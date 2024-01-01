@@ -11,4 +11,11 @@ a breakdown of revenue and expenses.
 
 Quarterly reports are available in the
 [`quarterly-reports`](./quarterly-reports) directory. Each quarterly report
-contains
+includes details about the company equity at the end of the quarter, a summary
+of revenue and expenditures for the quarter, and a budget for the next quarter
+and runway calculation.
+
+Annual reports are available in the [`annual-reports`](./annual-reports)
+directory. Each annual report includes details about the company equity change
+over the course of the year, a summary of the year's expenditures, and
+commentary about the past year and prospectus for the next year.
