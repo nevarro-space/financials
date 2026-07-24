@@ -31,8 +31,10 @@ account expenses:monitoring:uptimerobot
 account expenses:fees:government
 account expenses:fees:foreign-transaction
 
-; Opening balances as of 2026-01-01, derived from actual bank data rather
-; than by-month/2025-12.md. That report's Bluevine figure ($447.38) turns
+; Opening balances, dated 2025-12-31 (rather than 2026-01-01) so that a
+; --historical -e 2026-01-01 query correctly includes them when computing
+; "prior year-end" equity. Derived from actual bank data rather than
+; by-month/2025-12.md. That report's Bluevine figure ($447.38) turns
 ; out to be the balance *after* the 2026-01-05 Chase autopay had already
 ; posted, not the true 2025-12-31 balance — Bluevine's own running-balance
 ; column shows $525.85 held continuously from 2025-12-04 (last txn before
@@ -42,16 +44,37 @@ account expenses:fees:foreign-transaction
 ; and payment ($78.47) reconciling to the reported 2026-01-31 balance
 ; ($222.12). This ~1-statement-cycle labeling lag in the old monthly
 ; reports is exactly the kind of gap this conversion is meant to catch.
-2026-01-01 * Opening Balances
+2025-12-31 * Opening Balances
     assets:bluevine                  $525.85
     liabilities:chase-cc             -$78.47
     equity:opening-balances          -$447.38
+
+; Recurring cost budget — used for both budget-vs-actual reporting
+; (`hledger balance --budget`) and projecting next quarter's expected
+; spend. Update the amounts here when a recurring cost actually changes.
+~ monthly
+    expenses:hosting:hetzner            $42.00
+    expenses:comms:sendgrid             $34.95
+    expenses:devtools:github            $15.90
+    expenses:backup:backblaze            $1.30
+    liabilities:chase-cc
+
+; Annual renewals — dated to match when they actually recur, so the goal
+; only lands in the quarter the bill is really due, not smeared evenly.
+~ yearly from 2026-03-13
+    expenses:monitoring:uptimerobot    $180.00
+    liabilities:chase-cc
+
+~ yearly from 2026-02-23
+    expenses:comms:migadu              $19.00
+    liabilities:chase-cc
 
 2026-01-02=2026-01-02 AUTOMATIC PAYMENT - THANK
     liabilities:chase-cc          $78.47
     equity:transfers             $-78.47
 
 2026-01-05=2026-01-05 NAME-CHEAP.COM* 3PHT9C
+    ; bookmyti.me
     liabilities:chase-cc               $-23.98
     expenses:domains:namecheap          $23.98
 
@@ -71,6 +94,7 @@ account expenses:fees:foreign-transaction
     expenses:comms:sendgrid          $10.16
 
 2026-01-14=2026-01-14 NAME-CHEAP.COM* CSBRIF
+    ; mentalmodels.education
     liabilities:chase-cc               $-47.18
     expenses:domains:namecheap          $47.18
 
@@ -79,10 +103,12 @@ account expenses:fees:foreign-transaction
     expenses:backup:backblaze           $1.31
 
 2026-01-19=2026-01-20 GITHUB
+    ; arp242, neovim
     liabilities:chase-cc             $-15.90
     expenses:devtools:github          $15.90
 
 2026-01-23=2026-01-23 NAME-CHEAP.COM* DQN9DY
+    ; kuatcom.me, kuatcomments.com, wthstack.com
     liabilities:chase-cc               $-61.34
     expenses:domains:namecheap          $61.34
 
@@ -119,6 +145,7 @@ account expenses:fees:foreign-transaction
     equity:transfers             $40
 
 2026-02-19=2026-02-20 GITHUB
+    ; arp242, neovim
     liabilities:chase-cc             $-15.90
     expenses:devtools:github          $15.90
 
@@ -155,6 +182,7 @@ account expenses:fees:foreign-transaction
     equity:transfers         $173.14
 
 2026-03-12=2026-03-12 NAME-CHEAP.COM* CH740K
+    ; mineshspc.com
     liabilities:chase-cc               $-18.68
     expenses:domains:namecheap          $18.68
 
@@ -167,6 +195,7 @@ account expenses:fees:foreign-transaction
     expenses:backup:backblaze           $1.19
 
 2026-03-19=2026-03-20 GITHUB
+    ; arp242, neovim
     liabilities:chase-cc             $-15.90
     expenses:devtools:github          $15.90
 
@@ -175,6 +204,7 @@ account expenses:fees:foreign-transaction
     expenses:hosting:hetzner          $40.36
 
 2026-03-25=2026-03-26 NAME-CHEAP.COM* MYVABI
+    ; sublimemusic.app
     liabilities:chase-cc               $-23.18
     expenses:domains:namecheap          $23.18
 
@@ -203,10 +233,12 @@ account expenses:fees:foreign-transaction
     expenses:backup:backblaze           $1.29
 
 2026-04-19=2026-04-20 GITHUB
+    ; arp242, neovim
     liabilities:chase-cc             $-15.90
     expenses:devtools:github          $15.90
 
 2026-04-23=2026-04-24 NAME-CHEAP.COM* DHBVSH
+    ; nevarro.space
     liabilities:chase-cc               $-32.68
     expenses:domains:namecheap          $32.68
 
@@ -239,6 +271,7 @@ account expenses:fees:foreign-transaction
     expenses:backup:backblaze           $1.33
 
 2026-05-19=2026-05-20 GITHUB
+    ; arp242, neovim
     liabilities:chase-cc             $-15.90
     expenses:devtools:github          $15.90
 
@@ -282,6 +315,7 @@ account expenses:fees:foreign-transaction
     expenses:backup:backblaze           $1.40
 
 2026-06-19=2026-06-21 GITHUB
+    ; arp242, neovim
     liabilities:chase-cc             $-15.90
     expenses:devtools:github          $15.90
 
@@ -314,6 +348,7 @@ account expenses:fees:foreign-transaction
     equity:transfers          $147.6
 
 2026-07-19=2026-07-20 GITHUB
+    ; arp242, neovim
     liabilities:chase-cc             $-15.90
     expenses:devtools:github          $15.90
 
