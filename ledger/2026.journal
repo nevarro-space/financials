@@ -64,6 +64,9 @@ account expenses:fees:foreign-transaction
     equity:transfers          $78.47
 
 2026-01-11=2026-01-12 TWILIO SENDGRID
+    ; Sendgrid changed their pricing; switched to a new plan mid-month,
+    ; resulting in this charge plus the prorated old-plan charge on 01-05.
+    ; Monthly cost from February onward is $34.95.
     liabilities:chase-cc            $-10.16
     expenses:comms:sendgrid          $10.16
 
@@ -111,11 +114,7 @@ account expenses:fees:foreign-transaction
     liabilities:chase-cc          $40.00
     equity:transfers             $-40.00
 
-2026-02-10 No Description
-    assets:fidelity                 $1000 = $1000
-    equity:member-capital          $-1000
-
-2026-02-11 No Description
+2026-02-11 Chase Credit Card autopay
     assets:fidelity             $-40 = $960
     equity:transfers             $40
 
@@ -139,7 +138,7 @@ account expenses:fees:foreign-transaction
     liabilities:chase-cc                       $-1.22
     expenses:fees:foreign-transaction           $1.22
 
-2026-02-27 FIDELITY GOVERNMENT MONEY MARKET
+2026-02-27 SPAXX dividend
     assets:fidelity           $1.57 = $961.57
     income:interest          $-1.57
 
@@ -151,7 +150,7 @@ account expenses:fees:foreign-transaction
     liabilities:chase-cc            $-34.95
     expenses:comms:sendgrid          $34.95
 
-2026-03-04 No Description
+2026-03-04 Chase Credit Card autopay
     assets:fidelity         $-173.14 = $788.43
     equity:transfers         $173.14
 
@@ -183,7 +182,7 @@ account expenses:fees:foreign-transaction
     liabilities:chase-cc                       $-1.21
     expenses:fees:foreign-transaction           $1.21
 
-2026-03-31 FIDELITY GOVERNMENT MONEY MARKET
+2026-03-31 SPAXX dividend
     assets:fidelity           $2.25 = $790.68
     income:interest          $-2.25
 
@@ -195,7 +194,7 @@ account expenses:fees:foreign-transaction
     liabilities:chase-cc            $-34.95
     expenses:comms:sendgrid          $34.95
 
-2026-04-06 No Description
+2026-04-06 Chase Credit Card autopay
     assets:fidelity         $-113.29 = $677.39
     equity:transfers         $113.29
 
@@ -219,7 +218,7 @@ account expenses:fees:foreign-transaction
     liabilities:chase-cc                       $-1.22
     expenses:fees:foreign-transaction           $1.22
 
-2026-04-30 FIDELITY GOVERNMENT MONEY MARKET
+2026-04-30 SPAXX dividend
     assets:fidelity           $1.88 = $679.27
     income:interest          $-1.88
 
@@ -231,7 +230,7 @@ account expenses:fees:foreign-transaction
     liabilities:chase-cc            $-34.95
     expenses:comms:sendgrid          $34.95
 
-2026-05-05 No Description
+2026-05-05 Chase Credit Card autopay
     assets:fidelity         $-315.47 = $363.8
     equity:transfers         $315.47
 
@@ -244,6 +243,9 @@ account expenses:fees:foreign-transaction
     expenses:devtools:github          $15.90
 
 2026-05-22 Transfer to FirstBank ( (0283)
+    ; FirstBank was just used as a pass-through/personal account already
+    ; configured for transfers — not a Nevarro LLC account — so this closes
+    ; out Bluevine straight into Fidelity rather than adding a third account.
     assets:bluevine        $-319.05 = $0.0
     assets:fidelity         $319.05
 
@@ -255,7 +257,7 @@ account expenses:fees:foreign-transaction
     liabilities:chase-cc                       $-1.57
     expenses:fees:foreign-transaction           $1.57
 
-2026-05-29 FIDELITY GOVERNMENT MONEY MARKET
+2026-05-29 SPAXX dividend
     assets:fidelity           $1.26 = $684.11
     income:interest          $-1.26
 
@@ -271,7 +273,7 @@ account expenses:fees:foreign-transaction
     liabilities:chase-cc            $-34.95
     expenses:comms:sendgrid          $34.95
 
-2026-06-04 No Description
+2026-06-04 Chase Credit Card autopay
     assets:fidelity         $-126.73 = $557.38
     equity:transfers         $126.73
 
@@ -291,7 +293,7 @@ account expenses:fees:foreign-transaction
     liabilities:chase-cc                       $-1.54
     expenses:fees:foreign-transaction           $1.54
 
-2026-06-30 FIDELITY GOVERNMENT MONEY MARKET
+2026-06-30 SPAXX dividend
     assets:fidelity           $1.54 = $558.92
     income:interest          $-1.54
 
@@ -307,7 +309,7 @@ account expenses:fees:foreign-transaction
     liabilities:chase-cc            $-34.95
     expenses:comms:sendgrid          $34.95
 
-2026-07-06 No Description
+2026-07-06 Chase Credit Card autopay
     assets:fidelity          $-147.6 = $411.32
     equity:transfers          $147.6
 
@@ -318,4 +320,8 @@ account expenses:fees:foreign-transaction
 2026-07-19=2026-07-20 BACKBLAZE INC
     liabilities:chase-cc               $-1.30
     expenses:backup:backblaze           $1.30
+
+2026-02-10 Capital contribution
+    assets:fidelity                 $1000 = $1000
+    equity:member-capital          $-1000
 

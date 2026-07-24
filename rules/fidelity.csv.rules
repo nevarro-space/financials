@@ -12,7 +12,7 @@
 #   hledger import csv/fidelity.csv --rules rules/fidelity.csv.rules -f ledger/2026.journal
 
 skip 1
-fields date, action, symbol, description, txntype, price, quantity, commission, fees, accruedinterest, amount, balance, settlementdate
+fields date, action, symbol, fdesc, txntype, price, quantity, commission, fees, accruedinterest, amount, balance, settlementdate
 
 date-format %m/%d/%Y
 
@@ -21,9 +21,15 @@ currency $
 account1 assets:fidelity
 balance %balance
 
+# Fidelity's own Description column is always "No Description" or the
+# generic fund name — the meaningful text is in Action. Default to that,
+# then override with something more readable per case below.
+description %action
+
 # Dividends are real interest income.
 if DIVIDEND RECEIVED
     account2 income:interest
+    description SPAXX dividend
 
 # Reinvestment of that same dividend back into the money-market fund is a
 # same-day wash with no net effect in our flat "SPAXX = cash" model — skip
@@ -35,6 +41,7 @@ if REINVESTMENT
 # through the same clearing account so both sides net to zero.
 if DIRECT DEBIT CHASE CREDIT
     account2 equity:transfers
+    description Chase Credit Card autopay
 
 # Incoming transfers default to capital contributions, since that's the
 # common case. One known exception: the 2026-05-26 transfer is the tail
@@ -46,3 +53,4 @@ if %action TRANSFERRED FROM VS && %date 05/26/2026
 
 if TRANSFERRED FROM VS
     account2 equity:member-capital
+    description Capital contribution

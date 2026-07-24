@@ -22,6 +22,7 @@
           devShells.default = pkgs.mkShell {
             packages = with pkgs; [
               hledger
+              hledger-web
               python3
             ];
 
