@@ -1,0 +1,32 @@
+# Rules for Bluevine checking exports.
+# Expected columns: Date,Description,Debit/Credit,Balance,Name,Additional
+# information,IMAD/trace ID,Bill due date,Bill number,Bill notes
+#
+# Usage:
+#   hledger import csv/bluevine.csv --rules rules/bluevine.csv.rules -f ledger/2026.journal
+
+skip 1
+fields date, description, amount, balance, name, info, imad, billduedate, billnumber, billnotes
+
+date-format %Y-%m-%d
+
+currency $
+
+account1 assets:bluevine
+
+# Bluevine provides a running balance on every row — use it to generate a
+# free balance assertion on every imported transaction. If this ever fails,
+# it means a transaction is missing or mis-categorized somewhere.
+balance %balance
+
+if CHASE CREDIT CRD
+    account2 equity:transfers
+
+if CO SECRETARY STATE FEE
+    account2 expenses:fees:government
+
+# One-off: this is the Bluevine account closure, routed through a personal
+# FirstBank account as a pass-through, landing in Fidelity. Not a recurring
+# pattern — safe to leave mapped straight to Fidelity here.
+if Transfer to FirstBank
+    account2 assets:fidelity

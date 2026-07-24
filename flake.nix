@@ -24,6 +24,11 @@
               hledger
               python3
             ];
+
+            # Assumes `nix develop` is run from the repo root.
+            shellHook = ''
+              export LEDGER_FILE="$PWD/ledger/all.journal"
+            '';
           };
         };
     };

@@ -1,0 +1,60 @@
+# Rules for Chase credit card exports.
+# Expected columns: Card,Transaction Date,Post Date,Description,Category,Type,Amount,Memo
+#
+# Usage:
+#   hledger import csv/chase-cc.csv --rules rules/chase-cc.csv.rules -f ledger/2026.journal
+
+skip 1
+fields card, date, date2, description, category, txntype, amount, memo
+
+date-format %m/%d/%Y
+
+currency $
+
+account1 liabilities:chase-cc
+
+# Chase's sign convention already matches ours: charges are negative
+# (increase what's owed), payments/credits are positive (reduce it).
+
+if Hetzner
+    account2 expenses:hosting:hetzner
+
+if NAME-CHEAP
+    account2 expenses:domains:namecheap
+
+if TWILIO SENDGRID
+    account2 expenses:comms:sendgrid
+
+if MIGADU
+    account2 expenses:comms:migadu
+
+if GITHUB
+    account2 expenses:devtools:github
+
+if GOOGLE .Workspace
+    account2 expenses:comms:google-workspace
+
+if BACKBLAZE
+    account2 expenses:backup:backblaze
+
+if UPTIMEROBOT
+    account2 expenses:monitoring:uptimerobot
+
+if FOREIGN TRANSACTION FEE
+    account2 expenses:fees:foreign-transaction
+
+if CO SECRETARY STATE FEE
+    account2 expenses:fees:government
+
+# Card payments come from Bluevine or Fidelity depending on when — routed
+# through a clearing account so this file doesn't need to know which.
+# The Bluevine/Fidelity rules route their side of the same payment to the
+# same account, so it should net to zero once both sides are imported.
+if AUTOMATIC PAYMENT
+    account2 equity:transfers
+
+if Payment Thank You
+    account2 equity:transfers
+
+if Statement Credit Adjustme
+    account2 income:credits-and-adjustments
