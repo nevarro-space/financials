@@ -1,0 +1,17 @@
+include accounts.journal
+include commodities.journal
+
+2024-01-01 * Opening Balances
+    assets:cash:bluevine                           $539.08  =   $539.08
+    liabilities:credit-cards:chase:ink-unlimited  -$183.60  =  -$183.60
+    equity:opening/closing balances
+
+include bluevine.journal
+include chase-*.journal
+include hetzner.journal
+include square.journal
+
+2024-12-31 * Closing Balances
+    assets:cash:bluevine                          -$1,929.19  =  $0.00
+    liabilities:credit-cards:chase:ink-unlimited      $79.31  =  $0.00
+    equity:opening/closing balances

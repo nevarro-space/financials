@@ -1,0 +1,27 @@
+2024-01-01 * Hetzner Invoice
+    expenses:hosting:hetzner                3 HETZNERIPMO         @@   1.5000 EUR
+    expenses:hosting:hetzner              150 HETZNERVOLUMEMO     @@   6.6000 EUR
+    expenses:hosting:hetzner                1 CCXTWENTYTWOMO      @@  37.9000 EUR
+    expenses:hosting:hetzner                2 HETZNERCPXELEVENMO  @@   7.7000 EUR
+    expenses:taxes:vat:hetzner              2.6878 EUR
+    equity:rounding
+    liabilities:accounts-payable:hetzner  -56.39 EUR
+
+2024-02-01 * Hetzner Invoice
+    expenses:hosting:hetzner                3 HETZNERIPMO         @@   1.5000 EUR
+    expenses:hosting:hetzner              150 HETZNERVOLUMEMO     @@   6.6000 EUR
+    expenses:hosting:hetzner                2 HETZNERCPXELEVENMO  @@   7.7000 EUR
+    expenses:hosting:hetzner               92 CPXTHIRTYONEHR      @@   1.9412 EUR
+    expenses:hosting:hetzner                1 CCXTWENTYTWOMO      @@  37.9000 EUR
+    expenses:taxes:vat:hetzner              2.7775 EUR
+    equity:rounding                         0.0013 EUR
+    liabilities:accounts-payable:hetzner  -58.420 EUR
+
+2024-03-01 * Hetzner Invoice
+    ; I cut the cost of my Matrix server from €37.90/mo to €13.10/mo.
+    expenses:hosting:hetzner                3 HETZNERIPMO         @@   1.5000 EUR
+    expenses:hosting:hetzner              150 HETZNERVOLUMEMO     @@   6.6000 EUR
+    expenses:hosting:hetzner                2 HETZNERCPXELEVENMO  @@   7.7000 EUR
+    expenses:hosting:hetzner                1 CPXTHIRTYONEMO      @@  13.1000 EUR
+    expenses:taxes:vat:hetzner              1.4400 EUR
+    liabilities:accounts-payable:hetzner

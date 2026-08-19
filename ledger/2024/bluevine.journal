@@ -1,0 +1,75 @@
+2024-01-03 * ROBINHOOD, CREDITS
+    assets:cash:bluevine   $2,000.00
+    equity:member:sumner  -$2,000.00
+
+2024-01-04 * CHASE CREDIT CRD, AUTOPAYBUS
+    assets:cash:bluevine  $-160.76
+    equity:transfers
+
+2024-01-16 * VENMO, CASHOUT
+    assets:cash:bluevine   $100.00  ; date:2024-01-18
+    revenue:tutoring      -$100.00  ; KH
+
+2024-01-24 * Square Inc, 240124P2
+    assets:cash:bluevine   $96.35
+    equity:transfers      -$96.35
+
+2024-01-29 * Square Inc, 240129P2
+    assets:cash:bluevine   $67.40  =  $2,642.07
+    equity:transfers      -$67.40
+
+2024-02-05 * CHASE CREDIT CRD, AUTOPAYBUS
+    assets:cash:bluevine  $-204.63  =  $2,437.44
+    equity:transfers
+
+2024-03-04 * CHASE CREDIT CRD, AUTOPAYBUS
+    assets:cash:bluevine  $-140.73  =  $2,296.71
+    equity:transfers
+
+2024-04-05 * CHASE CREDIT CRD, AUTOPAYBUS
+    assets:cash:bluevine  $-135.79  =  $2,160.92
+    equity:transfers
+
+2024-05-06 * CHASE CREDIT CRD, AUTOPAYBUS
+    assets:cash:bluevine  $-376.08  =  $1,784.84
+    equity:transfers
+
+2024-06-04 * CHASE CREDIT CRD, AUTOPAYBUS
+    assets:cash:bluevine  $-60.84  =  $1,724.00
+    equity:transfers
+
+2024-07-05 * CHASE CREDIT CRD, AUTOPAYBUS
+    assets:cash:bluevine  $-78.16  =  $1,645.84
+    equity:transfers
+
+2024-08-05 * CHASE CREDIT CRD, AUTOPAYBUS
+    assets:cash:bluevine  $-60.61  =  $1,585.23
+    equity:transfers
+
+2024-09-04 * CHASE CREDIT CRD, AUTOPAYBUS
+    assets:cash:bluevine  $-60.81
+    equity:transfers
+
+2024-09-24 * ROBINHOOD, CREDITS
+    assets:cash:bluevine                  $500.00  =  $2,024.42
+    revenue:martial-arts:management-fee  -$500.00
+
+2024-10-04 * CHASE CREDIT CRD, AUTOPAYBUS
+    assets:cash:bluevine  $-62.06
+    equity:transfers
+
+2024-10-22 * ROBINHOOD, CREDITS
+    assets:cash:bluevine              $75.00  =  $2,037.36
+    revenue:martial-arts:commission  -$75.00
+
+2024-11-01 * ROBINHOOD, CREDITS
+    assets:cash:bluevine              $25.00
+    revenue:martial-arts:commission  -$25.00
+
+2024-11-04 * CHASE CREDIT CRD, AUTOPAYBUS
+    assets:cash:bluevine  $-72.32  =  $1,990.04
+    equity:transfers
+
+2024-12-04 * CHASE CREDIT CRD, AUTOPAYBUS
+    assets:cash:bluevine  $-60.85  =  $1,929.19
+    equity:transfers

@@ -1,0 +1,330 @@
+2024-01-01 * AUTOMATIC PAYMENT - THANK
+    liabilities:credit-cards:chase:ink-unlimited  $160.76
+    equity:transfers
+
+2024-01-01 * CO Secretary of State Fee
+    liabilities:credit-cards:chase:ink-unlimited  $-10.00
+    expenses:fees:government                       $10.00
+
+2024-01-01 * Points Redemption
+    liabilities:credit-cards:chase:ink-unlimited   $7.62
+    revenue:credits-and-adjustments               $-7.62
+
+2024-01-02 * NAMECHEAP.COM  ; mentalmodels.education transfer
+    liabilities:credit-cards:chase:ink-unlimited  $-22.16
+    expenses:domains:namecheap                     $22.16
+
+2024-01-02 * NAMECHEAP.COM  ; nevarro.space transfer
+    liabilities:credit-cards:chase:ink-unlimited  $-22.16
+    expenses:domains:namecheap                     $22.16
+
+2024-01-02 * NAMECHEAP.COM  ; sublimemusic.app transfer
+    liabilities:credit-cards:chase:ink-unlimited  $-14.16
+    expenses:domains:namecheap                     $14.16
+
+2024-01-02 * Hetzner Online GmbH
+    liabilities:credit-cards:chase:ink-unlimited  $-64.39
+    liabilities:accounts-payable:hetzner            56.39 EUR  @@  $62.52
+    expenses:fees:foreign-transaction               $1.87
+
+2024-01-03 * NAMECHEAP.COM  ; mineshspc.com transfer
+    liabilities:credit-cards:chase:ink-unlimited  $-20.32
+    expenses:domains:namecheap                     $20.32
+
+2024-01-06 * NAMECHEAP.COM  ; bookmyti.me renewal
+    liabilities:credit-cards:chase:ink-unlimited  $-20.98
+    expenses:domains:namecheap                     $20.98
+
+2024-01-08 * TWILIO SENDGRID
+    liabilities:credit-cards:chase:ink-unlimited  $-15.45
+    expenses:communication:sendgrid                $15.45
+
+2024-01-10 * CONNECTS WORKSPACE
+    liabilities:credit-cards:chase:ink-unlimited  $-26.27
+    expenses:tutoring                              $26.27  ; Conference Room
+
+2024-01-10 * TUTORS.COM
+    liabilities:credit-cards:chase:ink-unlimited  $-17.58
+    expenses:marketing:tutors.com                  $17.58
+
+2024-01-19 * BACKBLAZE INC
+    liabilities:credit-cards:chase:ink-unlimited  $-11.48
+    expenses:backup:backblaze                      $11.48
+
+2024-02-02 * AUTOMATIC PAYMENT - THANK
+    liabilities:credit-cards:chase:ink-unlimited   $204.63
+    equity:transfers                              -$204.63
+
+2024-02-02 * Hetzner Online GmbH
+    liabilities:credit-cards:chase:ink-unlimited  $-65.45
+    liabilities:accounts-payable:hetzner            58.42 EUR  @@  $63.55
+    expenses:fees:foreign-transaction               $1.90
+
+2024-02-06 * TWILIO SENDGRID
+    liabilities:credit-cards:chase:ink-unlimited  $-19.95
+    expenses:communication:sendgrid                $19.95
+
+2024-02-09 * NAMECHEAP.COM  ; summation.tech renewal
+    liabilities:credit-cards:chase:ink-unlimited  $-44.16
+    expenses:domains:namecheap                     $44.16
+
+2024-02-19 * BACKBLAZE INC
+    liabilities:credit-cards:chase:ink-unlimited  $-4.98
+    expenses:backup:backblaze                      $4.98
+
+2024-02-22 * MIGADU.COM
+    liabilities:credit-cards:chase:ink-unlimited  $-19.00
+    expenses:communication:migadu                  $19.00
+
+2024-02-22 * NAMECHEAP.COM  ; wthstack.com
+    liabilities:credit-cards:chase:ink-unlimited  $-10.16
+    expenses:domains:namecheap                     $10.16
+
+2024-02-28 * GITHUB  ; arp242, GoatCounter
+    liabilities:credit-cards:chase:ink-unlimited  $-3.66
+    expenses:devtools:github                       $3.66
+
+2024-03-02 * hetzner.com
+    liabilities:credit-cards:chase:ink-unlimited  $-33.48
+    liabilities:accounts-payable:hetzner            30.34 EUR  @@  $32.51
+    expenses:fees:foreign-transaction               $0.97
+
+2024-03-03 * AUTOMATIC PAYMENT - THANK
+    liabilities:credit-cards:chase:ink-unlimited   $140.73
+    equity:transfers                              $-140.73
+
+2024-03-07 * TWILIO SENDGRID
+    liabilities:credit-cards:chase:ink-unlimited  $-19.95
+    expenses:communication:sendgrid                $19.95
+
+2024-03-13 * UPTIMEROBOT.COM
+    liabilities:credit-cards:chase:ink-unlimited  $-348.00
+    expenses:monitoring:uptimerobot                $348.00
+
+2024-03-19 * GITHUB  ; arp242, GoatCounter
+    liabilities:credit-cards:chase:ink-unlimited  $-5.30
+    expenses:devtools:github                       $5.30
+
+2024-03-19 * BACKBLAZE INC
+    liabilities:credit-cards:chase:ink-unlimited  $-2.83
+    expenses:backup:backblaze                      $2.83
+
+2024-04-03 * AUTOMATIC PAYMENT - THANK
+    liabilities:credit-cards:chase:ink-unlimited   $135.79
+    equity:transfers                              $-135.79
+
+2024-04-04 * TWILIO SENDGRID
+    liabilities:credit-cards:chase:ink-unlimited  $-19.95
+    expenses:communication:sendgrid                $19.95
+
+2024-04-19 * GITHUB  ; arp242, GoatCounter
+    liabilities:credit-cards:chase:ink-unlimited  $-5.30
+    expenses:devtools:github                       $5.30
+
+2024-04-19 * BACKBLAZE INC
+    liabilities:credit-cards:chase:ink-unlimited  $-2.11
+    expenses:backup:backblaze                      $2.11
+
+2024-04-27 * hetzner.com
+    liabilities:credit-cards:chase:ink-unlimited  $-33.48
+    expenses:hosting:hetzner                        30.34 EUR  @@  $32.51
+    expenses:fees:foreign-transaction               $0.97
+
+2024-05-03 * AUTOMATIC PAYMENT - THANK
+    liabilities:credit-cards:chase:ink-unlimited   $376.08
+    equity:transfers                              $-376.08
+
+2024-05-05 * TWILIO SENDGRID
+    liabilities:credit-cards:chase:ink-unlimited  $-19.95
+    expenses:communication:sendgrid                $19.95
+
+2024-05-19 * GITHUB  ; arp242, GoatCounter
+    liabilities:credit-cards:chase:ink-unlimited  $-5.30
+    expenses:devtools:github                       $5.30
+
+2024-05-19 * BACKBLAZE INC
+    liabilities:credit-cards:chase:ink-unlimited  $-1.81
+    expenses:backup:backblaze                      $1.81
+
+2024-05-27 * hetzner.com
+    liabilities:credit-cards:chase:ink-unlimited  $-33.94
+    expenses:hosting:hetzner                        30.35 EUR  @@  $32.96
+    expenses:fees:foreign-transaction               $0.98
+
+2024-06-03 * AUTOMATIC PAYMENT - THANK
+    liabilities:credit-cards:chase:ink-unlimited   $60.84
+    equity:transfers                              $-60.84
+
+2024-06-05 * TWILIO SENDGRID
+    liabilities:credit-cards:chase:ink-unlimited  $-19.95
+    expenses:communication:sendgrid                $19.95
+
+2024-06-08 * NAMECHEAP.COM  ; quarkchat.app renewal
+    liabilities:credit-cards:chase:ink-unlimited  $-17.16
+    expenses:domains:namecheap                     $17.16
+
+2024-06-19 * GITHUB  ; arp242, GoatCounter
+    liabilities:credit-cards:chase:ink-unlimited  $-5.30
+    expenses:devtools:github                       $5.30
+
+2024-06-19 * BACKBLAZE INC
+    liabilities:credit-cards:chase:ink-unlimited  $-1.78
+    expenses:backup:backblaze                      $1.78
+
+2024-06-27 * hetzner.com
+    liabilities:credit-cards:chase:ink-unlimited  $-33.58
+    expenses:hosting:hetzner                        30.34 EUR  @@  $32.61
+    expenses:fees:foreign-transaction               $0.97
+
+2024-07-03 * AUTOMATIC PAYMENT - THANK
+    liabilities:credit-cards:chase:ink-unlimited   $78.16
+    equity:transfers                              $-78.16
+
+2024-07-05 * TWILIO SENDGRID
+    liabilities:credit-cards:chase:ink-unlimited  $-19.95
+    expenses:communication:sendgrid                $19.95
+
+2024-07-19 * GITHUB  ; arp242, GoatCounter
+    liabilities:credit-cards:chase:ink-unlimited  $-5.30
+    expenses:devtools:github                       $5.30
+
+2024-07-19 * BACKBLAZE INC
+    liabilities:credit-cards:chase:ink-unlimited  $-1.78
+    expenses:backup:backblaze                      $1.78
+
+2024-07-25 * hetzner.com
+    liabilities:credit-cards:chase:ink-unlimited  $-33.97
+    expenses:hosting:hetzner                        30.35 EUR  @@  $32.99
+    expenses:fees:foreign-transaction               $0.98
+
+2024-08-03 * AUTOMATIC PAYMENT - THANK
+    liabilities:credit-cards:chase:ink-unlimited  $60.61
+    equity:transfers
+
+2024-08-04 * TWILIO SENDGRID
+    liabilities:credit-cards:chase:ink-unlimited  $-19.95
+    expenses:communication:sendgrid                $19.95
+
+2024-08-19 * GITHUB  ; arp242, GoatCounter
+    liabilities:credit-cards:chase:ink-unlimited  $-5.30
+    expenses:devtools:github                       $5.30
+
+2024-08-19 * BACKBLAZE INC
+    liabilities:credit-cards:chase:ink-unlimited  $-1.79
+    expenses:backup:backblaze                      $1.79
+
+2024-08-26 * hetzner.com
+    liabilities:credit-cards:chase:ink-unlimited  $-34.00
+    expenses:hosting:hetzner                        30.35 EUR  @@  $34.00
+
+2024-08-27 * FOREIGN TRANSACTION FEE
+    liabilities:credit-cards:chase:ink-unlimited  $-1.02
+    expenses:fees:foreign-transaction              $1.02
+
+2024-09-03 * AUTOMATIC PAYMENT - THANK
+    liabilities:credit-cards:chase:ink-unlimited   $60.81  ; date:09/03/2024
+    equity:transfers                              $-60.81
+
+2024-09-04 * TWILIO SENDGRID
+    liabilities:credit-cards:chase:ink-unlimited  $-19.95  ; date:09/05/2024
+    expenses:communication:sendgrid                $19.95
+
+2024-09-19 * GITHUB  ; arp242, GoatCounter
+    liabilities:credit-cards:chase:ink-unlimited  $-5.30  ; date:09/20/2024
+    expenses:devtools:github                       $5.30
+
+2024-09-19 * BACKBLAZE INC
+    liabilities:credit-cards:chase:ink-unlimited  $-1.81  ; date:09/20/2024
+    expenses:backup:backblaze                      $1.81
+
+2024-09-25 * Hetzner Online GmbH
+    liabilities:credit-cards:chase:ink-unlimited  $-33.94      ; date:09/26/2024
+    expenses:hosting:hetzner                        30.35 EUR  @@  $33.94
+
+2024-09-26 * FOREIGN TRANSACTION FEE
+    liabilities:credit-cards:chase:ink-unlimited  $-1.01  ; date:09/26/2024
+    expenses:fees:foreign-transaction              $1.01
+
+2024-09-26 * KING SOOPERS  #  #0031
+    liabilities:credit-cards:chase:ink-unlimited  $-6.02  ; date:09/27/2024
+    expenses:supplies                              $6.02  ; waters for taekwondo school
+
+2024-09-28 * CONOCO - CITYMART CONO
+    liabilities:credit-cards:chase:ink-unlimited  $-4.29  ; date:09/29/2024
+    expenses:supplies                              $4.29  ; batteries for taekwondo school
+
+2024-10-03 * AUTOMATIC PAYMENT - THANK
+    liabilities:credit-cards:chase:ink-unlimited   $62.06  ; date:10/03/2024
+    equity:transfers                              $-62.06
+
+2024-10-03 * TWILIO SENDGRID
+    liabilities:credit-cards:chase:ink-unlimited  $-19.95  ; date:10/04/2024
+    expenses:communication:sendgrid                $19.95
+
+2024-10-19 * BACKBLAZE INC
+    liabilities:credit-cards:chase:ink-unlimited  $-1.77  ; date:10/20/2024
+    expenses:backup:backblaze                      $1.77
+
+2024-10-19 * GITHUB  ; arp242, GoatCounter
+    liabilities:credit-cards:chase:ink-unlimited  $-5.30  ; date:10/20/2024
+    expenses:devtools:github                       $5.30
+
+2024-10-25 * Hetzner Online GmbH
+    liabilities:credit-cards:chase:ink-unlimited  $-32.85      ; date:10/27/2024
+    expenses:hosting:hetzner                        30.33 EUR  @@  $32.85
+
+2024-10-27 * FOREIGN TRANSACTION FEE
+    liabilities:credit-cards:chase:ink-unlimited  $-0.98  ; date:10/27/2024
+    expenses:fees:foreign-transaction              $0.98
+
+2024-11-03 * AUTOMATIC PAYMENT - THANK
+    liabilities:credit-cards:chase:ink-unlimited   $72.32  ; date:11/03/2024
+    equity:transfers                              $-72.32
+
+2024-11-05 * TWILIO SENDGRID
+    liabilities:credit-cards:chase:ink-unlimited  $-19.95  ; date:11/06/2024
+    expenses:communication:sendgrid                $19.95
+
+2024-11-19 * GITHUB  ; arp242, GoatCounter
+    liabilities:credit-cards:chase:ink-unlimited  $-5.30  ; date:11/20/2024
+    expenses:devtools:github                       $5.30
+
+2024-11-19 * BACKBLAZE INC
+    liabilities:credit-cards:chase:ink-unlimited  $-1.92  ; date:11/20/2024
+    expenses:backup:backblaze                      $1.92
+
+2024-11-25 * Hetzner Online GmbH
+    liabilities:credit-cards:chase:ink-unlimited  $-31.84      ; date:11/26/2024
+    expenses:hosting:hetzner                        30.32 EUR  @@  $31.84
+
+2024-11-26 * FOREIGN TRANSACTION FEE
+    liabilities:credit-cards:chase:ink-unlimited  $-0.95  ; date:11/26/2024
+    expenses:fees:foreign-transaction              $0.95
+
+2024-12-03 * AUTOMATIC PAYMENT - THANK
+    liabilities:credit-cards:chase:ink-unlimited   $60.85  ; date:12/03/2024
+    equity:transfers                              $-60.85
+
+2024-12-04 * TWILIO SENDGRID
+    liabilities:credit-cards:chase:ink-unlimited  $-19.95  ; date:12/05/2024
+    expenses:communication:sendgrid                $19.95
+
+2024-12-19 * GITHUB  ; arp242, GoatCounter
+    liabilities:credit-cards:chase:ink-unlimited  $-5.30  ; date:12/20/2024
+    expenses:devtools:github                       $5.30
+
+2024-12-19 * BACKBLAZE INC
+    liabilities:credit-cards:chase:ink-unlimited  $-1.93  ; date:12/20/2024
+    expenses:backup:backblaze                      $1.93
+
+2024-12-24 * Statement Credit Adjustme
+    liabilities:credit-cards:chase:ink-unlimited   $20.46  ; date:12/24/2024
+    revenue:credits-and-adjustments               $-20.46
+
+2024-12-27 * Hetzner Online GmbH
+    liabilities:credit-cards:chase:ink-unlimited  $-31.64      ; date:12/29/2024
+    expenses:hosting:hetzner                        30.32 EUR  @@  $31.64
+
+2024-12-29 * FOREIGN TRANSACTION FEE
+    liabilities:credit-cards:chase:ink-unlimited  $-0.94  ; date:12/29/2024
+    expenses:fees:foreign-transaction              $0.94
