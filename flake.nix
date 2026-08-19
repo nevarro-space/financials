@@ -22,7 +22,9 @@
           devShells.default = pkgs.mkShell {
             packages = with pkgs; [
               hledger
+              hledger-fmt
               hledger-web
+              pre-commit
               python3
             ];
 
