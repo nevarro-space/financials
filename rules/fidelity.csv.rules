@@ -1,15 +1,4 @@
-# Rules for Fidelity "History for Account" exports (SPAXX).
-# Expected columns: Run Date,Action,Symbol,Description,Type,Price ($),Quantity,
-# Commission ($),Fees ($),Accrued Interest ($),Amount ($),Cash Balance ($),Settlement Date
-#
-# Fidelity's raw export has 2 blank lines then a header line before the
-# data, and a legal-disclaimer footer after it — neither is valid CSV, so
-# trim both before importing (keep the header line + data rows only).
-# This rules file assumes that trim has already been done, i.e. the header
-# is on line 1 — adjust `skip` below if you're feeding it the raw export.
-#
-# Usage:
-#   hledger import csv/fidelity.csv --rules rules/fidelity.csv.rules -f ledger/2026.journal
+include global.rules
 
 skip 1
 fields date, action, symbol, fdesc, txntype, price, quantity, commission, fees, accruedinterest, amount, balance, settlementdate
@@ -18,18 +7,13 @@ date-format %m/%d/%Y
 
 currency $
 
-account1 assets:fidelity
+account1 assets:cash:fidelity
 balance %balance
 
 # Fidelity's own Description column is always "No Description" or the
 # generic fund name — the meaningful text is in Action. Default to that,
 # then override with something more readable per case below.
 description %action
-
-# Dividends are real interest income.
-if DIVIDEND RECEIVED
-    account2 income:interest
-    description SPAXX dividend
 
 # Reinvestment of that same dividend back into the money-market fund is a
 # same-day wash with no net effect in our flat "SPAXX = cash" model — skip
@@ -43,14 +27,14 @@ if DIRECT DEBIT CHASE CREDIT
     account2 equity:transfers
     description Chase Credit Card autopay
 
-# Incoming transfers default to capital contributions, since that's the
-# common case. One known exception: the 2026-05-26 transfer is the tail
-# end of the Bluevine account closure (Bluevine -> FirstBank -> Fidelity),
-# already fully recorded by the Bluevine rules, so skip it here to avoid
-# double-counting.
-if %action TRANSFERRED FROM VS && %date 05/26/2026
-    skip
-
-if TRANSFERRED FROM VS
-    account2 equity:member-capital
-    description Capital contribution
+if
+%date The data and information in this spreadsheet is provided to you solely for your use and is not for distribution. The spreadsheet is provided for
+%date informational purposes only, and is not intended to provide advice, nor should it be construed as an offer to sell, a solicitation of an offer to buy or a
+%date recommendation for any security or insurance product by Fidelity or any third party. Data and information shown is based on information known to Fidelity as of the date it was
+%date exported and is subject to change. It should not be used in place of your account statements or trade confirmations and is not intended for tax reporting
+%date purposes. For more information on the data included in this spreadsheet, including any limitations thereof, go to Fidelity.com.
+%date Brokerage services are provided by Fidelity Brokerage Services LLC \(FBS\), 900 Salem Street, Smithfield, RI 02917. Custody and other services provided by National
+%date Financial Services LLC \(NFS\). Both are Fidelity Investment companies and members SIPC, NYSE. Insurance products at Fidelity are distributed by
+%date Fidelity Insurance Agency, Inc., and, for certain products, by Fidelity Brokerage Services, Member NYSE, SIPC.
+%date Date downloaded
+    skip 1

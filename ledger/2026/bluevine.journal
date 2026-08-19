@@ -1,0 +1,15 @@
+2026-01-05 CHASE CREDIT CRD, AUTOPAYBUS
+    assets:cash:bluevine  $-78.47  =  $447.38
+    equity:transfers       $78.47
+
+2026-01-23 CO SECRETARY STATE FEE, DENVER, CO
+    assets:cash:bluevine      $-25.0  =  $422.38
+    expenses:fees:government   $25.0
+
+2026-02-04 CHASE CREDIT CRD, AUTOPAYBUS
+    assets:cash:bluevine  $-103.33  =  $319.05
+    equity:transfers       $103.33
+
+2026-05-22 Transfer to FirstBank ( (0283)
+    assets:cash:bluevine  $-319.05  =  $0.0
+    equity:transfers       $319.05

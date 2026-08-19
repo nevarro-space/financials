@@ -1,0 +1,59 @@
+2026-02-10 TRANSFERRED FROM VS Z34-231545-1 (Cash)
+    assets:cash:fidelity   $1000  =  $1000
+    equity:member:sumner  $-1000
+
+2026-02-11 Chase Credit Card autopay
+    assets:cash:fidelity  $-40  =  $960
+    equity:transfers       $40
+
+2026-02-27 DIVIDEND RECEIVED FIDELITY GOVERNMENT MONEY MARKET (SPAXX) (Cash)
+    assets:cash:fidelity      $1.57  =  $961.57
+    revenue:dividends:SPAXX  $-1.57
+
+2026-03-04 Chase Credit Card autopay
+    assets:cash:fidelity  $-173.14  =  $788.43
+    equity:transfers       $173.14
+
+2026-03-31 DIVIDEND RECEIVED FIDELITY GOVERNMENT MONEY MARKET (SPAXX) (Cash)
+    assets:cash:fidelity      $2.25  =  $790.68
+    revenue:dividends:SPAXX  $-2.25
+
+2026-04-06 Chase Credit Card autopay
+    assets:cash:fidelity  $-113.29  =  $677.39
+    equity:transfers       $113.29
+
+2026-04-30 DIVIDEND RECEIVED FIDELITY GOVERNMENT MONEY MARKET (SPAXX) (Cash)
+    assets:cash:fidelity      $1.88  =  $679.27
+    revenue:dividends:SPAXX  $-1.88
+
+2026-05-05 Chase Credit Card autopay
+    assets:cash:fidelity  $-315.47  =  $363.8
+    equity:transfers       $315.47
+
+2026-05-26 TRANSFERRED FROM VS Z34-231545-1 (Cash)
+    assets:cash:fidelity   $319.05  =  $682.85
+    equity:transfers      $-319.05
+
+2026-05-29 DIVIDEND RECEIVED FIDELITY GOVERNMENT MONEY MARKET (SPAXX) (Cash)
+    assets:cash:fidelity      $1.26  =  $684.11
+    revenue:dividends:SPAXX  $-1.26
+
+2026-06-04 Chase Credit Card autopay
+    assets:cash:fidelity  $-126.73  =  $557.38
+    equity:transfers       $126.73
+
+2026-06-30 DIVIDEND RECEIVED FIDELITY GOVERNMENT MONEY MARKET (SPAXX) (Cash)
+    assets:cash:fidelity      $1.54  =  $558.92
+    revenue:dividends:SPAXX  $-1.54
+
+2026-07-06 Chase Credit Card autopay
+    assets:cash:fidelity  $-147.6  =  $411.32
+    equity:transfers       $147.6
+
+2026-07-31 DIVIDEND RECEIVED FIDELITY GOVERNMENT MONEY MARKET (SPAXX) (Cash)
+    assets:cash:fidelity      $1.22  =  $412.54
+    revenue:dividends:SPAXX  $-1.22
+
+2026-08-05 Chase Credit Card autopay
+    assets:cash:fidelity  $-120.54  =  $292
+    equity:transfers       $120.54

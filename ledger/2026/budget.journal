@@ -1,0 +1,19 @@
+; Recurring cost budget — used for both budget-vs-actual reporting
+; (`hledger balance --budget`) and projecting next quarter's expected
+; spend. Update the amounts here when a recurring cost actually changes.
+~ monthly
+    expenses:hosting:hetzner         $42.00
+    expenses:communication:sendgrid  $34.95
+    expenses:donations               $15.90
+    expenses:backup:backblaze         $1.30
+    liabilities:chase-cc
+
+; Annual renewals — dated to match when they actually recur, so the goal
+; only lands in the quarter the bill is really due, not smeared evenly.
+~ yearly from 2026-03-13
+    expenses:monitoring:uptimerobot  $180.00
+    liabilities:chase-cc
+
+~ yearly from 2026-02-23
+    expenses:comms:migadu  $19.00
+    liabilities:chase-cc

@@ -1,0 +1,228 @@
+2026-01-02 * AUTOMATIC PAYMENT - THANK
+    liabilities:credit-cards:chase:ink-unlimited   $78.47  ; date:01/02/2026
+    equity:transfers                              $-78.47
+
+2026-01-05 * NAME-CHEAP.COM* 3PHT9C  ; bookmyti.me
+    liabilities:credit-cards:chase:ink-unlimited  $-23.98  ; date:01/05/2026
+    expenses:domains:namecheap                     $23.98
+
+2026-01-05 * TWILIO SENDGRID
+    liabilities:credit-cards:chase:ink-unlimited  $-19.95  ; date:01/06/2026
+    expenses:communication:sendgrid                $19.95
+
+2026-01-11 * TWILIO SENDGRID
+    liabilities:credit-cards:chase:ink-unlimited  $-10.16  ; date:01/12/2026
+    expenses:communication:sendgrid                $10.16
+
+2026-01-14 * NAME-CHEAP.COM* CSBRIF  ; mentalmodels.education
+    liabilities:credit-cards:chase:ink-unlimited  $-47.18  ; date:01/14/2026
+    expenses:domains:namecheap                     $47.18
+
+2026-01-19 * BACKBLAZE INC
+    liabilities:credit-cards:chase:ink-unlimited  $-1.31  ; date:01/20/2026
+    expenses:backup:backblaze                      $1.31
+
+2026-01-19 * GITHUB  ; arp242, neovim
+    liabilities:credit-cards:chase:ink-unlimited  $-15.90  ; date:01/20/2026
+    expenses:donations                             $15.90
+
+2026-01-23 * NAME-CHEAP.COM* DQN9DY  ; kuatcom.me, kuatcomments.com, wthstack.com
+    liabilities:credit-cards:chase:ink-unlimited  $-61.34  ; date:01/23/2026
+    expenses:domains:namecheap                     $61.34
+
+2026-01-25 * Hetzner Online GmbH
+    liabilities:credit-cards:chase:ink-unlimited  $-41.07  ; date:01/26/2026
+    expenses:hosting:hetzner                       $41.07
+
+2026-01-26 * FOREIGN TRANSACTION FEE
+    liabilities:credit-cards:chase:ink-unlimited  $-1.23  ; date:01/26/2026
+    expenses:fees:foreign-transaction              $1.23
+
+2026-02-03 * AUTOMATIC PAYMENT - THANK
+    liabilities:credit-cards:chase:ink-unlimited   $103.33  ; date:02/03/2026
+    equity:transfers                              $-103.33
+
+2026-02-04 * TWILIO SENDGRID
+    liabilities:credit-cards:chase:ink-unlimited  $-34.95  ; date:02/04/2026
+    expenses:communication:sendgrid                $34.95
+
+2026-02-10 * Payment Thank You - Web
+    liabilities:credit-cards:chase:ink-unlimited   $40.00  ; date:02/10/2026
+    equity:transfers                              $-40.00
+
+2026-02-19 * GITHUB  ; arp242, neovim
+    liabilities:credit-cards:chase:ink-unlimited  $-15.90  ; date:02/20/2026
+    expenses:donations                             $15.90
+
+2026-02-19 * BACKBLAZE INC
+    liabilities:credit-cards:chase:ink-unlimited  $-1.28  ; date:02/20/2026
+    expenses:backup:backblaze                      $1.28
+
+2026-02-23 * MIGADU.COM EMAIL SRVC.
+    liabilities:credit-cards:chase:ink-unlimited  $-19.00  ; date:02/23/2026
+    expenses:communication:migadu                  $19.00
+
+2026-02-25 * Hetzner Online GmbH
+    liabilities:credit-cards:chase:ink-unlimited  $-40.94  ; date:02/26/2026
+    expenses:hosting:hetzner                       $40.94
+
+2026-02-26 * FOREIGN TRANSACTION FEE
+    liabilities:credit-cards:chase:ink-unlimited  $-1.22  ; date:02/26/2026
+    expenses:fees:foreign-transaction              $1.22
+
+2026-03-03 * AUTOMATIC PAYMENT - THANK
+    liabilities:credit-cards:chase:ink-unlimited   $173.14  ; date:03/03/2026
+    equity:transfers                              $-173.14
+
+2026-03-04 * TWILIO SENDGRID
+    liabilities:credit-cards:chase:ink-unlimited  $-34.95  ; date:03/04/2026
+    expenses:communication:sendgrid                $34.95
+
+2026-03-12 * NAME-CHEAP.COM* CH740K  ; mineshspc.com
+    liabilities:credit-cards:chase:ink-unlimited  $-18.68  ; date:03/12/2026
+    expenses:domains:namecheap                     $18.68
+
+2026-03-13 * UPTIMEROBOT
+    liabilities:credit-cards:chase:ink-unlimited  $-180.00  ; date:03/13/2026
+    expenses:monitoring:uptimerobot                $180.00
+
+2026-03-19 * BACKBLAZE INC    
+    liabilities:credit-cards:chase:ink-unlimited  $-1.19  ; date:03/20/2026
+    expenses:backup:backblaze                      $1.19
+
+2026-03-19 * GITHUB  ; arp242, neovim
+    liabilities:credit-cards:chase:ink-unlimited  $-15.90  ; date:03/20/2026
+    expenses:donations                             $15.90
+
+2026-03-25 * Hetzner Online GmbH
+    liabilities:credit-cards:chase:ink-unlimited  $-40.36  ; date:03/26/2026
+    expenses:hosting:hetzner                       $40.36
+
+2026-03-25 * NAME-CHEAP.COM* MYVABI  ; sublimemusic.app
+    liabilities:credit-cards:chase:ink-unlimited  $-23.18  ; date:03/26/2026
+    expenses:domains:namecheap                     $23.18
+
+2026-03-26 * FOREIGN TRANSACTION FEE
+    liabilities:credit-cards:chase:ink-unlimited  $-1.21  ; date:03/26/2026
+    expenses:fees:foreign-transaction              $1.21
+
+2026-04-03 * AUTOMATIC PAYMENT - THANK
+    liabilities:credit-cards:chase:ink-unlimited   $113.29  ; date:04/03/2026
+    equity:transfers                              $-113.29
+
+2026-04-06 * TWILIO SENDGRID
+    liabilities:credit-cards:chase:ink-unlimited  $-34.95  ; date:04/07/2026
+    expenses:communication:sendgrid                $34.95
+
+2026-04-19 * BACKBLAZE INC
+    liabilities:credit-cards:chase:ink-unlimited  $-1.29  ; date:04/20/2026
+    expenses:backup:backblaze                      $1.29
+
+2026-04-19 * GITHUB  ; arp242, neovim
+    liabilities:credit-cards:chase:ink-unlimited  $-15.90  ; date:04/20/2026
+    expenses:donations                             $15.90
+
+2026-04-23 * NAME-CHEAP.COM* DHBVSH  ; nevarro.space
+    liabilities:credit-cards:chase:ink-unlimited  $-32.68  ; date:04/24/2026
+    expenses:domains:namecheap                     $32.68
+
+2026-04-25 * Hetzner Online GmbH
+    liabilities:credit-cards:chase:ink-unlimited  $-40.69  ; date:04/26/2026
+    expenses:hosting:hetzner                       $40.69
+
+2026-04-26 * FOREIGN TRANSACTION FEE
+    liabilities:credit-cards:chase:ink-unlimited  $-1.22  ; date:04/26/2026
+    expenses:fees:foreign-transaction              $1.22
+
+2026-05-03 * AUTOMATIC PAYMENT - THANK
+    liabilities:credit-cards:chase:ink-unlimited   $315.47  ; date:05/03/2026
+    equity:transfers                              $-315.47
+
+2026-05-05 * TWILIO SENDGRID
+    liabilities:credit-cards:chase:ink-unlimited  $-34.95  ; date:05/05/2026
+    expenses:communication:sendgrid                $34.95
+
+2026-05-19 * BACKBLAZE INC
+    liabilities:credit-cards:chase:ink-unlimited  $-1.33  ; date:05/20/2026
+    expenses:backup:backblaze                      $1.33
+
+2026-05-19 * GITHUB  ; arp242, neovim
+    liabilities:credit-cards:chase:ink-unlimited  $-15.90  ; date:05/20/2026
+    expenses:donations                             $15.90
+
+2026-05-25 * Hetzner Online GmbH
+    liabilities:credit-cards:chase:ink-unlimited  $-52.53  ; date:05/26/2026
+    expenses:hosting:hetzner                       $52.53
+
+2026-05-26 * FOREIGN TRANSACTION FEE
+    liabilities:credit-cards:chase:ink-unlimited  $-1.57  ; date:05/26/2026
+    expenses:fees:foreign-transaction              $1.57
+
+2026-06-03 * AUTOMATIC PAYMENT - THANK
+    liabilities:credit-cards:chase:ink-unlimited   $126.73  ; date:06/03/2026
+    equity:transfers                              $-126.73
+
+2026-06-03 * NAME-CHEAP.COM* Q6GX0G
+    liabilities:credit-cards:chase:ink-unlimited  $-41.32  ; date:06/04/2026
+    expenses:domains:namecheap                     $41.32
+
+2026-06-03 * TWILIO SENDGRID
+    liabilities:credit-cards:chase:ink-unlimited  $-34.95  ; date:06/04/2026
+    expenses:communication:sendgrid                $34.95
+
+2026-06-19 * BACKBLAZE INC
+    liabilities:credit-cards:chase:ink-unlimited  $-1.40  ; date:06/21/2026
+    expenses:backup:backblaze                      $1.40
+
+2026-06-19 * GITHUB  ; arp242, neovim
+    liabilities:credit-cards:chase:ink-unlimited  $-15.90  ; date:06/21/2026
+    expenses:donations                             $15.90
+
+2026-06-25 * Hetzner Online GmbH
+    liabilities:credit-cards:chase:ink-unlimited  $-51.44  ; date:06/26/2026
+    expenses:hosting:hetzner                       $51.44
+
+2026-06-26 * FOREIGN TRANSACTION FEE
+    liabilities:credit-cards:chase:ink-unlimited  $-1.54  ; date:06/26/2026
+    expenses:fees:foreign-transaction              $1.54
+
+2026-07-01 * GOOGLE *Workspace_neva
+    liabilities:credit-cards:chase:ink-unlimited  $-15.31  ; date:07/02/2026
+    expenses:communication:google-workspace        $15.31
+
+2026-07-03 * AUTOMATIC PAYMENT - THANK
+    liabilities:credit-cards:chase:ink-unlimited   $147.60  ; date:07/03/2026
+    equity:transfers                              $-147.60
+
+2026-07-03 * TWILIO SENDGRID
+    liabilities:credit-cards:chase:ink-unlimited  $-34.95  ; date:07/05/2026
+    expenses:communication:sendgrid                $34.95
+
+2026-07-19 * GITHUB  ; arp242, neovim
+    liabilities:credit-cards:chase:ink-unlimited  $-15.90  ; date:07/20/2026
+    expenses:donations                             $15.90
+
+2026-07-19 * BACKBLAZE INC
+    liabilities:credit-cards:chase:ink-unlimited  $-1.30  ; date:07/20/2026
+    expenses:backup:backblaze                      $1.30
+
+2026-07-25 * Hetzner Online GmbH
+    liabilities:credit-cards:chase:ink-unlimited  $-51.51  ; date:07/28/2026
+    expenses:hosting:hetzner                       $51.51
+
+2026-07-28 * FOREIGN TRANSACTION FEE
+    liabilities:credit-cards:chase:ink-unlimited  $-1.54  ; date:07/28/2026
+    expenses:fees:foreign-transaction              $1.54
+
+2026-08-01 * GOOGLE *Workspace_neva
+    liabilities:credit-cards:chase:ink-unlimited  $-17.67  ; date:08/02/2026
+    expenses:communication:google-workspace        $17.67
+
+2026-08-03 * AUTOMATIC PAYMENT - THANK
+    liabilities:credit-cards:chase:ink-unlimited   $120.54  ; date:08/03/2026
+    equity:transfers                              $-120.54
+
+2026-08-05 * TWILIO SENDGRID
+    liabilities:credit-cards:chase:ink-unlimited  $-34.95  ; date:08/05/2026
+    expenses:communication:sendgrid                $34.95
+

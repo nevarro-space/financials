@@ -1,0 +1,35 @@
+if CO SECRETARY STATE FEE
+    account2 expenses:fees:government
+
+if DIVIDEND RECEIVED .* \((.*)\) \((Cash|Margin)\)
+    account2 revenue:dividends:\1
+
+if Hetzner
+    account2 expenses:hosting:hetzner
+
+if NAME-CHEAP
+    account2 expenses:domains:namecheap
+
+if TWILIO SENDGRID
+    account2 expenses:comms:sendgrid
+
+if MIGADU
+    account2 expenses:comms:migadu
+
+if GITHUB
+    account2 expenses:devtools:github
+
+if GOOGLE .Workspace
+    account2 expenses:comms:google-workspace
+
+if BACKBLAZE
+    account2 expenses:backup:backblaze
+
+if UPTIMEROBOT
+    account2 expenses:monitoring:uptimerobot
+
+if FOREIGN TRANSACTION FEE
+    account2 expenses:fees:foreign-transaction
+
+if CO SECRETARY STATE FEE
+    account2 expenses:fees:government
