@@ -86,7 +86,7 @@
     liabilities:credit-cards:chase:ink-unlimited  $-180.00  ; date:03/13/2026
     expenses:monitoring:uptimerobot                $180.00
 
-2026-03-19 * BACKBLAZE INC    
+2026-03-19 * BACKBLAZE INC
     liabilities:credit-cards:chase:ink-unlimited  $-1.19  ; date:03/20/2026
     expenses:backup:backblaze                      $1.19
 
@@ -223,6 +223,5 @@
     equity:transfers                              $-120.54
 
 2026-08-05 * TWILIO SENDGRID
-    liabilities:credit-cards:chase:ink-unlimited  $-34.95  ; date:08/05/2026
+    liabilities:credit-cards:chase:ink-unlimited  $-34.95  =  -$122.87  ; date:08/05/2026
     expenses:communication:sendgrid                $34.95
-
