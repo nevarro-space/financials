@@ -8,6 +8,6 @@ include chase-*.journal
 include fidelity.journal
 
 2026-01-01 * Opening Balances
-    assets:cash:bluevine                          =$525.85
-    liabilities:credit-cards:chase:ink-unlimited  =-$78.47
+    assets:cash:bluevine                          $525.85  =  $525.85
+    liabilities:credit-cards:chase:ink-unlimited  -$78.47  =  -$78.47
     equity:opening/closing balances
