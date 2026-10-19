@@ -1,6 +1,7 @@
 ; Nevarro LLC — full history across all years.
 ; Add an `include` line here as each new year gets converted.
 
+include 2023/index.journal
 include 2024/index.journal
 include 2025/index.journal
 include 2026/index.journal

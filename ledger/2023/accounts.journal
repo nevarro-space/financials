@@ -1,0 +1,26 @@
+; Assets (Bank Accounts)
+account assets:cash:bluevine
+
+; Liabilities
+account liabilities:credit-cards:chase:ink-unlimited
+account liabilities:accounts-payable:hetzner
+
+; Revenue
+account revenue:interest
+account revenue:credits-and-adjustments
+
+; Expenses
+account expenses:backup:backblaze
+account expenses:communication:migadu
+account expenses:communication:sendgrid
+account expenses:domains:namecheap
+account expenses:donations
+account expenses:fees:foreign-transaction
+account expenses:fees:government
+account expenses:hosting:hetzner
+account expenses:monitoring:uptimerobot
+
+; Equity
+account equity:opening/closing balances
+account equity:member:sumner
+account equity:transfers

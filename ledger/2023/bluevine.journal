@@ -1,0 +1,59 @@
+2023-01-26 * Initial Capital Contribution
+    assets:cash:bluevine  $1,500.00
+    equity:member:sumner
+
+2023-01-31 * January Balance
+    assets:cash:bluevine  =$1,500.00
+    equity:transfers
+
+2023-02-09 * UptimeRobot
+    assets:cash:bluevine             $-34.00
+    expenses:monitoring:uptimerobot
+
+2023-02-13 * Google Domains  ; mentalmodels.education
+    assets:cash:bluevine             $-20.00
+    expenses:domains:google-domains
+
+2023-02-28 * February Balance
+    assets:cash:bluevine                          =$1,446.00
+    liabilities:credit-cards:chase:ink-unlimited
+
+2023-03-31 * March Balance
+    assets:cash:bluevine                          =$1,446.00
+    liabilities:credit-cards:chase:ink-unlimited
+
+2023-04-30 * April Balance
+    assets:cash:bluevine                          =$1,367.99
+    liabilities:credit-cards:chase:ink-unlimited
+
+2023-05-31 * May Balance
+    assets:cash:bluevine                          =$1,044.10
+    liabilities:credit-cards:chase:ink-unlimited
+
+2023-06-30 * June Balance
+    assets:cash:bluevine                          =$963.59
+    liabilities:credit-cards:chase:ink-unlimited
+
+2023-07-31 * July Balance
+    assets:cash:bluevine                          =$885.93
+    liabilities:credit-cards:chase:ink-unlimited
+
+2023-08-31 * August Balance
+    assets:cash:bluevine                          =$824.63
+    liabilities:credit-cards:chase:ink-unlimited
+
+2023-09-30 * September Balance
+    assets:cash:bluevine                          =$767.26
+    liabilities:credit-cards:chase:ink-unlimited
+
+2023-10-31 * October Balance
+    ; We failed to record the actual Bluevine account balance this month
+    liabilities:credit-cards:chase:ink-unlimited
+
+2023-11-30 * November Balance
+    assets:cash:bluevine                          =$613.84
+    liabilities:credit-cards:chase:ink-unlimited
+
+2023-12-31 * December Balance
+    assets:cash:bluevine                          =$539.08
+    liabilities:credit-cards:chase:ink-unlimited

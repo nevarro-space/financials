@@ -13,6 +13,7 @@ account revenue:credits-and-adjustments
 account expenses:backup:backblaze
 account expenses:communication:migadu
 account expenses:communication:sendgrid
+account expenses:domains:google-domains
 account expenses:domains:namecheap
 account expenses:donations
 account expenses:fees:foreign-transaction
