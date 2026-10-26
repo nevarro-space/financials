@@ -11,16 +11,17 @@ if NAME-CHEAP
     account2 expenses:domains:namecheap
 
 if TWILIO SENDGRID
-    account2 expenses:comms:sendgrid
+    account2 expenses:communication:sendgrid
 
 if MIGADU
-    account2 expenses:comms:migadu
+    account2 expenses:communication:migadu
 
 if GITHUB
     account2 expenses:devtools:github
 
-if GOOGLE .Workspace
-    account2 expenses:comms:google-workspace
+if GOOGLE Workspace
+GOOGLE \*Workspace
+    account2 expenses:communication:google-workspace
 
 if BACKBLAZE
     account2 expenses:backup:backblaze

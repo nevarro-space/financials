@@ -57,3 +57,27 @@
 2026-08-05 Chase Credit Card autopay
     assets:cash:fidelity  $-120.54  =  $292
     equity:transfers       $120.54
+
+2026-08-24 TRANSFERRED FROM VS Z34-231545-1 (Cash)
+    assets:cash:fidelity   $500  =  $792
+    income:unknown        $-500
+
+2026-08-31 DIVIDEND RECEIVED FIDELITY GOVERNMENT MONEY MARKET (SPAXX) (Cash)
+    assets:cash:fidelity      $1.19  =  $793.19
+    revenue:dividends:SPAXX  $-1.19
+
+2026-09-08 Chase Credit Card autopay
+    assets:cash:fidelity  $-122.87  =  $670.32
+    equity:transfers       $122.87
+
+2026-09-14 TRANSFERRED FROM VS Z34-231545-1 (Cash)
+    assets:cash:fidelity   $30  =  $700.32
+    income:unknown        $-30
+
+2026-09-30 DIVIDEND RECEIVED FIDELITY GOVERNMENT MONEY MARKET (SPAXX) (Cash)
+    assets:cash:fidelity      $2  =  $702.32
+    revenue:dividends:SPAXX  $-2
+
+2026-10-05 Chase Credit Card autopay
+    assets:cash:fidelity  $-124.18  =  $578.14
+    equity:transfers       $124.18
