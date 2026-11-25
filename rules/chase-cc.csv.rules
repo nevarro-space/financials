@@ -8,8 +8,11 @@ date-format %m/%d/%Y
 currency USD
 
 account1 liabilities:credit-cards:chase:ink-unlimited
-comment1 date:%posteddate
 status *
+
+# Post on the settlement date, as an ISO date tag.
+if %posteddate ^(..)/(..)/(....)$
+    comment1 date:\3-\1-\2
 
 if AUTOMATIC PAYMENT
     account2 equity:transfers

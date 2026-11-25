@@ -5,10 +5,11 @@ fields date, action, symbol, fdesc, txntype, price, quantity, commission, fees, 
 
 date-format %m/%d/%Y
 
-currency USD
+amount %amount USD
+balance %balance USD
 
 account1 assets:cash:fidelity
-balance %balance
+status *
 
 # Fidelity's own Description column is always "No Description" or the
 # generic fund name — the meaningful text is in Action. Default to that,
@@ -26,6 +27,12 @@ if REINVESTMENT
 if DIRECT DEBIT CHASE CREDIT
     account2 equity:transfers
     description Chase Credit Card autopay
+
+# Transfers to/from Sumner's personal Fidelity account are owner capital
+# contributions/distributions. Pass-throughs (e.g. the 2026-05 Bluevine
+# wind-down) still need to be re-booked to equity:transfers by hand.
+if TRANSFERRED (FROM|TO) VS Z34-231545
+    account2 equity:member:sumner
 
 if
 %date The data and information in this spreadsheet is provided to you solely for your use and is not for distribution. The spreadsheet is provided for

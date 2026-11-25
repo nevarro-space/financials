@@ -8,6 +8,7 @@ date-format %Y-%m-%d
 currency USD
 
 account1 assets:cash:bluevine
+status *
 
 balance %balance
 
