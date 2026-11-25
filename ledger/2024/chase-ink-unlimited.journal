@@ -1,330 +1,330 @@
 2024-01-01 * AUTOMATIC PAYMENT - THANK
-    liabilities:credit-cards:chase:ink-unlimited  160.76 USD
+    liabilities:credit-cards:chase:ink-unlimited               160.76 USD
     equity:transfers
 
 2024-01-01 * CO Secretary of State Fee
-    liabilities:credit-cards:chase:ink-unlimited  -10.00 USD
-    expenses:fees:government                       10.00 USD
+    liabilities:credit-cards:chase:ink-unlimited               -10.00 USD
+    expenses:fees:government                                    10.00 USD
 
 2024-01-01 * Points Redemption
-    liabilities:credit-cards:chase:ink-unlimited   7.62 USD
-    revenue:credits-and-adjustments               -7.62 USD
+    liabilities:credit-cards:chase:ink-unlimited                 7.62 USD
+    revenue:credits-and-adjustments                             -7.62 USD
 
 2024-01-02 * NAMECHEAP.COM  ; mentalmodels.education transfer
-    liabilities:credit-cards:chase:ink-unlimited  -22.16 USD
-    expenses:domains:namecheap                     22.16 USD
+    liabilities:credit-cards:chase:ink-unlimited               -22.16 USD
+    expenses:domains:namecheap                                  22.16 USD
 
 2024-01-02 * NAMECHEAP.COM  ; nevarro.space transfer
-    liabilities:credit-cards:chase:ink-unlimited  -22.16 USD
-    expenses:domains:namecheap                     22.16 USD
+    liabilities:credit-cards:chase:ink-unlimited               -22.16 USD
+    expenses:domains:namecheap                                  22.16 USD
 
 2024-01-02 * NAMECHEAP.COM  ; sublimemusic.app transfer
-    liabilities:credit-cards:chase:ink-unlimited  -14.16 USD
-    expenses:domains:namecheap                     14.16 USD
+    liabilities:credit-cards:chase:ink-unlimited               -14.16 USD
+    expenses:domains:namecheap                                  14.16 USD
 
 2024-01-02 * Hetzner Online GmbH
-    liabilities:credit-cards:chase:ink-unlimited  -64.39 USD
-    liabilities:accounts-payable:hetzner           56.39 EUR  @@  62.52 USD
-    expenses:fees:foreign-transaction               1.87 USD
+    liabilities:credit-cards:chase:ink-unlimited               -64.39 USD
+    liabilities:accounts-payable:hetzner          56.390 EUR @@ 62.52 USD
+    expenses:fees:foreign-transaction                            1.87 USD
 
 2024-01-03 * NAMECHEAP.COM  ; mineshspc.com transfer
-    liabilities:credit-cards:chase:ink-unlimited  -20.32 USD
-    expenses:domains:namecheap                     20.32 USD
+    liabilities:credit-cards:chase:ink-unlimited               -20.32 USD
+    expenses:domains:namecheap                                  20.32 USD
 
 2024-01-06 * NAMECHEAP.COM  ; bookmyti.me renewal
-    liabilities:credit-cards:chase:ink-unlimited  -20.98 USD
-    expenses:domains:namecheap                     20.98 USD
+    liabilities:credit-cards:chase:ink-unlimited               -20.98 USD
+    expenses:domains:namecheap                                  20.98 USD
 
 2024-01-08 * TWILIO SENDGRID
-    liabilities:credit-cards:chase:ink-unlimited  -15.45 USD
-    expenses:communication:sendgrid                15.45 USD
+    liabilities:credit-cards:chase:ink-unlimited               -15.45 USD
+    expenses:communication:sendgrid                             15.45 USD
 
 2024-01-10 * CONNECTS WORKSPACE
-    liabilities:credit-cards:chase:ink-unlimited  -26.27 USD
-    expenses:tutoring                              26.27 USD  ; Conference Room
+    liabilities:credit-cards:chase:ink-unlimited               -26.27 USD
+    expenses:tutoring                                           26.27 USD  ; Conference Room
 
 2024-01-10 * TUTORS.COM
-    liabilities:credit-cards:chase:ink-unlimited  -17.58 USD
-    expenses:marketing:tutors.com                  17.58 USD
+    liabilities:credit-cards:chase:ink-unlimited               -17.58 USD
+    expenses:marketing:tutors.com                               17.58 USD
 
 2024-01-19 * BACKBLAZE INC
-    liabilities:credit-cards:chase:ink-unlimited  -11.48 USD
-    expenses:backup:backblaze                      11.48 USD
+    liabilities:credit-cards:chase:ink-unlimited               -11.48 USD
+    expenses:backup:backblaze                                   11.48 USD
 
 2024-02-02 * AUTOMATIC PAYMENT - THANK
-    liabilities:credit-cards:chase:ink-unlimited   204.63 USD
-    equity:transfers                              -204.63 USD
+    liabilities:credit-cards:chase:ink-unlimited               204.63 USD
+    equity:transfers                                          -204.63 USD
 
 2024-02-02 * Hetzner Online GmbH
-    liabilities:credit-cards:chase:ink-unlimited  -65.45 USD
-    liabilities:accounts-payable:hetzner           58.42 EUR  @@  63.55 USD
-    expenses:fees:foreign-transaction               1.90 USD
+    liabilities:credit-cards:chase:ink-unlimited               -65.45 USD
+    liabilities:accounts-payable:hetzner          58.420 EUR @@ 63.55 USD
+    expenses:fees:foreign-transaction                            1.90 USD
 
 2024-02-06 * TWILIO SENDGRID
-    liabilities:credit-cards:chase:ink-unlimited  -19.95 USD
-    expenses:communication:sendgrid                19.95 USD
+    liabilities:credit-cards:chase:ink-unlimited               -19.95 USD
+    expenses:communication:sendgrid                             19.95 USD
 
 2024-02-09 * NAMECHEAP.COM  ; summation.tech renewal
-    liabilities:credit-cards:chase:ink-unlimited  -44.16 USD
-    expenses:domains:namecheap                     44.16 USD
+    liabilities:credit-cards:chase:ink-unlimited               -44.16 USD
+    expenses:domains:namecheap                                  44.16 USD
 
 2024-02-19 * BACKBLAZE INC
-    liabilities:credit-cards:chase:ink-unlimited  -4.98 USD
-    expenses:backup:backblaze                      4.98 USD
+    liabilities:credit-cards:chase:ink-unlimited                -4.98 USD
+    expenses:backup:backblaze                                    4.98 USD
 
 2024-02-22 * MIGADU.COM
-    liabilities:credit-cards:chase:ink-unlimited  -19.00 USD
-    expenses:communication:migadu                  19.00 USD
+    liabilities:credit-cards:chase:ink-unlimited               -19.00 USD
+    expenses:communication:migadu                               19.00 USD
 
 2024-02-22 * NAMECHEAP.COM  ; wthstack.com
-    liabilities:credit-cards:chase:ink-unlimited  -10.16 USD
-    expenses:domains:namecheap                     10.16 USD
+    liabilities:credit-cards:chase:ink-unlimited               -10.16 USD
+    expenses:domains:namecheap                                  10.16 USD
 
 2024-02-28 * GITHUB  ; arp242, GoatCounter
-    liabilities:credit-cards:chase:ink-unlimited  -3.66 USD
-    expenses:devtools:github                       3.66 USD
+    liabilities:credit-cards:chase:ink-unlimited                -3.66 USD
+    expenses:devtools:github                                     3.66 USD
 
 2024-03-02 * hetzner.com
-    liabilities:credit-cards:chase:ink-unlimited  -33.48 USD
-    liabilities:accounts-payable:hetzner           30.34 EUR  @@  32.51 USD
-    expenses:fees:foreign-transaction               0.97 USD
+    liabilities:credit-cards:chase:ink-unlimited               -33.48 USD
+    liabilities:accounts-payable:hetzner          30.340 EUR @@ 32.51 USD
+    expenses:fees:foreign-transaction                            0.97 USD
 
 2024-03-03 * AUTOMATIC PAYMENT - THANK
-    liabilities:credit-cards:chase:ink-unlimited   140.73 USD
-    equity:transfers                              -140.73 USD
+    liabilities:credit-cards:chase:ink-unlimited               140.73 USD
+    equity:transfers                                          -140.73 USD
 
 2024-03-07 * TWILIO SENDGRID
-    liabilities:credit-cards:chase:ink-unlimited  -19.95 USD
-    expenses:communication:sendgrid                19.95 USD
+    liabilities:credit-cards:chase:ink-unlimited               -19.95 USD
+    expenses:communication:sendgrid                             19.95 USD
 
 2024-03-13 * UPTIMEROBOT.COM
-    liabilities:credit-cards:chase:ink-unlimited  -348.00 USD
-    expenses:monitoring:uptimerobot                348.00 USD
+    liabilities:credit-cards:chase:ink-unlimited              -348.00 USD
+    expenses:monitoring:uptimerobot                            348.00 USD
 
 2024-03-19 * GITHUB  ; arp242, GoatCounter
-    liabilities:credit-cards:chase:ink-unlimited  -5.30 USD
-    expenses:devtools:github                       5.30 USD
+    liabilities:credit-cards:chase:ink-unlimited                -5.30 USD
+    expenses:devtools:github                                     5.30 USD
 
 2024-03-19 * BACKBLAZE INC
-    liabilities:credit-cards:chase:ink-unlimited  -2.83 USD
-    expenses:backup:backblaze                      2.83 USD
+    liabilities:credit-cards:chase:ink-unlimited                -2.83 USD
+    expenses:backup:backblaze                                    2.83 USD
 
 2024-04-03 * AUTOMATIC PAYMENT - THANK
-    liabilities:credit-cards:chase:ink-unlimited   135.79 USD
-    equity:transfers                              -135.79 USD
+    liabilities:credit-cards:chase:ink-unlimited               135.79 USD
+    equity:transfers                                          -135.79 USD
 
 2024-04-04 * TWILIO SENDGRID
-    liabilities:credit-cards:chase:ink-unlimited  -19.95 USD
-    expenses:communication:sendgrid                19.95 USD
+    liabilities:credit-cards:chase:ink-unlimited               -19.95 USD
+    expenses:communication:sendgrid                             19.95 USD
 
 2024-04-19 * GITHUB  ; arp242, GoatCounter
-    liabilities:credit-cards:chase:ink-unlimited  -5.30 USD
-    expenses:devtools:github                       5.30 USD
+    liabilities:credit-cards:chase:ink-unlimited                -5.30 USD
+    expenses:devtools:github                                     5.30 USD
 
 2024-04-19 * BACKBLAZE INC
-    liabilities:credit-cards:chase:ink-unlimited  -2.11 USD
-    expenses:backup:backblaze                      2.11 USD
+    liabilities:credit-cards:chase:ink-unlimited                -2.11 USD
+    expenses:backup:backblaze                                    2.11 USD
 
 2024-04-27 * hetzner.com
-    liabilities:credit-cards:chase:ink-unlimited  -33.48 USD
-    expenses:hosting:hetzner                       30.34 EUR  @@  32.51 USD
-    expenses:fees:foreign-transaction               0.97 USD
+    liabilities:credit-cards:chase:ink-unlimited               -33.48 USD
+    expenses:hosting:hetzner                      30.340 EUR @@ 32.51 USD
+    expenses:fees:foreign-transaction                            0.97 USD
 
 2024-05-03 * AUTOMATIC PAYMENT - THANK
-    liabilities:credit-cards:chase:ink-unlimited   376.08 USD
-    equity:transfers                              -376.08 USD
+    liabilities:credit-cards:chase:ink-unlimited               376.08 USD
+    equity:transfers                                          -376.08 USD
 
 2024-05-05 * TWILIO SENDGRID
-    liabilities:credit-cards:chase:ink-unlimited  -19.95 USD
-    expenses:communication:sendgrid                19.95 USD
+    liabilities:credit-cards:chase:ink-unlimited               -19.95 USD
+    expenses:communication:sendgrid                             19.95 USD
 
 2024-05-19 * GITHUB  ; arp242, GoatCounter
-    liabilities:credit-cards:chase:ink-unlimited  -5.30 USD
-    expenses:devtools:github                       5.30 USD
+    liabilities:credit-cards:chase:ink-unlimited                -5.30 USD
+    expenses:devtools:github                                     5.30 USD
 
 2024-05-19 * BACKBLAZE INC
-    liabilities:credit-cards:chase:ink-unlimited  -1.81 USD
-    expenses:backup:backblaze                      1.81 USD
+    liabilities:credit-cards:chase:ink-unlimited                -1.81 USD
+    expenses:backup:backblaze                                    1.81 USD
 
 2024-05-27 * hetzner.com
-    liabilities:credit-cards:chase:ink-unlimited  -33.94 USD
-    expenses:hosting:hetzner                       30.35 EUR  @@  32.96 USD
-    expenses:fees:foreign-transaction               0.98 USD
+    liabilities:credit-cards:chase:ink-unlimited               -33.94 USD
+    expenses:hosting:hetzner                      30.350 EUR @@ 32.96 USD
+    expenses:fees:foreign-transaction                            0.98 USD
 
 2024-06-03 * AUTOMATIC PAYMENT - THANK
-    liabilities:credit-cards:chase:ink-unlimited   60.84 USD
-    equity:transfers                              -60.84 USD
+    liabilities:credit-cards:chase:ink-unlimited                60.84 USD
+    equity:transfers                                           -60.84 USD
 
 2024-06-05 * TWILIO SENDGRID
-    liabilities:credit-cards:chase:ink-unlimited  -19.95 USD
-    expenses:communication:sendgrid                19.95 USD
+    liabilities:credit-cards:chase:ink-unlimited               -19.95 USD
+    expenses:communication:sendgrid                             19.95 USD
 
 2024-06-08 * NAMECHEAP.COM  ; quarkchat.app renewal
-    liabilities:credit-cards:chase:ink-unlimited  -17.16 USD
-    expenses:domains:namecheap                     17.16 USD
+    liabilities:credit-cards:chase:ink-unlimited               -17.16 USD
+    expenses:domains:namecheap                                  17.16 USD
 
 2024-06-19 * GITHUB  ; arp242, GoatCounter
-    liabilities:credit-cards:chase:ink-unlimited  -5.30 USD
-    expenses:devtools:github                       5.30 USD
+    liabilities:credit-cards:chase:ink-unlimited                -5.30 USD
+    expenses:devtools:github                                     5.30 USD
 
 2024-06-19 * BACKBLAZE INC
-    liabilities:credit-cards:chase:ink-unlimited  -1.78 USD
-    expenses:backup:backblaze                      1.78 USD
+    liabilities:credit-cards:chase:ink-unlimited                -1.78 USD
+    expenses:backup:backblaze                                    1.78 USD
 
 2024-06-27 * hetzner.com
-    liabilities:credit-cards:chase:ink-unlimited  -33.58 USD
-    expenses:hosting:hetzner                       30.34 EUR  @@  32.61 USD
-    expenses:fees:foreign-transaction               0.97 USD
+    liabilities:credit-cards:chase:ink-unlimited               -33.58 USD
+    expenses:hosting:hetzner                      30.340 EUR @@ 32.61 USD
+    expenses:fees:foreign-transaction                            0.97 USD
 
 2024-07-03 * AUTOMATIC PAYMENT - THANK
-    liabilities:credit-cards:chase:ink-unlimited   78.16 USD
-    equity:transfers                              -78.16 USD
+    liabilities:credit-cards:chase:ink-unlimited                78.16 USD
+    equity:transfers                                           -78.16 USD
 
 2024-07-05 * TWILIO SENDGRID
-    liabilities:credit-cards:chase:ink-unlimited  -19.95 USD
-    expenses:communication:sendgrid                19.95 USD
+    liabilities:credit-cards:chase:ink-unlimited               -19.95 USD
+    expenses:communication:sendgrid                             19.95 USD
 
 2024-07-19 * GITHUB  ; arp242, GoatCounter
-    liabilities:credit-cards:chase:ink-unlimited  -5.30 USD
-    expenses:devtools:github                       5.30 USD
+    liabilities:credit-cards:chase:ink-unlimited                -5.30 USD
+    expenses:devtools:github                                     5.30 USD
 
 2024-07-19 * BACKBLAZE INC
-    liabilities:credit-cards:chase:ink-unlimited  -1.78 USD
-    expenses:backup:backblaze                      1.78 USD
+    liabilities:credit-cards:chase:ink-unlimited                -1.78 USD
+    expenses:backup:backblaze                                    1.78 USD
 
 2024-07-25 * hetzner.com
-    liabilities:credit-cards:chase:ink-unlimited  -33.97 USD
-    expenses:hosting:hetzner                       30.35 EUR  @@  32.99 USD
-    expenses:fees:foreign-transaction               0.98 USD
+    liabilities:credit-cards:chase:ink-unlimited               -33.97 USD
+    expenses:hosting:hetzner                      30.350 EUR @@ 32.99 USD
+    expenses:fees:foreign-transaction                            0.98 USD
 
 2024-08-03 * AUTOMATIC PAYMENT - THANK
-    liabilities:credit-cards:chase:ink-unlimited  60.61 USD
+    liabilities:credit-cards:chase:ink-unlimited                60.61 USD
     equity:transfers
 
 2024-08-04 * TWILIO SENDGRID
-    liabilities:credit-cards:chase:ink-unlimited  -19.95 USD
-    expenses:communication:sendgrid                19.95 USD
+    liabilities:credit-cards:chase:ink-unlimited               -19.95 USD
+    expenses:communication:sendgrid                             19.95 USD
 
 2024-08-19 * GITHUB  ; arp242, GoatCounter
-    liabilities:credit-cards:chase:ink-unlimited  -5.30 USD
-    expenses:devtools:github                       5.30 USD
+    liabilities:credit-cards:chase:ink-unlimited                -5.30 USD
+    expenses:devtools:github                                     5.30 USD
 
 2024-08-19 * BACKBLAZE INC
-    liabilities:credit-cards:chase:ink-unlimited  -1.79 USD
-    expenses:backup:backblaze                      1.79 USD
+    liabilities:credit-cards:chase:ink-unlimited                -1.79 USD
+    expenses:backup:backblaze                                    1.79 USD
 
 2024-08-26 * hetzner.com
-    liabilities:credit-cards:chase:ink-unlimited  -34.00 USD
-    expenses:hosting:hetzner                       30.35 EUR  @@  34.00 USD
+    liabilities:credit-cards:chase:ink-unlimited               -34.00 USD
+    expenses:hosting:hetzner                      30.350 EUR @@ 34.00 USD
 
 2024-08-27 * FOREIGN TRANSACTION FEE
-    liabilities:credit-cards:chase:ink-unlimited  -1.02 USD
-    expenses:fees:foreign-transaction              1.02 USD
+    liabilities:credit-cards:chase:ink-unlimited                -1.02 USD
+    expenses:fees:foreign-transaction                            1.02 USD
 
 2024-09-03 * AUTOMATIC PAYMENT - THANK
-    liabilities:credit-cards:chase:ink-unlimited   60.81 USD  ; date:09/03/2024
-    equity:transfers                              -60.81 USD
+    liabilities:credit-cards:chase:ink-unlimited                60.81 USD  ; date:09/03/2024
+    equity:transfers                                           -60.81 USD
 
 2024-09-04 * TWILIO SENDGRID
-    liabilities:credit-cards:chase:ink-unlimited  -19.95 USD  ; date:09/05/2024
-    expenses:communication:sendgrid                19.95 USD
+    liabilities:credit-cards:chase:ink-unlimited               -19.95 USD  ; date:09/05/2024
+    expenses:communication:sendgrid                             19.95 USD
 
 2024-09-19 * GITHUB  ; arp242, GoatCounter
-    liabilities:credit-cards:chase:ink-unlimited  -5.30 USD  ; date:09/20/2024
-    expenses:devtools:github                       5.30 USD
+    liabilities:credit-cards:chase:ink-unlimited                -5.30 USD  ; date:09/20/2024
+    expenses:devtools:github                                     5.30 USD
 
 2024-09-19 * BACKBLAZE INC
-    liabilities:credit-cards:chase:ink-unlimited  -1.81 USD  ; date:09/20/2024
-    expenses:backup:backblaze                      1.81 USD
+    liabilities:credit-cards:chase:ink-unlimited                -1.81 USD  ; date:09/20/2024
+    expenses:backup:backblaze                                    1.81 USD
 
 2024-09-25 * Hetzner Online GmbH
-    liabilities:credit-cards:chase:ink-unlimited  -33.94 USD  ; date:09/26/2024
-    expenses:hosting:hetzner                       30.35 EUR  @@  33.94 USD
+    liabilities:credit-cards:chase:ink-unlimited               -33.94 USD  ; date:09/26/2024
+    expenses:hosting:hetzner                      30.350 EUR @@ 33.94 USD
 
 2024-09-26 * FOREIGN TRANSACTION FEE
-    liabilities:credit-cards:chase:ink-unlimited  -1.01 USD  ; date:09/26/2024
-    expenses:fees:foreign-transaction              1.01 USD
+    liabilities:credit-cards:chase:ink-unlimited                -1.01 USD  ; date:09/26/2024
+    expenses:fees:foreign-transaction                            1.01 USD
 
 2024-09-26 * KING SOOPERS  #  #0031
-    liabilities:credit-cards:chase:ink-unlimited  -6.02 USD  ; date:09/27/2024
-    expenses:supplies                              6.02 USD  ; waters for taekwondo school
+    liabilities:credit-cards:chase:ink-unlimited                -6.02 USD  ; date:09/27/2024
+    expenses:supplies                                            6.02 USD  ; waters for taekwondo school
 
 2024-09-28 * CONOCO - CITYMART CONO
-    liabilities:credit-cards:chase:ink-unlimited  -4.29 USD  ; date:09/29/2024
-    expenses:supplies                              4.29 USD  ; batteries for taekwondo school
+    liabilities:credit-cards:chase:ink-unlimited                -4.29 USD  ; date:09/29/2024
+    expenses:supplies                                            4.29 USD  ; batteries for taekwondo school
 
 2024-10-03 * AUTOMATIC PAYMENT - THANK
-    liabilities:credit-cards:chase:ink-unlimited   62.06 USD  ; date:10/03/2024
-    equity:transfers                              -62.06 USD
+    liabilities:credit-cards:chase:ink-unlimited                62.06 USD  ; date:10/03/2024
+    equity:transfers                                           -62.06 USD
 
 2024-10-03 * TWILIO SENDGRID
-    liabilities:credit-cards:chase:ink-unlimited  -19.95 USD  ; date:10/04/2024
-    expenses:communication:sendgrid                19.95 USD
+    liabilities:credit-cards:chase:ink-unlimited               -19.95 USD  ; date:10/04/2024
+    expenses:communication:sendgrid                             19.95 USD
 
 2024-10-19 * BACKBLAZE INC
-    liabilities:credit-cards:chase:ink-unlimited  -1.77 USD  ; date:10/20/2024
-    expenses:backup:backblaze                      1.77 USD
+    liabilities:credit-cards:chase:ink-unlimited                -1.77 USD  ; date:10/20/2024
+    expenses:backup:backblaze                                    1.77 USD
 
 2024-10-19 * GITHUB  ; arp242, GoatCounter
-    liabilities:credit-cards:chase:ink-unlimited  -5.30 USD  ; date:10/20/2024
-    expenses:devtools:github                       5.30 USD
+    liabilities:credit-cards:chase:ink-unlimited                -5.30 USD  ; date:10/20/2024
+    expenses:devtools:github                                     5.30 USD
 
 2024-10-25 * Hetzner Online GmbH
-    liabilities:credit-cards:chase:ink-unlimited  -32.85 USD  ; date:10/27/2024
-    expenses:hosting:hetzner                       30.33 EUR  @@  32.85 USD
+    liabilities:credit-cards:chase:ink-unlimited               -32.85 USD  ; date:10/27/2024
+    expenses:hosting:hetzner                      30.330 EUR @@ 32.85 USD
 
 2024-10-27 * FOREIGN TRANSACTION FEE
-    liabilities:credit-cards:chase:ink-unlimited  -0.98 USD  ; date:10/27/2024
-    expenses:fees:foreign-transaction              0.98 USD
+    liabilities:credit-cards:chase:ink-unlimited                -0.98 USD  ; date:10/27/2024
+    expenses:fees:foreign-transaction                            0.98 USD
 
 2024-11-03 * AUTOMATIC PAYMENT - THANK
-    liabilities:credit-cards:chase:ink-unlimited   72.32 USD  ; date:11/03/2024
-    equity:transfers                              -72.32 USD
+    liabilities:credit-cards:chase:ink-unlimited                72.32 USD  ; date:11/03/2024
+    equity:transfers                                           -72.32 USD
 
 2024-11-05 * TWILIO SENDGRID
-    liabilities:credit-cards:chase:ink-unlimited  -19.95 USD  ; date:11/06/2024
-    expenses:communication:sendgrid                19.95 USD
+    liabilities:credit-cards:chase:ink-unlimited               -19.95 USD  ; date:11/06/2024
+    expenses:communication:sendgrid                             19.95 USD
 
 2024-11-19 * GITHUB  ; arp242, GoatCounter
-    liabilities:credit-cards:chase:ink-unlimited  -5.30 USD  ; date:11/20/2024
-    expenses:devtools:github                       5.30 USD
+    liabilities:credit-cards:chase:ink-unlimited                -5.30 USD  ; date:11/20/2024
+    expenses:devtools:github                                     5.30 USD
 
 2024-11-19 * BACKBLAZE INC
-    liabilities:credit-cards:chase:ink-unlimited  -1.92 USD  ; date:11/20/2024
-    expenses:backup:backblaze                      1.92 USD
+    liabilities:credit-cards:chase:ink-unlimited                -1.92 USD  ; date:11/20/2024
+    expenses:backup:backblaze                                    1.92 USD
 
 2024-11-25 * Hetzner Online GmbH
-    liabilities:credit-cards:chase:ink-unlimited  -31.84 USD  ; date:11/26/2024
-    expenses:hosting:hetzner                       30.32 EUR  @@  31.84 USD
+    liabilities:credit-cards:chase:ink-unlimited               -31.84 USD  ; date:11/26/2024
+    expenses:hosting:hetzner                      30.320 EUR @@ 31.84 USD
 
 2024-11-26 * FOREIGN TRANSACTION FEE
-    liabilities:credit-cards:chase:ink-unlimited  -0.95 USD  ; date:11/26/2024
-    expenses:fees:foreign-transaction              0.95 USD
+    liabilities:credit-cards:chase:ink-unlimited                -0.95 USD  ; date:11/26/2024
+    expenses:fees:foreign-transaction                            0.95 USD
 
 2024-12-03 * AUTOMATIC PAYMENT - THANK
-    liabilities:credit-cards:chase:ink-unlimited   60.85 USD  ; date:12/03/2024
-    equity:transfers                              -60.85 USD
+    liabilities:credit-cards:chase:ink-unlimited                60.85 USD  ; date:12/03/2024
+    equity:transfers                                           -60.85 USD
 
 2024-12-04 * TWILIO SENDGRID
-    liabilities:credit-cards:chase:ink-unlimited  -19.95 USD  ; date:12/05/2024
-    expenses:communication:sendgrid                19.95 USD
+    liabilities:credit-cards:chase:ink-unlimited               -19.95 USD  ; date:12/05/2024
+    expenses:communication:sendgrid                             19.95 USD
 
 2024-12-19 * GITHUB  ; arp242, GoatCounter
-    liabilities:credit-cards:chase:ink-unlimited  -5.30 USD  ; date:12/20/2024
-    expenses:devtools:github                       5.30 USD
+    liabilities:credit-cards:chase:ink-unlimited                -5.30 USD  ; date:12/20/2024
+    expenses:devtools:github                                     5.30 USD
 
 2024-12-19 * BACKBLAZE INC
-    liabilities:credit-cards:chase:ink-unlimited  -1.93 USD  ; date:12/20/2024
-    expenses:backup:backblaze                      1.93 USD
+    liabilities:credit-cards:chase:ink-unlimited                -1.93 USD  ; date:12/20/2024
+    expenses:backup:backblaze                                    1.93 USD
 
 2024-12-24 * Statement Credit Adjustme
-    liabilities:credit-cards:chase:ink-unlimited   20.46 USD  ; date:12/24/2024
-    revenue:credits-and-adjustments               -20.46 USD
+    liabilities:credit-cards:chase:ink-unlimited                20.46 USD  ; date:12/24/2024
+    revenue:credits-and-adjustments                            -20.46 USD
 
 2024-12-27 * Hetzner Online GmbH
-    liabilities:credit-cards:chase:ink-unlimited  -31.64 USD  ; date:12/29/2024
-    expenses:hosting:hetzner                       30.32 EUR  @@  31.64 USD
+    liabilities:credit-cards:chase:ink-unlimited               -31.64 USD  ; date:12/29/2024
+    expenses:hosting:hetzner                      30.320 EUR @@ 31.64 USD
 
 2024-12-29 * FOREIGN TRANSACTION FEE
-    liabilities:credit-cards:chase:ink-unlimited  -0.94 USD  ; date:12/29/2024
-    expenses:fees:foreign-transaction              0.94 USD
+    liabilities:credit-cards:chase:ink-unlimited                -0.94 USD  ; date:12/29/2024
+    expenses:fees:foreign-transaction                            0.94 USD

@@ -2,10 +2,10 @@
 ; (`hledger balance --budget`) and projecting next quarter's expected
 ; spend. Update the amounts here when a recurring cost actually changes.
 ~ monthly
-    expenses:hosting:hetzner         42.00 USD
-    expenses:communication:sendgrid  34.95 USD
-    expenses:donations               15.90 USD
-    expenses:backup:backblaze         1.30 USD
+    expenses:hosting:hetzner          42.00 USD
+    expenses:communication:sendgrid   34.95 USD
+    expenses:donations                15.90 USD
+    expenses:backup:backblaze          1.30 USD
     liabilities:chase-cc
 
 ; Annual renewals — dated to match when they actually recur, so the goal
@@ -15,5 +15,5 @@
     liabilities:chase-cc
 
 ~ yearly from 2026-02-23
-    expenses:comms:migadu  19.00 USD
+    expenses:comms:migadu             19.00 USD
     liabilities:chase-cc

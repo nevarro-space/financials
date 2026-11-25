@@ -2,14 +2,14 @@ include accounts.journal
 include commodities.journal
 
 2025-01-01 * Opening Balances
-    assets:cash:bluevine                          1,929.19 USD  =  1,929.19 USD
-    liabilities:credit-cards:chase:ink-unlimited    -79.31 USD  =    -79.31 USD
+    assets:cash:bluevine                          1,929.19 USD = 1,929.19 USD
+    liabilities:credit-cards:chase:ink-unlimited    -79.31 USD =   -79.31 USD
     equity:opening/closing balances
 
 include bluevine.journal
 include chase-*.journal
 
 2025-12-31 closing balances  ; clopen:
-    assets:cash:bluevine                          -525.85 USD  =  0.00 USD
-    liabilities:credit-cards:chase:ink-unlimited   137.87 USD  =  0.00 USD
+    assets:cash:bluevine                           -525.85 USD = 0.00 USD
+    liabilities:credit-cards:chase:ink-unlimited    137.87 USD = 0.00 USD
     equity:opening/closing balances

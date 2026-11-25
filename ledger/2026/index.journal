@@ -4,8 +4,8 @@ include commodities.journal
 include budget.journal
 
 2026-01-01 * Opening Balances
-    assets:cash:bluevine                           525.85 USD  =   525.85 USD
-    liabilities:credit-cards:chase:ink-unlimited  -137.87 USD  =  -137.87 USD
+    assets:cash:bluevine                           525.85 USD =  525.85 USD
+    liabilities:credit-cards:chase:ink-unlimited  -137.87 USD = -137.87 USD
     equity:opening/closing balances
 
 include bluevine.journal
