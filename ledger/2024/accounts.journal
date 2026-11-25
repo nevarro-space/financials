@@ -9,7 +9,6 @@ account liabilities:credit-cards:chase:ink-unlimited
 
 ; Revenue
 account revenue:credits-and-adjustments
-account revenue:interest
 account revenue:martial-arts:commission
 account revenue:martial-arts:management-fee
 account revenue:tutoring

@@ -2,18 +2,31 @@
 ; (`hledger balance --budget`) and projecting next quarter's expected
 ; spend. Update the amounts here when a recurring cost actually changes.
 ~ monthly
-    expenses:hosting:hetzner          42.00 USD
-    expenses:communication:sendgrid   34.95 USD
-    expenses:donations                15.00 USD
-    expenses:backup:backblaze          1.30 USD
-    liabilities:chase-cc
+    expenses:communication:sendgrid                34.95 USD
+    expenses:donations                             15.00 USD
+    expenses:fees:github-sponsors                   0.90 USD
+    expenses:backup:backblaze                       1.30 USD
+    liabilities:credit-cards:chase:ink-unlimited
+
+; Hetzner bills in EUR, so its budget is in EUR too (hosting net of tax, at
+; current prices); budget-vs-actual can't compare EUR actuals to a USD goal.
+~ monthly
+    expenses:hosting:hetzner                      43.050 EUR
+    expenses:taxes:sales:hetzner                   2.130 EUR
+    liabilities:accounts-payable:hetzner
+
+; Google Workspace, Business Starter x 2 users, since 2026-06.
+~ monthly from 2026-06-01
+    expenses:communication:google-workspace        16.80 USD
+    expenses:taxes:sales:google                     0.87 USD
+    liabilities:credit-cards:chase:ink-unlimited
 
 ; Annual renewals — dated to match when they actually recur, so the goal
 ; only lands in the quarter the bill is really due, not smeared evenly.
 ~ yearly from 2026-03-13
-    expenses:monitoring:uptimerobot  180.00 USD
-    liabilities:chase-cc
+    expenses:monitoring:uptimerobot               180.00 USD
+    liabilities:credit-cards:chase:ink-unlimited
 
 ~ yearly from 2026-02-23
-    expenses:communication:migadu     19.00 USD
-    liabilities:chase-cc
+    expenses:communication:migadu                  19.00 USD
+    liabilities:credit-cards:chase:ink-unlimited

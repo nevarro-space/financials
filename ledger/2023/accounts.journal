@@ -6,7 +6,6 @@ account liabilities:credit-cards:chase:ink-unlimited
 account liabilities:accounts-payable:hetzner
 
 ; Revenue
-account revenue:interest
 account revenue:credits-and-adjustments
 
 ; Expenses
