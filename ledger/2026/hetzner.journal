@@ -1,0 +1,131 @@
+2026-01-24 * Hetzner Invoice 082000681553  ; period 12/2025
+    expenses:hosting:hetzner                8.980 EUR  ; 2 CPX11 Cloud Server, 2 mo @ €4.4900
+    expenses:hosting:hetzner               15.990 EUR  ; 1 CPX31 Cloud Server, 1 mo @ €15.9900
+    expenses:hosting:hetzner                1.500 EUR  ; 3 Primary IPv4, 3 mo @ €0.5000
+    expenses:hosting:hetzner                6.600 EUR  ; 1 Volume, 150 GB-mo @ €0.0440
+    expenses:taxes:vat:hetzner              1.630 EUR  ; 4.93%
+    equity:conversion                     -34.700 EUR
+    equity:conversion                       41.07 USD
+    liabilities:accounts-payable:hetzner   -41.07 USD
+
+2026-01-31 * Hetzner Invoice 082000771609  ; period 12/2025
+    expenses:hosting:hetzner                8.980 EUR  ; 2 CPX11 Cloud Server, 2 mo @ €4.4900
+    expenses:hosting:hetzner               15.990 EUR  ; 1 CPX31 Cloud Server, 1 mo @ €15.9900
+    expenses:hosting:hetzner                1.500 EUR  ; 3 Primary IPv4, 3 mo @ €0.5000
+    expenses:hosting:hetzner                6.600 EUR  ; 1 Volume, 150 GB-mo @ €0.0440
+    expenses:taxes:vat:hetzner              1.630 EUR  ; 4.93%
+    liabilities:accounts-payable:hetzner  -34.700 EUR
+
+2026-01-31 * Hetzner Cancellation 092000002004 for invoice 082000681553  ; period 12/2025
+    expenses:hosting:hetzner               -8.980 EUR  ; 2 CPX11 Cloud Server, 2 mo @ €4.4900
+    expenses:hosting:hetzner              -15.990 EUR  ; 1 CPX31 Cloud Server, 1 mo @ €15.9900
+    expenses:hosting:hetzner               -1.500 EUR  ; 3 Primary IPv4, 3 mo @ €0.5000
+    expenses:hosting:hetzner               -6.600 EUR  ; 1 Volume, 150 GB-mo @ €0.0440
+    expenses:taxes:vat:hetzner             -1.630 EUR  ; 4.93%
+    liabilities:accounts-payable:hetzner   34.700 EUR
+
+2026-02-24 * Hetzner Invoice 088000760402  ; period 01/2026
+    expenses:hosting:hetzner                8.980 EUR  ; 2 CPX11 Cloud Server, 2 mo @ €4.4900
+    expenses:hosting:hetzner               15.990 EUR  ; 1 CPX31 Cloud Server, 1 mo @ €15.9900
+    expenses:hosting:hetzner                1.500 EUR  ; 3 Primary IPv4, 3 mo @ €0.5000
+    expenses:hosting:hetzner                6.600 EUR  ; 1 Volume, 150 GB-mo @ €0.0440
+    expenses:taxes:vat:hetzner              1.630 EUR  ; 4.93%
+    equity:conversion                     -34.700 EUR
+    equity:conversion                       40.94 USD
+    liabilities:accounts-payable:hetzner   -40.94 USD
+
+2026-02-28 * Hetzner Invoice 082000773171  ; period 01/2026
+    expenses:hosting:hetzner                8.980 EUR  ; 2 CPX11 Cloud Server, 2 mo @ €4.4900
+    expenses:hosting:hetzner               15.990 EUR  ; 1 CPX31 Cloud Server, 1 mo @ €15.9900
+    expenses:hosting:hetzner                1.500 EUR  ; 3 Primary IPv4, 3 mo @ €0.5000
+    expenses:hosting:hetzner                6.600 EUR  ; 1 Volume, 150 GB-mo @ €0.0440
+    expenses:taxes:vat:hetzner              1.630 EUR  ; 4.93%
+    liabilities:accounts-payable:hetzner  -34.700 EUR
+
+2026-02-28 * Hetzner Cancellation 095000003954 for invoice 088000760402  ; period 01/2026
+    expenses:hosting:hetzner               -8.980 EUR  ; 2 CPX11 Cloud Server, 2 mo @ €4.4900
+    expenses:hosting:hetzner              -15.990 EUR  ; 1 CPX31 Cloud Server, 1 mo @ €15.9900
+    expenses:hosting:hetzner               -1.500 EUR  ; 3 Primary IPv4, 3 mo @ €0.5000
+    expenses:hosting:hetzner               -6.600 EUR  ; 1 Volume, 150 GB-mo @ €0.0440
+    expenses:taxes:vat:hetzner             -1.630 EUR  ; 4.93%
+    liabilities:accounts-payable:hetzner   34.700 EUR
+
+2026-03-24 * Hetzner Invoice 081000790280  ; period 02/2026
+    expenses:hosting:hetzner                8.980 EUR  ; 2 CPX11 Cloud Server, 2 mo @ €4.4900
+    expenses:hosting:hetzner               15.990 EUR  ; 1 CPX31 Cloud Server, 1 mo @ €15.9900
+    expenses:hosting:hetzner                1.500 EUR  ; 3 Primary IPv4, 3 mo @ €0.5000
+    expenses:hosting:hetzner                6.600 EUR  ; 1 Volume, 150 GB-mo @ €0.0440
+    expenses:taxes:vat:hetzner              1.630 EUR  ; 4.93%
+    equity:conversion                     -34.700 EUR
+    equity:conversion                       40.36 USD
+    liabilities:accounts-payable:hetzner   -40.36 USD
+
+2026-04-24 * Hetzner Invoice 082000843248  ; period 03/2026
+    expenses:hosting:hetzner                8.980 EUR  ; 2 CPX11 Cloud Server, 2 mo @ €4.4900
+    expenses:hosting:hetzner               15.990 EUR  ; 1 CPX31 Cloud Server, 1 mo @ €15.9900
+    expenses:hosting:hetzner                1.500 EUR  ; 3 Primary IPv4, 3 mo @ €0.5000
+    expenses:hosting:hetzner                6.600 EUR  ; 1 Volume, 150 GB-mo @ €0.0440
+    expenses:taxes:vat:hetzner              1.630 EUR  ; 4.93%
+    equity:conversion                     -34.700 EUR
+    equity:conversion                       40.69 USD
+    liabilities:accounts-payable:hetzner   -40.69 USD
+
+2026-05-24 * Hetzner Invoice 084000889399  ; period 04/2026
+    expenses:hosting:hetzner               11.980 EUR  ; 2 CPX11 Cloud Server, 2 mo @ €5.9900
+    expenses:hosting:hetzner               20.990 EUR  ; 1 CPX31 Cloud Server, 1 mo @ €20.9900
+    expenses:hosting:hetzner                1.500 EUR  ; 3 Primary IPv4, 3 mo @ €0.5000
+    expenses:hosting:hetzner                8.580 EUR  ; 1 Volume, 150 GB-mo @ €0.0572
+    expenses:taxes:vat:hetzner              2.130 EUR  ; 4.93%
+    equity:conversion                     -45.180 EUR
+    equity:conversion                       52.53 USD
+    liabilities:accounts-payable:hetzner   -52.53 USD
+
+2026-06-24 * Hetzner Invoice 085001029934  ; period 05/2026
+    expenses:hosting:hetzner               11.980 EUR  ; 2 CPX11 Cloud Server, 2 mo @ €5.9900
+    expenses:hosting:hetzner               20.990 EUR  ; 1 CPX31 Cloud Server, 1 mo @ €20.9900
+    expenses:hosting:hetzner                1.500 EUR  ; 3 Primary IPv4, 3 mo @ €0.5000
+    expenses:hosting:hetzner                8.580 EUR  ; 1 Volume, 150 GB-mo @ €0.0572
+    expenses:taxes:vat:hetzner              2.130 EUR  ; 4.93%
+    equity:conversion                     -45.180 EUR
+    equity:conversion                       51.44 USD
+    liabilities:accounts-payable:hetzner   -51.44 USD
+
+2026-07-24 * Hetzner Invoice 088001055199  ; period 06/2026
+    expenses:hosting:hetzner               11.980 EUR  ; 2 CPX11 Cloud Server, 2 mo @ €5.9900
+    expenses:hosting:hetzner               20.990 EUR  ; 1 CPX31 Cloud Server, 1 mo @ €20.9900
+    expenses:hosting:hetzner                1.500 EUR  ; 3 Primary IPv4, 3 mo @ €0.5000
+    expenses:hosting:hetzner                8.580 EUR  ; 1 Volume, 150 GB-mo @ €0.0572
+    expenses:taxes:vat:hetzner              2.130 EUR  ; 4.93%
+    equity:conversion                     -45.180 EUR
+    equity:conversion                       51.51 USD
+    liabilities:accounts-payable:hetzner   -51.51 USD
+
+2026-08-24 * Hetzner Invoice 086001077693  ; period 07/2026
+    expenses:hosting:hetzner               11.980 EUR  ; 2 CPX11 Cloud Server, 2 mo @ €5.9900
+    expenses:hosting:hetzner               20.990 EUR  ; 1 CPX31 Cloud Server, 1 mo @ €20.9900
+    expenses:hosting:hetzner                1.500 EUR  ; 3 Primary IPv4, 3 mo @ €0.5000
+    expenses:hosting:hetzner                8.580 EUR  ; 1 Volume, 150 GB-mo @ €0.0572
+    expenses:taxes:vat:hetzner              2.130 EUR  ; 4.93%
+    equity:conversion                     -45.180 EUR
+    equity:conversion                       52.81 USD
+    liabilities:accounts-payable:hetzner   -52.81 USD
+
+2026-09-24 * Hetzner Invoice 083001173326  ; period 08/2026
+    expenses:hosting:hetzner               11.980 EUR  ; 2 CPX11 Cloud Server, 2 mo @ €5.9900
+    expenses:hosting:hetzner               20.990 EUR  ; 1 CPX31 Cloud Server, 1 mo @ €20.9900
+    expenses:hosting:hetzner                1.500 EUR  ; 3 Primary IPv4, 3 mo @ €0.5000
+    expenses:hosting:hetzner                8.580 EUR  ; 1 Volume, 150 GB-mo @ €0.0572
+    expenses:taxes:vat:hetzner              2.130 EUR  ; 4.93%
+    equity:conversion                     -45.180 EUR
+    equity:conversion                       51.51 USD
+    liabilities:accounts-payable:hetzner   -51.51 USD
+
+2026-10-24 * Hetzner Invoice 085001350644  ; period 09/2026
+    expenses:hosting:hetzner               11.980 EUR  ; 2 CPX11 Cloud Server, 2 mo @ €5.9900
+    expenses:hosting:hetzner               20.990 EUR  ; 1 CPX31 Cloud Server, 1 mo @ €20.9900
+    expenses:hosting:hetzner                1.500 EUR  ; 3 Primary IPv4, 3 mo @ €0.5000
+    expenses:hosting:hetzner                8.580 EUR  ; 1 Volume, 150 GB-mo @ €0.0572
+    expenses:taxes:vat:hetzner              2.130 EUR  ; 4.93%
+    equity:conversion                     -45.180 EUR
+    equity:conversion                       50.75 USD
+    liabilities:accounts-payable:hetzner   -50.75 USD

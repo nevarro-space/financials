@@ -2,6 +2,7 @@
 account assets:cash:bluevine
 
 ; Liabilities
+account liabilities:accounts-payable:hetzner
 account liabilities:credit-cards:chase:ink-unlimited
 
 ; Revenue
@@ -20,6 +21,7 @@ account expenses:hosting:hetzner
 account expenses:monitoring:uptimerobot
 
 ; Equity
-account equity:opening/closing balances
+account equity:conversion  ; type:V
 account equity:member:sumner
+account equity:opening/closing balances
 account equity:transfers

@@ -12,8 +12,9 @@ if CO SECRETARY STATE FEE
 if DIVIDEND RECEIVED .* \((.*)\) \((Cash|Margin)\)
     account2 revenue:dividends:\1
 
+# Settles the itemized invoice from bin/hetzner-invoice.py (in hetzner.journal).
 if Hetzner
-    account2 expenses:hosting:hetzner
+    account2 liabilities:accounts-payable:hetzner
 
 if NAME-CHEAP
     account2 expenses:domains:namecheap

@@ -24,6 +24,7 @@
               hledger
               hledger-web
               pre-commit
+              poppler-utils
               pricehist
               python3
             ];

@@ -86,6 +86,28 @@ hledger print tag:commentary -p 2026q3    # commentary for a period
 Runway is `equity / average monthly burn`; take the two inputs from `bs` and
 `is`.
 
+### Hetzner invoices (EUR)
+
+Hetzner bills in EUR. Each invoice is an itemized transaction in
+`ledger/YYYY/hetzner.journal` (one posting per server/IP/volume plus tax, in
+EUR), converted to USD with a pair of `equity:conversion` postings and
+balanced against `liabilities:accounts-payable:hetzner` in USD. The Chase
+import rule posts each `Hetzner Online GmbH` card charge to that payable, so
+it nets to $0.00 once both sides are in; a nonzero balance means a missing
+invoice or charge. The foreign-transaction fee stays its own transaction.
+
+After importing the Chase CSV, generate any new invoices from the PDFs
+(emailed by Hetzner, or downloaded from accounts.hetzner.com/invoice):
+
+```bash
+bin/hetzner-invoice.py ~/Downloads/Hetzner_*.pdf >> ledger/2026/hetzner.journal
+hledger bal liabilities:accounts-payable:hetzner -H   # should be empty (0)
+```
+
+The script skips invoices already in the ledger and ones whose card charge
+isn't imported yet. Invoices through 2024-03-01 are older hand-written entries
+in the 2023 style (conversion on the card charge with `@@`).
+
 ### Prices
 
 `ledger/prices/EUR.journal` holds daily ECB EUR/USD rates, fetched by
@@ -99,8 +121,8 @@ card network's FX spread.
 ## Dev environment
 
 `nix develop` (or `direnv allow`, since `.envrc` has `use flake`) provides
-`hledger`, `hledger-web`, `pre-commit`, `pricehist`, and
-`python3`, and sets `LEDGER_FILE`
+`hledger`, `hledger-web`, `pre-commit`, `pricehist`, `poppler-utils`
+(`pdftotext`), and `python3`, and sets `LEDGER_FILE`
 to `ledger/all.journal`. `hledger-web` starts a local browser UI for exploring
 the ledger.
 

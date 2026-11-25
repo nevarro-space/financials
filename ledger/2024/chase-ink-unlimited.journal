@@ -127,7 +127,7 @@
 
 2024-04-27 * hetzner.com
     liabilities:credit-cards:chase:ink-unlimited               -33.48 USD
-    expenses:hosting:hetzner                      30.340 EUR @@ 32.51 USD
+    liabilities:accounts-payable:hetzner                        32.51 USD
     expenses:fees:foreign-transaction                            0.97 USD
 
 2024-05-03 * AUTOMATIC PAYMENT - THANK
@@ -148,7 +148,7 @@
 
 2024-05-27 * hetzner.com
     liabilities:credit-cards:chase:ink-unlimited               -33.94 USD
-    expenses:hosting:hetzner                      30.350 EUR @@ 32.96 USD
+    liabilities:accounts-payable:hetzner                        32.96 USD
     expenses:fees:foreign-transaction                            0.98 USD
 
 2024-06-03 * AUTOMATIC PAYMENT - THANK
@@ -173,7 +173,7 @@
 
 2024-06-27 * hetzner.com
     liabilities:credit-cards:chase:ink-unlimited               -33.58 USD
-    expenses:hosting:hetzner                      30.340 EUR @@ 32.61 USD
+    liabilities:accounts-payable:hetzner                        32.61 USD
     expenses:fees:foreign-transaction                            0.97 USD
 
 2024-07-03 * AUTOMATIC PAYMENT - THANK
@@ -194,7 +194,7 @@
 
 2024-07-25 * hetzner.com
     liabilities:credit-cards:chase:ink-unlimited               -33.97 USD
-    expenses:hosting:hetzner                      30.350 EUR @@ 32.99 USD
+    liabilities:accounts-payable:hetzner                        32.99 USD
     expenses:fees:foreign-transaction                            0.98 USD
 
 2024-08-03 * AUTOMATIC PAYMENT - THANK
@@ -215,7 +215,7 @@
 
 2024-08-26 * hetzner.com
     liabilities:credit-cards:chase:ink-unlimited               -34.00 USD
-    expenses:hosting:hetzner                      30.350 EUR @@ 34.00 USD
+    liabilities:accounts-payable:hetzner                        34.00 USD
 
 2024-08-27 * FOREIGN TRANSACTION FEE
     liabilities:credit-cards:chase:ink-unlimited                -1.02 USD
@@ -239,7 +239,7 @@
 
 2024-09-25 * Hetzner Online GmbH
     liabilities:credit-cards:chase:ink-unlimited               -33.94 USD  ; date:2024-09-26
-    expenses:hosting:hetzner                      30.350 EUR @@ 33.94 USD
+    liabilities:accounts-payable:hetzner                        33.94 USD
 
 2024-09-26 * FOREIGN TRANSACTION FEE
     liabilities:credit-cards:chase:ink-unlimited                -1.01 USD  ; date:2024-09-26
@@ -271,7 +271,7 @@
 
 2024-10-25 * Hetzner Online GmbH
     liabilities:credit-cards:chase:ink-unlimited               -32.85 USD  ; date:2024-10-27
-    expenses:hosting:hetzner                      30.330 EUR @@ 32.85 USD
+    liabilities:accounts-payable:hetzner                        32.85 USD
 
 2024-10-27 * FOREIGN TRANSACTION FEE
     liabilities:credit-cards:chase:ink-unlimited                -0.98 USD  ; date:2024-10-27
@@ -295,7 +295,7 @@
 
 2024-11-25 * Hetzner Online GmbH
     liabilities:credit-cards:chase:ink-unlimited               -31.84 USD  ; date:2024-11-26
-    expenses:hosting:hetzner                      30.320 EUR @@ 31.84 USD
+    liabilities:accounts-payable:hetzner                        31.84 USD
 
 2024-11-26 * FOREIGN TRANSACTION FEE
     liabilities:credit-cards:chase:ink-unlimited                -0.95 USD  ; date:2024-11-26
@@ -323,7 +323,7 @@
 
 2024-12-27 * Hetzner Online GmbH
     liabilities:credit-cards:chase:ink-unlimited               -31.64 USD  ; date:2024-12-29
-    expenses:hosting:hetzner                      30.320 EUR @@ 31.64 USD
+    liabilities:accounts-payable:hetzner                        31.64 USD
 
 2024-12-29 * FOREIGN TRANSACTION FEE
     liabilities:credit-cards:chase:ink-unlimited                -0.94 USD  ; date:2024-12-29

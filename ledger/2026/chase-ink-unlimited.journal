@@ -32,7 +32,7 @@
 
 2026-01-25 * Hetzner Online GmbH
     liabilities:credit-cards:chase:ink-unlimited       -41.07 USD  ; date:2026-01-26
-    expenses:hosting:hetzner                            41.07 USD
+    liabilities:accounts-payable:hetzner                41.07 USD
 
 2026-01-26 * FOREIGN TRANSACTION FEE
     liabilities:credit-cards:chase:ink-unlimited        -1.23 USD  ; date:2026-01-26
@@ -64,7 +64,7 @@
 
 2026-02-25 * Hetzner Online GmbH
     liabilities:credit-cards:chase:ink-unlimited       -40.94 USD  ; date:2026-02-26
-    expenses:hosting:hetzner                            40.94 USD
+    liabilities:accounts-payable:hetzner                40.94 USD
 
 2026-02-26 * FOREIGN TRANSACTION FEE
     liabilities:credit-cards:chase:ink-unlimited        -1.22 USD  ; date:2026-02-26
@@ -96,7 +96,7 @@
 
 2026-03-25 * Hetzner Online GmbH
     liabilities:credit-cards:chase:ink-unlimited       -40.36 USD  ; date:2026-03-26
-    expenses:hosting:hetzner                            40.36 USD
+    liabilities:accounts-payable:hetzner                40.36 USD
 
 2026-03-25 * NAME-CHEAP.COM* MYVABI  ; sublimemusic.app
     liabilities:credit-cards:chase:ink-unlimited       -23.18 USD  ; date:2026-03-26
@@ -128,7 +128,7 @@
 
 2026-04-25 * Hetzner Online GmbH
     liabilities:credit-cards:chase:ink-unlimited       -40.69 USD  ; date:2026-04-26
-    expenses:hosting:hetzner                            40.69 USD
+    liabilities:accounts-payable:hetzner                40.69 USD
 
 2026-04-26 * FOREIGN TRANSACTION FEE
     liabilities:credit-cards:chase:ink-unlimited        -1.22 USD  ; date:2026-04-26
@@ -152,7 +152,7 @@
 
 2026-05-25 * Hetzner Online GmbH
     liabilities:credit-cards:chase:ink-unlimited       -52.53 USD  ; date:2026-05-26
-    expenses:hosting:hetzner                            52.53 USD
+    liabilities:accounts-payable:hetzner                52.53 USD
 
 2026-05-26 * FOREIGN TRANSACTION FEE
     liabilities:credit-cards:chase:ink-unlimited        -1.57 USD  ; date:2026-05-26
@@ -180,7 +180,7 @@
 
 2026-06-25 * Hetzner Online GmbH
     liabilities:credit-cards:chase:ink-unlimited       -51.44 USD  ; date:2026-06-26
-    expenses:hosting:hetzner                            51.44 USD
+    liabilities:accounts-payable:hetzner                51.44 USD
 
 2026-06-26 * FOREIGN TRANSACTION FEE
     liabilities:credit-cards:chase:ink-unlimited        -1.54 USD  ; date:2026-06-26
@@ -208,7 +208,7 @@
 
 2026-07-25 * Hetzner Online GmbH
     liabilities:credit-cards:chase:ink-unlimited       -51.51 USD  ; date:2026-07-28
-    expenses:hosting:hetzner                            51.51 USD
+    liabilities:accounts-payable:hetzner                51.51 USD
 
 2026-07-28 * FOREIGN TRANSACTION FEE
     liabilities:credit-cards:chase:ink-unlimited        -1.54 USD  ; date:2026-07-28
@@ -236,7 +236,7 @@
 
 2026-08-25 * Hetzner Online GmbH
     liabilities:credit-cards:chase:ink-unlimited       -52.81 USD  ; date:2026-08-26
-    expenses:hosting:hetzner                            52.81 USD
+    liabilities:accounts-payable:hetzner                52.81 USD
 
 2026-08-26 * FOREIGN TRANSACTION FEE
     liabilities:credit-cards:chase:ink-unlimited        -1.58 USD  ; date:2026-08-26
@@ -264,7 +264,7 @@
 
 2026-09-25 * Hetzner Online GmbH
     liabilities:credit-cards:chase:ink-unlimited       -51.51 USD  ; date:2026-09-27
-    expenses:hosting:hetzner                            51.51 USD
+    liabilities:accounts-payable:hetzner                51.51 USD
 
 2026-09-27 * FOREIGN TRANSACTION FEE
     liabilities:credit-cards:chase:ink-unlimited        -1.54 USD  ; date:2026-09-27
@@ -292,7 +292,7 @@
 
 2026-10-25 * Hetzner Online GmbH
     liabilities:credit-cards:chase:ink-unlimited       -50.75 USD  ; date:2026-10-26
-    expenses:hosting:hetzner                            50.75 USD
+    liabilities:accounts-payable:hetzner                50.75 USD
 
 2026-10-26 * FOREIGN TRANSACTION FEE
     liabilities:credit-cards:chase:ink-unlimited        -1.52 USD  ; date:2026-10-26

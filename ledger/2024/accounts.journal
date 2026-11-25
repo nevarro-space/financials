@@ -30,6 +30,7 @@ account expenses:taxes:vat:hetzner
 account expenses:tutoring
 
 ; Equity
+account equity:conversion  ; type:V
 account equity:member:sumner
 account equity:opening/closing balances
 account equity:rounding
