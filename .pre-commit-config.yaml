@@ -16,3 +16,10 @@ repos:
         additional_dependencies:
           - github.com/juev/hledger-lsp/cmd/hledger-fmt@v0.3.1
         files: \.(hledger|journal|j)$
+
+      - id: hledger-check
+        name: hledger check
+        entry: hledger -f ledger/all.journal check -s ordereddates
+        language: system
+        files: ^ledger/
+        pass_filenames: false

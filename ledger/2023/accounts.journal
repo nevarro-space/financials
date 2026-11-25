@@ -13,14 +13,18 @@ account revenue:credits-and-adjustments
 account expenses:backup:backblaze
 account expenses:communication:migadu
 account expenses:communication:sendgrid
+account expenses:domains:google-domains
 account expenses:domains:namecheap
 account expenses:donations
 account expenses:fees:foreign-transaction
 account expenses:fees:government
 account expenses:hosting:hetzner
+account expenses:monitoring
 account expenses:monitoring:uptimerobot
+account expenses:taxes:vat:hetzner
 
 ; Equity
-account equity:opening/closing balances
 account equity:member:sumner
+account equity:opening/closing balances
+account equity:rounding
 account equity:transfers

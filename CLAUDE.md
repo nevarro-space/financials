@@ -33,12 +33,18 @@ Two eras coexist in this repo:
 - `rules/<source>.csv.rules` — hledger CSV import rules mapping each
   source's columns and description patterns to ledger accounts.
 
-Key accounts: `assets:bluevine`, `assets:fidelity`, `liabilities:chase-cc`,
-`equity:opening-balances`, `equity:member-capital` (owner capital
+Key accounts: `assets:cash:bluevine`, `assets:cash:fidelity`,
+`liabilities:credit-cards:chase:ink-unlimited`,
+`equity:opening/closing balances`, `equity:member:sumner` (owner capital
 contributions), `equity:transfers` (clearing account for CC payments — both
 the paying account's CSV and Chase's CSV record their half of the same
 transfer independently, so each posts against this account; it should net to
-$0.00 once both sides are imported), `income:*`, `expenses:*`.
+$0.00 once both sides are imported), `revenue:*`, `expenses:*`.
+
+Unmatched imports land in `revenue:unknown` (inflows, set in
+`rules/global.rules`) or `expenses:unknown` (outflows, hledger's default).
+Both are deliberately left undeclared so the `hledger check -s` pre-commit
+hook fails until they are re-categorized by hand.
 
 ### Workflow
 

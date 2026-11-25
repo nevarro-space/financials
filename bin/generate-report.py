@@ -27,21 +27,21 @@ REPO_ROOT = Path(__file__).resolve().parent.parent
 LEDGER_FILE = REPO_ROOT / "ledger" / "all.journal"
 
 ASSET_LABELS = {
-    "assets:bluevine": "Bluevine Checking",
-    "assets:fidelity": "Fidelity (SPAXX)",
+    "assets:cash:bluevine": "Bluevine Checking",
+    "assets:cash:fidelity": "Fidelity (SPAXX)",
 }
 LIABILITY_LABELS = {
-    "liabilities:chase-cc": "Chase Credit Card",
+    "liabilities:credit-cards:chase:ink-unlimited": "Chase Credit Card",
 }
 # account -> (display label, "monthly"|"yearly" — matches the periodic
 # transaction interval, so the report can label/format each correctly)
 BUDGET_ITEMS = {
     "expenses:hosting:hetzner": ("Hetzner", "monthly"),
-    "expenses:comms:sendgrid": ("Twilio Sendgrid", "monthly"),
-    "expenses:devtools:github": ("GitHub", "monthly"),
+    "expenses:communication:sendgrid": ("Twilio Sendgrid", "monthly"),
+    "expenses:donations": ("GitHub", "monthly"),
     "expenses:backup:backblaze": ("Backblaze", "monthly"),
     "expenses:monitoring:uptimerobot": ("UptimeRobot", "yearly"),
-    "expenses:comms:migadu": ("Migadu", "yearly"),
+    "expenses:communication:migadu": ("Migadu", "yearly"),
 }
 
 
@@ -80,9 +80,17 @@ def csv_rows(output: str) -> list[dict]:
 
 
 def balances_as_of(end: date, accounts: list[str]) -> dict[str, Decimal]:
-    """Balance of each account, historical, as of just before `end`."""
+    """Balance of each account, historical, as of just before `end`.
+
+    Each year's journal ends with a `clopen:`-tagged closing entry on Dec 31
+    and the next starts with a matching opening entry on Jan 1; they cancel
+    out for any `end` except Jan 1 itself, where only the closing entry is in
+    range and would zero every balance. Exclude it in that case."""
+    query = list(accounts)
+    if (end.month, end.day) == (1, 1):
+        query.append("not:tag:clopen")
     out = hledger(
-        "balance", *accounts, "-e", end.isoformat(), "--historical", "--flat", "-O", "csv"
+        "balance", *query, "-e", end.isoformat(), "--historical", "--flat", "-O", "csv"
     )
     balances = {row["account"]: parse_amount(row["balance"]) for row in csv_rows(out)}
     return {a: balances.get(a, Decimal(0)) for a in accounts}
@@ -248,7 +256,7 @@ def events_table(rows: list[dict]) -> str:
     if not rows:
         return "None for this month."
     amounts = [
-        -parse_amount(r["amount"]) if r["account"].startswith(("income:", "equity:")) else parse_amount(r["amount"])
+        -parse_amount(r["amount"]) if r["account"].startswith(("revenue:", "equity:")) else parse_amount(r["amount"])
         for r in rows
     ]
     total = sum(amounts)
@@ -266,7 +274,7 @@ def generate_month(year: int, month: int, commentary: str = "") -> str:
     start = date(year, month, 1)
     end = next_month(start)
 
-    revenue_rows = transactions(["income", "equity:member-capital"], start, end)
+    revenue_rows = transactions(["revenue", "equity:member"], start, end)
     expense_rows = transactions(["expenses"], start, end)
 
     month_name = calendar.month_name[month]
@@ -298,11 +306,15 @@ def generate_quarter(year: int, q: int, commentary: str = "") -> str:
     py, pq = prev_quarter(year, q)
     _, prev_end = quarter_bounds(py, pq)
 
-    contrib_rows = register(["equity:member-capital"], start, end)
+    contrib_rows = register(["equity:member"], start, end)
     contributions = -sum(parse_amount(r["amount"]) for r in contrib_rows)
 
-    interest_rows = register(["income:interest"], start, end)
+    interest_rows = register(["revenue:interest", "revenue:dividends"], start, end)
     interest = -sum(parse_amount(r["amount"]) for r in interest_rows)
+
+    # Everything else booked to revenue:* (client work, commissions, ...).
+    revenue_rows = register(["revenue"], start, end)
+    revenue = -sum(parse_amount(r["amount"]) for r in revenue_rows) - interest
 
     expense_rows = register(["expenses"], start, end)
     expenses = sum(parse_amount(r["amount"]) for r in expense_rows)
@@ -325,12 +337,13 @@ def generate_quarter(year: int, q: int, commentary: str = "") -> str:
 
 {commentary_block}## Equity
 
-A total of {fmt_amount(contributions)} in capital contributions and {fmt_amount(interest)} in SPAXX interest were
-received, and {fmt_amount(expenses)} of expenses were incurred.
+A total of {fmt_amount(contributions)} in capital contributions, {fmt_amount(revenue)} in revenue, and
+{fmt_amount(interest)} in SPAXX interest were received, and {fmt_amount(expenses)} of expenses were incurred.
 
 | **Summary**              |           |
 | :----------------------- | --------: |
 | **Capital Contribution** | {fmt_amount(contributions):>9} |
+| **Revenue**              | {fmt_amount(revenue):>9} |
 | **Interest (SPAXX)**     | {fmt_amount(interest):>9} |
 | **Expenses**             | {fmt_amount(expenses):>9} |
 | **Equity**               | {fmt_amount(equity):>9} |

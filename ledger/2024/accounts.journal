@@ -6,8 +6,11 @@ account liabilities:credit-cards:chase:ink-unlimited
 account liabilities:accounts-payable:hetzner
 
 ; Revenue
-account revenue:interest
 account revenue:credits-and-adjustments
+account revenue:interest
+account revenue:martial-arts:commission
+account revenue:martial-arts:management-fee
+account revenue:tutoring
 
 ; Expenses
 account expenses:backup:backblaze
@@ -18,10 +21,16 @@ account expenses:domains:namecheap
 account expenses:donations
 account expenses:fees:foreign-transaction
 account expenses:fees:government
+account expenses:fees:square
 account expenses:hosting:hetzner
+account expenses:marketing:tutors.com
 account expenses:monitoring:uptimerobot
+account expenses:supplies
+account expenses:taxes:vat:hetzner
+account expenses:tutoring
 
 ; Equity
-account equity:opening/closing balances
 account equity:member:sumner
+account equity:opening/closing balances
+account equity:rounding
 account equity:transfers

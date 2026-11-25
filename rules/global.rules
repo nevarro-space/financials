@@ -1,3 +1,11 @@
+# Default for money coming in when no rule below matches (hledger's own
+# default would be income:unknown). Deliberately left undeclared in accounts.journal
+# so `hledger check -s` fails until every such posting is re-categorized.
+# Outflows fall through to hledger's default, expenses:unknown, which is
+# likewise undeclared.
+if %amount ^[^-]
+    account2 revenue:unknown
+
 if CO SECRETARY STATE FEE
     account2 expenses:fees:government
 
@@ -16,8 +24,10 @@ if TWILIO SENDGRID
 if MIGADU
     account2 expenses:communication:migadu
 
+# GitHub Sponsors (arp242, GoatCounter, neovim, ...) — paying for support of
+# projects we depend on, so booked as donations rather than dev tooling.
 if GITHUB
-    account2 expenses:devtools:github
+    account2 expenses:donations
 
 if GOOGLE Workspace
 GOOGLE \*Workspace

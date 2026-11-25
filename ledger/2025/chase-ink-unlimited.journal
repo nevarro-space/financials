@@ -4,7 +4,7 @@
 
 2025-01-03 * TWILIO SENDGRID
     liabilities:credit-cards:chase:ink-unlimited   -19.95 USD  ; date:2025-01-05
-    expenses:comms:sendgrid                         19.95 USD
+    expenses:communication:sendgrid                 19.95 USD
 
 2025-01-04 * CO SECRETARY STATE FEE
     liabilities:credit-cards:chase:ink-unlimited   -25.00 USD  ; date:2025-01-05
@@ -20,7 +20,7 @@
 
 2025-01-19 * GITHUB  ; arp242
     liabilities:credit-cards:chase:ink-unlimited    -5.30 USD  ; date:2025-01-20
-    expenses:devtools:github                         5.30 USD
+    expenses:donations                               5.30 USD
 
 2025-01-19 * BACKBLAZE INC
     liabilities:credit-cards:chase:ink-unlimited    -2.03 USD  ; date:2025-01-20
@@ -44,7 +44,7 @@
 
 2025-02-04 * TWILIO SENDGRID
     liabilities:credit-cards:chase:ink-unlimited   -19.95 USD  ; date:2025-02-05
-    expenses:comms:sendgrid                         19.95 USD
+    expenses:communication:sendgrid                 19.95 USD
 
 2025-02-19 * BACKBLAZE INC
     liabilities:credit-cards:chase:ink-unlimited    -2.02 USD  ; date:2025-02-20
@@ -52,7 +52,7 @@
 
 2025-02-19 * GITHUB  ; arp242
     liabilities:credit-cards:chase:ink-unlimited    -5.30 USD  ; date:2025-02-20
-    expenses:devtools:github                         5.30 USD
+    expenses:donations                               5.30 USD
 
 2025-02-22 * NAME-CHEAP.COM* GQ46EP  ; kuatcomments.com, kuatcom.me
     liabilities:credit-cards:chase:ink-unlimited   -19.44 USD  ; date:2025-02-23
@@ -60,7 +60,7 @@
 
 2025-02-22 * MIGADU.COM EMAIL SRVC.
     liabilities:credit-cards:chase:ink-unlimited   -19.00 USD  ; date:2025-02-23
-    expenses:comms:migadu                           19.00 USD
+    expenses:communication:migadu                   19.00 USD
 
 2025-02-25 * Hetzner Online GmbH
     liabilities:credit-cards:chase:ink-unlimited   -31.93 USD  ; date:2025-02-26
@@ -76,11 +76,11 @@
 
 2025-03-03 * GITHUB  ; GoatCounter, prorated
     liabilities:credit-cards:chase:ink-unlimited    -6.05 USD  ; date:2025-03-04
-    expenses:devtools:github                         6.05 USD
+    expenses:donations                               6.05 USD
 
 2025-03-04 * TWILIO SENDGRID
     liabilities:credit-cards:chase:ink-unlimited   -19.95 USD  ; date:2025-03-05
-    expenses:comms:sendgrid                         19.95 USD
+    expenses:communication:sendgrid                 19.95 USD
 
 2025-03-12 * NAME-CHEAP.COM* HGYOSX  ; mineshspc.com
     liabilities:credit-cards:chase:ink-unlimited   -17.16 USD  ; date:2025-03-12
@@ -92,7 +92,7 @@
 
 2025-03-19 * GITHUB  ; arp242, GoatCounter
     liabilities:credit-cards:chase:ink-unlimited   -15.90 USD  ; date:2025-03-20
-    expenses:devtools:github                        15.90 USD
+    expenses:donations                              15.90 USD
 
 2025-03-19 * BACKBLAZE INC
     liabilities:credit-cards:chase:ink-unlimited    -1.91 USD  ; date:2025-03-20
@@ -116,7 +116,7 @@
 
 2025-04-03 * TWILIO SENDGRID
     liabilities:credit-cards:chase:ink-unlimited   -19.95 USD  ; date:2025-04-04
-    expenses:comms:sendgrid                         19.95 USD
+    expenses:communication:sendgrid                 19.95 USD
 
 2025-04-19 * BACKBLAZE INC
     liabilities:credit-cards:chase:ink-unlimited    -2.27 USD  ; date:2025-04-20
@@ -124,7 +124,7 @@
 
 2025-04-19 * GITHUB  ; arp242, GoatCounter
     liabilities:credit-cards:chase:ink-unlimited   -15.90 USD  ; date:2025-04-20
-    expenses:devtools:github                        15.90 USD
+    expenses:donations                              15.90 USD
 
 2025-04-23 * NAME-CHEAP.COM* OYQZJ3  ; nevarro.space
     liabilities:credit-cards:chase:ink-unlimited   -25.16 USD  ; date:2025-04-24
@@ -144,11 +144,11 @@
 
 2025-05-05 * TWILIO SENDGRID
     liabilities:credit-cards:chase:ink-unlimited   -19.95 USD  ; date:2025-05-06
-    expenses:comms:sendgrid                         19.95 USD
+    expenses:communication:sendgrid                 19.95 USD
 
 2025-05-19 * GITHUB  ; arp242, GoatCounter
     liabilities:credit-cards:chase:ink-unlimited   -15.90 USD  ; date:2025-05-20
-    expenses:devtools:github                        15.90 USD
+    expenses:donations                              15.90 USD
 
 2025-05-19 * BACKBLAZE INC
     liabilities:credit-cards:chase:ink-unlimited    -2.14 USD  ; date:2025-05-20
@@ -168,11 +168,11 @@
 
 2025-06-03 * TWILIO SENDGRID
     liabilities:credit-cards:chase:ink-unlimited   -19.95 USD  ; date:2025-06-04
-    expenses:comms:sendgrid                         19.95 USD
+    expenses:communication:sendgrid                 19.95 USD
 
 2025-06-19 * GITHUB  ; arp242, GoatCounter
     liabilities:credit-cards:chase:ink-unlimited   -15.90 USD  ; date:2025-06-20
-    expenses:devtools:github                        15.90 USD
+    expenses:donations                              15.90 USD
 
 2025-06-19 * BACKBLAZE INC
     liabilities:credit-cards:chase:ink-unlimited    -2.07 USD  ; date:2025-06-20
@@ -192,7 +192,7 @@
 
 2025-07-03 * TWILIO SENDGRID
     liabilities:credit-cards:chase:ink-unlimited   -19.95 USD  ; date:2025-07-04
-    expenses:comms:sendgrid                         19.95 USD
+    expenses:communication:sendgrid                 19.95 USD
 
 2025-07-19 * BACKBLAZE INC
     liabilities:credit-cards:chase:ink-unlimited    -1.84 USD  ; date:2025-07-20
@@ -200,7 +200,7 @@
 
 2025-07-19 * GITHUB  ; arp242, GoatCounter
     liabilities:credit-cards:chase:ink-unlimited   -15.90 USD  ; date:2025-07-20
-    expenses:devtools:github                        15.90 USD
+    expenses:donations                              15.90 USD
 
 2025-07-25 * Hetzner Online GmbH
     liabilities:credit-cards:chase:ink-unlimited   -40.92 USD  ; date:2025-07-27
@@ -216,11 +216,11 @@
 
 2025-08-05 * TWILIO SENDGRID
     liabilities:credit-cards:chase:ink-unlimited   -19.95 USD  ; date:2025-08-06
-    expenses:comms:sendgrid                         19.95 USD
+    expenses:communication:sendgrid                 19.95 USD
 
 2025-08-19 * GITHUB  ; arp242, GoatCounter
     liabilities:credit-cards:chase:ink-unlimited   -15.90 USD  ; date:2025-08-20
-    expenses:devtools:github                        15.90 USD
+    expenses:donations                              15.90 USD
 
 2025-08-19 * BACKBLAZE INC
     liabilities:credit-cards:chase:ink-unlimited    -1.73 USD  ; date:2025-08-20
@@ -240,11 +240,11 @@
 
 2025-09-03 * TWILIO SENDGRID
     liabilities:credit-cards:chase:ink-unlimited   -19.95 USD  ; date:2025-09-04
-    expenses:comms:sendgrid                         19.95 USD
+    expenses:communication:sendgrid                 19.95 USD
 
 2025-09-19 * GITHUB  ; arp242, GoatCounter
     liabilities:credit-cards:chase:ink-unlimited   -15.90 USD  ; date:2025-09-21
-    expenses:devtools:github                        15.90 USD
+    expenses:donations                              15.90 USD
 
 2025-09-19 * BACKBLAZE INC
     liabilities:credit-cards:chase:ink-unlimited    -1.55 USD  ; date:2025-09-21
@@ -264,7 +264,7 @@
 
 2025-10-03 * TWILIO SENDGRID
     liabilities:credit-cards:chase:ink-unlimited   -19.95 USD  ; date:2025-10-05
-    expenses:comms:sendgrid                         19.95 USD
+    expenses:communication:sendgrid                 19.95 USD
 
 2025-10-19 * BACKBLAZE INC
     liabilities:credit-cards:chase:ink-unlimited    -1.38 USD  ; date:2025-10-20
@@ -272,7 +272,7 @@
 
 2025-10-19 * GITHUB  ; arp242, GoatCounter
     liabilities:credit-cards:chase:ink-unlimited   -15.90 USD  ; date:2025-10-20
-    expenses:devtools:github                        15.90 USD
+    expenses:donations                              15.90 USD
 
 2025-10-25 * Hetzner Online GmbH
     liabilities:credit-cards:chase:ink-unlimited   -40.43 USD  ; date:2025-10-26
@@ -288,11 +288,11 @@
 
 2025-11-05 * TWILIO SENDGRID
     liabilities:credit-cards:chase:ink-unlimited   -19.95 USD  ; date:2025-11-05
-    expenses:comms:sendgrid                         19.95 USD
+    expenses:communication:sendgrid                 19.95 USD
 
 2025-11-19 * GITHUB  ; arp242, GoatCounter
     liabilities:credit-cards:chase:ink-unlimited   -15.90 USD  ; date:2025-11-20
-    expenses:devtools:github                        15.90 USD
+    expenses:donations                              15.90 USD
 
 2025-11-19 * BACKBLAZE INC
     liabilities:credit-cards:chase:ink-unlimited    -1.34 USD  ; date:2025-11-20
@@ -312,11 +312,11 @@
 
 2025-12-04 * TWILIO SENDGRID
     liabilities:credit-cards:chase:ink-unlimited   -19.95 USD  ; date:2025-12-05
-    expenses:comms:sendgrid                         19.95 USD
+    expenses:communication:sendgrid                 19.95 USD
 
 2025-12-19 * GITHUB  ; arp242, GoatCounter
     liabilities:credit-cards:chase:ink-unlimited   -15.90 USD  ; date:2025-12-21
-    expenses:devtools:github                        15.90 USD
+    expenses:donations                              15.90 USD
 
 2025-12-19 * BACKBLAZE INC
     liabilities:credit-cards:chase:ink-unlimited    -1.30 USD  ; date:2025-12-21
