@@ -135,6 +135,21 @@ from the card amount using the sponsorship tiers. GitHub's GraphQL
 `totalSponsorshipAmountAsSponsorInCents` does not give per-period amounts that
 match the charges, so don't use it as a source.
 
+### SendGrid invoices
+
+SendGrid (Twilio) invoices are dated the 1st of each month and charged a few
+days later as `TWILIO SENDGRID`. Each invoice is a transaction in
+`ledger/YYYY/sendgrid.journal` with a posting per plan
+(`expenses:communication:sendgrid:essentials` for Essentials 50K,
+`...:marketing-campaigns` for Marketing Campaigns Basic 5K since 2026-01) plus
+any overage or sales tax (`expenses:taxes:sales`), against
+`liabilities:accounts-payable:sendgrid`; the Chase import rule posts the card
+charge to that payable. `bin/sendgrid-invoice.py` parses the invoice PDFs
+(`process-mail.py` runs it on "You have a new invoice from SendGrid" emails).
+Charges since 2024 without an invoice in the mailbox are tagged
+`reconstructed:` and split by plan price. SendGrid announced in 2026-11 that
+it's merging into Twilio, so the sender or invoice format may change.
+
 ### Invoice mail
 
 `bin/process-mail.py` reads `~/Mail/Nevarro/INBOX` (the mbsync maildir), turns
@@ -157,7 +172,7 @@ since been imported, even with no new mail. Messages stay in INBOX only when
 no handler recognizes them or they fail sender verification: the sender is
 taken from `X-Original-Sender` (mail relayed by the admin@nevarro.space group)
 or `From`, and must have a DKIM pass for the vendor's domain recorded by Google
-or Migadu. Handlers so far: Hetzner, GitHub. Add new vendors as `handle_<vendor>`
+or Migadu. Handlers so far: Hetzner, GitHub, SendGrid. Add new vendors as `handle_<vendor>`
 functions in `HANDLERS` (and a `RECONCILERS` entry if they need one).
 
 ### Prices

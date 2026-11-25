@@ -24,6 +24,9 @@ Handlers:
              (see bin/hetzner-invoice.py)
     github   "[GitHub] Payment Receipt for nevarro-space" with a PDF
              (see bin/github-receipt.py)
+    sendgrid "You have a new invoice from SendGrid (INV...)" with a PDF
+             (see bin/sendgrid-invoice.py); "Your payment to SendGrid was
+             successful" confirmations are just filed
 """
 
 import argparse
@@ -56,6 +59,7 @@ def load(name: str, file: str):
 
 hetzner = load("hetzner_invoice", "hetzner-invoice.py")
 github = load("github_receipt", "github-receipt.py")
+sendgrid = load("sendgrid_invoice", "sendgrid-invoice.py")
 
 
 @dataclass
@@ -137,7 +141,28 @@ def handle_github(m: Message, tmp: Path) -> Outcome | None:
     return Outcome(m, "added" if entries else "exists", detail, entries)
 
 
-HANDLERS = [handle_hetzner, handle_github]
+def handle_sendgrid(m: Message, tmp: Path) -> Outcome | None:
+    if m.sender != "noreply@sendgrid.com":
+        return None
+    invoice = m.subject.startswith("You have a new invoice from SendGrid")
+    payment = m.subject.startswith("Your payment to SendGrid was successful")
+    if not (invoice or payment):
+        return None
+    if not m.dkim_verified("sendgrid.com"):
+        return Outcome(m, "held", "DKIM for sendgrid.com not verified; check this message by hand", [])
+    if payment:
+        # The card import already records the charge; nothing to add.
+        return Outcome(m, "exists", "payment confirmation, nothing to record", [])
+    pdfs = m.pdfs(tmp)
+    if not pdfs:
+        return None
+    results = sendgrid.generate(pdfs)
+    detail = ", ".join(f"invoice {r.invoice.number} {r.status}" for r in results)
+    entries = [("sendgrid", r.entry) for r in results if r.status == "added"]
+    return Outcome(m, "added" if entries else "exists", detail, entries)
+
+
+HANDLERS = [handle_hetzner, handle_github, handle_sendgrid]
 
 # Called after handler entries are written; each returns (vendor, entry) pairs
 # for entries that can now be completed from what's in the ledger.

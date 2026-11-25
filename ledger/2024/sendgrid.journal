@@ -1,0 +1,47 @@
+2024-01-08 * SendGrid  ; reconstructed: from the card charge, no invoice
+    expenses:communication:sendgrid:essentials   15.45 USD  ; Essentials 50K, prorated first month
+    liabilities:accounts-payable:sendgrid       -15.45 USD
+
+2024-02-06 * SendGrid  ; reconstructed: from the card charge, no invoice
+    expenses:communication:sendgrid:essentials   19.95 USD  ; Essentials 50K
+    liabilities:accounts-payable:sendgrid       -19.95 USD
+
+2024-03-07 * SendGrid  ; reconstructed: from the card charge, no invoice
+    expenses:communication:sendgrid:essentials   19.95 USD  ; Essentials 50K
+    liabilities:accounts-payable:sendgrid       -19.95 USD
+
+2024-04-04 * SendGrid  ; reconstructed: from the card charge, no invoice
+    expenses:communication:sendgrid:essentials   19.95 USD  ; Essentials 50K
+    liabilities:accounts-payable:sendgrid       -19.95 USD
+
+2024-05-05 * SendGrid  ; reconstructed: from the card charge, no invoice
+    expenses:communication:sendgrid:essentials   19.95 USD  ; Essentials 50K
+    liabilities:accounts-payable:sendgrid       -19.95 USD
+
+2024-06-05 * SendGrid  ; reconstructed: from the card charge, no invoice
+    expenses:communication:sendgrid:essentials   19.95 USD  ; Essentials 50K
+    liabilities:accounts-payable:sendgrid       -19.95 USD
+
+2024-07-05 * SendGrid  ; reconstructed: from the card charge, no invoice
+    expenses:communication:sendgrid:essentials   19.95 USD  ; Essentials 50K
+    liabilities:accounts-payable:sendgrid       -19.95 USD
+
+2024-08-04 * SendGrid  ; reconstructed: from the card charge, no invoice
+    expenses:communication:sendgrid:essentials   19.95 USD  ; Essentials 50K
+    liabilities:accounts-payable:sendgrid       -19.95 USD
+
+2024-09-04 * SendGrid  ; reconstructed: from the card charge, no invoice
+    expenses:communication:sendgrid:essentials   19.95 USD  ; Essentials 50K
+    liabilities:accounts-payable:sendgrid       -19.95 USD
+
+2024-10-03 * SendGrid  ; reconstructed: from the card charge, no invoice
+    expenses:communication:sendgrid:essentials   19.95 USD  ; Essentials 50K
+    liabilities:accounts-payable:sendgrid       -19.95 USD
+
+2024-11-05 * SendGrid  ; reconstructed: from the card charge, no invoice
+    expenses:communication:sendgrid:essentials   19.95 USD  ; Essentials 50K
+    liabilities:accounts-payable:sendgrid       -19.95 USD
+
+2024-12-04 * SendGrid  ; reconstructed: from the card charge, no invoice
+    expenses:communication:sendgrid:essentials   19.95 USD  ; Essentials 50K
+    liabilities:accounts-payable:sendgrid       -19.95 USD

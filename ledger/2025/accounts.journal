@@ -4,6 +4,7 @@ account assets:cash:bluevine
 ; Liabilities
 account liabilities:accounts-payable:github
 account liabilities:accounts-payable:hetzner
+account liabilities:accounts-payable:sendgrid
 account liabilities:credit-cards:chase:ink-unlimited
 
 ; Revenue
@@ -14,6 +15,7 @@ account revenue:credits-and-adjustments
 account expenses:backup:backblaze
 account expenses:communication:migadu
 account expenses:communication:sendgrid
+account expenses:communication:sendgrid:essentials
 account expenses:domains:namecheap
 account expenses:donations
 account expenses:donations:github:arp242

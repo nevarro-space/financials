@@ -19,8 +19,9 @@ if Hetzner
 if NAME-CHEAP
     account2 expenses:domains:namecheap
 
+# Settles the itemized invoice from bin/sendgrid-invoice.py (in sendgrid.journal).
 if TWILIO SENDGRID
-    account2 expenses:communication:sendgrid
+    account2 liabilities:accounts-payable:sendgrid
 
 if MIGADU
     account2 expenses:communication:migadu

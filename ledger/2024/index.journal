@@ -17,3 +17,4 @@ include square.journal
     liabilities:credit-cards:chase:ink-unlimited      79.31 USD = 0.00 USD
     equity:opening/closing balances
 include github.journal
+include sendgrid.journal

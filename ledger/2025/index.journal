@@ -16,3 +16,4 @@ include hetzner.journal
     liabilities:credit-cards:chase:ink-unlimited    137.87 USD = 0.00 USD
     equity:opening/closing balances
 include github.journal
+include sendgrid.journal

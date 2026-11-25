@@ -4,7 +4,7 @@
 
 2025-01-03 * TWILIO SENDGRID
     liabilities:credit-cards:chase:ink-unlimited   -19.95 USD  ; date:2025-01-05
-    expenses:communication:sendgrid                 19.95 USD
+    liabilities:accounts-payable:sendgrid           19.95 USD
 
 2025-01-04 * CO SECRETARY STATE FEE
     liabilities:credit-cards:chase:ink-unlimited   -25.00 USD  ; date:2025-01-05
@@ -44,7 +44,7 @@
 
 2025-02-04 * TWILIO SENDGRID
     liabilities:credit-cards:chase:ink-unlimited   -19.95 USD  ; date:2025-02-05
-    expenses:communication:sendgrid                 19.95 USD
+    liabilities:accounts-payable:sendgrid           19.95 USD
 
 2025-02-19 * BACKBLAZE INC
     liabilities:credit-cards:chase:ink-unlimited    -2.02 USD  ; date:2025-02-20
@@ -80,7 +80,7 @@
 
 2025-03-04 * TWILIO SENDGRID
     liabilities:credit-cards:chase:ink-unlimited   -19.95 USD  ; date:2025-03-05
-    expenses:communication:sendgrid                 19.95 USD
+    liabilities:accounts-payable:sendgrid           19.95 USD
 
 2025-03-12 * NAME-CHEAP.COM* HGYOSX  ; mineshspc.com
     liabilities:credit-cards:chase:ink-unlimited   -17.16 USD  ; date:2025-03-12
@@ -116,7 +116,7 @@
 
 2025-04-03 * TWILIO SENDGRID
     liabilities:credit-cards:chase:ink-unlimited   -19.95 USD  ; date:2025-04-04
-    expenses:communication:sendgrid                 19.95 USD
+    liabilities:accounts-payable:sendgrid           19.95 USD
 
 2025-04-19 * BACKBLAZE INC
     liabilities:credit-cards:chase:ink-unlimited    -2.27 USD  ; date:2025-04-20
@@ -144,7 +144,7 @@
 
 2025-05-05 * TWILIO SENDGRID
     liabilities:credit-cards:chase:ink-unlimited   -19.95 USD  ; date:2025-05-06
-    expenses:communication:sendgrid                 19.95 USD
+    liabilities:accounts-payable:sendgrid           19.95 USD
 
 2025-05-19 * GITHUB  ; arp242, GoatCounter
     liabilities:credit-cards:chase:ink-unlimited   -15.90 USD  ; date:2025-05-20
@@ -168,7 +168,7 @@
 
 2025-06-03 * TWILIO SENDGRID
     liabilities:credit-cards:chase:ink-unlimited   -19.95 USD  ; date:2025-06-04
-    expenses:communication:sendgrid                 19.95 USD
+    liabilities:accounts-payable:sendgrid           19.95 USD
 
 2025-06-19 * GITHUB  ; arp242, GoatCounter
     liabilities:credit-cards:chase:ink-unlimited   -15.90 USD  ; date:2025-06-20
@@ -192,7 +192,7 @@
 
 2025-07-03 * TWILIO SENDGRID
     liabilities:credit-cards:chase:ink-unlimited   -19.95 USD  ; date:2025-07-04
-    expenses:communication:sendgrid                 19.95 USD
+    liabilities:accounts-payable:sendgrid           19.95 USD
 
 2025-07-19 * BACKBLAZE INC
     liabilities:credit-cards:chase:ink-unlimited    -1.84 USD  ; date:2025-07-20
@@ -216,7 +216,7 @@
 
 2025-08-05 * TWILIO SENDGRID
     liabilities:credit-cards:chase:ink-unlimited   -19.95 USD  ; date:2025-08-06
-    expenses:communication:sendgrid                 19.95 USD
+    liabilities:accounts-payable:sendgrid           19.95 USD
 
 2025-08-19 * GITHUB  ; arp242, GoatCounter
     liabilities:credit-cards:chase:ink-unlimited   -15.90 USD  ; date:2025-08-20
@@ -240,7 +240,7 @@
 
 2025-09-03 * TWILIO SENDGRID
     liabilities:credit-cards:chase:ink-unlimited   -19.95 USD  ; date:2025-09-04
-    expenses:communication:sendgrid                 19.95 USD
+    liabilities:accounts-payable:sendgrid           19.95 USD
 
 2025-09-19 * GITHUB  ; arp242, GoatCounter
     liabilities:credit-cards:chase:ink-unlimited   -15.90 USD  ; date:2025-09-21
@@ -264,7 +264,7 @@
 
 2025-10-03 * TWILIO SENDGRID
     liabilities:credit-cards:chase:ink-unlimited   -19.95 USD  ; date:2025-10-05
-    expenses:communication:sendgrid                 19.95 USD
+    liabilities:accounts-payable:sendgrid           19.95 USD
 
 2025-10-19 * BACKBLAZE INC
     liabilities:credit-cards:chase:ink-unlimited    -1.38 USD  ; date:2025-10-20
@@ -288,7 +288,7 @@
 
 2025-11-05 * TWILIO SENDGRID
     liabilities:credit-cards:chase:ink-unlimited   -19.95 USD  ; date:2025-11-05
-    expenses:communication:sendgrid                 19.95 USD
+    liabilities:accounts-payable:sendgrid           19.95 USD
 
 2025-11-19 * GITHUB  ; arp242, GoatCounter
     liabilities:credit-cards:chase:ink-unlimited   -15.90 USD  ; date:2025-11-20
@@ -312,7 +312,7 @@
 
 2025-12-04 * TWILIO SENDGRID
     liabilities:credit-cards:chase:ink-unlimited   -19.95 USD  ; date:2025-12-05
-    expenses:communication:sendgrid                 19.95 USD
+    liabilities:accounts-payable:sendgrid           19.95 USD
 
 2025-12-19 * GITHUB  ; arp242, GoatCounter
     liabilities:credit-cards:chase:ink-unlimited   -15.90 USD  ; date:2025-12-21
