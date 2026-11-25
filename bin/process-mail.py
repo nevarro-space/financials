@@ -19,18 +19,7 @@ Usage (after `mbsync Nevarro` and importing the latest Chase CSV):
 A message whose document is already in the ledger is just moved. Messages no
 handler recognizes, or that fail sender verification, are left in INBOX.
 
-Handlers:
-    hetzner  "Hetzner Online GmbH - Invoice|Cancellation ..." with a PDF
-             (see bin/hetzner-invoice.py)
-    github   "[GitHub] Payment Receipt for nevarro-space" with a PDF
-             (see bin/github-receipt.py)
-    sendgrid "You have a new invoice from SendGrid (INV...)" with a PDF
-             (see bin/sendgrid-invoice.py); "Your payment to SendGrid was
-             successful" confirmations are just filed
-    namecheap "Namecheap Order Summary (Order# N)" (items are in the HTML part;
-             see bin/namecheap-order.py)
-    google   "Google Workspace: Your invoice is available ..." with a PDF
-             (see bin/google-invoice.py)
+Vendors (sender, subjects, parser) are listed in VENDORS below.
 """
 
 import argparse
@@ -39,12 +28,14 @@ import email.policy
 import email.utils
 import importlib.util
 import re
+import shutil
 import subprocess
 import sys
 import tempfile
 from dataclasses import dataclass
 from email.message import EmailMessage
 from pathlib import Path
+from typing import Any
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
 LEDGER_DIR = REPO_ROOT / "ledger"
@@ -117,85 +108,64 @@ class Outcome:
     entries: list[tuple[str, str]]  # (journal name, entry text)
 
 
-def handle_hetzner(m: Message, tmp: Path) -> Outcome | None:
-    if not m.sender.endswith("@hetzner.com") or not re.match(
-        r"Hetzner Online GmbH - (Invoice|Cancellation) ", m.subject
-    ):
+@dataclass
+class Vendor:
+    """How to recognize and process one vendor's mail.
+
+    `senders` are original sender addresses; one starting with "@" matches any
+    address at that domain. `subjects` are subject prefixes of mail carrying a
+    document; `file_only` prefixes are mail that's just filed (e.g. payment
+    confirmations the card import already covers). `source` is what the
+    module's generate() takes: the PDF attachments, or the message itself.
+    """
+
+    journal: str
+    module: Any
+    senders: tuple[str, ...]
+    dkim: str
+    subjects: tuple[str, ...]
+    source: str = "pdf"  # or "message"
+    file_only: tuple[str, ...] = ()
+
+    def sent(self, m: Message) -> bool:
+        return any(m.sender.endswith(s) if s.startswith("@") else m.sender == s for s in self.senders)
+
+
+VENDORS = [
+    Vendor("hetzner", hetzner, ("@hetzner.com",), "hetzner.com",
+           ("Hetzner Online GmbH - Invoice ", "Hetzner Online GmbH - Cancellation ")),
+    Vendor("github", github, ("noreply@github.com",), "github.com",
+           ("[GitHub] Payment Receipt for nevarro-space",)),
+    Vendor("sendgrid", sendgrid, ("noreply@sendgrid.com",), "sendgrid.com",
+           ("You have a new invoice from SendGrid",),
+           file_only=("Your payment to SendGrid was successful",)),
+    Vendor("namecheap", namecheap, ("support@namecheap.com",), "namecheap.com",
+           ("Namecheap Order Summary",), source="message"),
+    Vendor("google", google, ("payments-noreply@google.com",), "google.com",
+           ("Google Workspace: Your invoice is available",)),
+]
+
+
+def handle(v: Vendor, m: Message, tmp: Path) -> Outcome | None:
+    document = m.subject.startswith(v.subjects)
+    filing = m.subject.startswith(v.file_only) if v.file_only else False
+    if not v.sent(m) or not (document or filing):
         return None
-    if not m.dkim_verified("hetzner.com"):
-        return Outcome(m, "held", "DKIM for hetzner.com not verified; check this message by hand", [])
-    pdfs = m.pdfs(tmp)
-    if not pdfs:
-        return None
-    results = hetzner.generate(pdfs)
-    detail = ", ".join(f"{r.invoice.kind.lower()} {r.invoice.number} {r.status}" for r in results)
-    entries = [("hetzner", r.entry) for r in results if r.status == "added"]
+    if not m.dkim_verified(v.dkim):
+        return Outcome(m, "held", f"DKIM for {v.dkim} not verified; check this message by hand", [])
+    if filing:
+        return Outcome(m, "exists", "nothing to record (covered by the card import)", [])
+    if v.source == "message":
+        results = v.module.generate([m.msg])
+    else:
+        pdfs = m.pdfs(tmp)
+        if not pdfs:
+            return None
+        results = v.module.generate(pdfs)
+    detail = ", ".join(f"{r.label} {r.status}" for r in results)
+    entries = [(v.journal, r.entry) for r in results if r.status == "added"]
     return Outcome(m, "added" if entries else "exists", detail, entries)
 
-
-def handle_github(m: Message, tmp: Path) -> Outcome | None:
-    if m.sender != "noreply@github.com" or not m.subject.startswith("[GitHub] Payment Receipt for nevarro-space"):
-        return None
-    if not m.dkim_verified("github.com"):
-        return Outcome(m, "held", "DKIM for github.com not verified; check this message by hand", [])
-    pdfs = m.pdfs(tmp)
-    if not pdfs:
-        return None
-    results = github.generate(pdfs)
-    detail = ", ".join(f"receipt {r.receipt.txn_id} {r.status}" for r in results)
-    entries = [("github", r.entry) for r in results if r.status == "added"]
-    return Outcome(m, "added" if entries else "exists", detail, entries)
-
-
-def handle_sendgrid(m: Message, tmp: Path) -> Outcome | None:
-    if m.sender != "noreply@sendgrid.com":
-        return None
-    invoice = m.subject.startswith("You have a new invoice from SendGrid")
-    payment = m.subject.startswith("Your payment to SendGrid was successful")
-    if not (invoice or payment):
-        return None
-    if not m.dkim_verified("sendgrid.com"):
-        return Outcome(m, "held", "DKIM for sendgrid.com not verified; check this message by hand", [])
-    if payment:
-        # The card import already records the charge; nothing to add.
-        return Outcome(m, "exists", "payment confirmation, nothing to record", [])
-    pdfs = m.pdfs(tmp)
-    if not pdfs:
-        return None
-    results = sendgrid.generate(pdfs)
-    detail = ", ".join(f"invoice {r.invoice.number} {r.status}" for r in results)
-    entries = [("sendgrid", r.entry) for r in results if r.status == "added"]
-    return Outcome(m, "added" if entries else "exists", detail, entries)
-
-
-def handle_namecheap(m: Message, tmp: Path) -> Outcome | None:
-    if m.sender != "support@namecheap.com" or not m.subject.startswith("Namecheap Order Summary"):
-        return None
-    if not m.dkim_verified("namecheap.com"):
-        return Outcome(m, "held", "DKIM for namecheap.com not verified; check this message by hand", [])
-    results = namecheap.generate([m.msg])
-    detail = ", ".join(f"order {r.order.number} {r.status}" for r in results)
-    entries = [("namecheap", r.entry) for r in results if r.status == "added"]
-    return Outcome(m, "added" if entries else "exists", detail, entries)
-
-
-def handle_google(m: Message, tmp: Path) -> Outcome | None:
-    if m.sender != "payments-noreply@google.com" or not m.subject.startswith(
-        "Google Workspace: Your invoice is available"
-    ):
-        return None
-    if not m.dkim_verified("google.com"):
-        return Outcome(m, "held", "DKIM for google.com not verified; check this message by hand", [])
-    pdfs = m.pdfs(tmp)
-    if not pdfs:
-        return None
-    results = google.generate(pdfs)
-    detail = ", ".join(f"invoice {r.invoice.number} {r.status}" for r in results)
-    entries = [("google", r.entry) for r in results if r.status == "added"]
-    return Outcome(m, "added" if entries else "exists", detail, entries)
-
-
-HANDLERS = [handle_hetzner, handle_github, handle_sendgrid, handle_namecheap, handle_google]
 
 # Called after handler entries are written; each returns (vendor, entry) pairs
 # for entries that can now be completed from what's in the ledger.
@@ -216,7 +186,8 @@ def insert_sorted(journal: Path, entry: str) -> None:
     after any transactions on or before its date (keeps ordereddates)."""
     entry = entry.strip("\n")
     date = entry[:10]
-    blocks = journal.read_text().strip("\n").split("\n\n") if journal.exists() else []
+    text = journal.read_text().strip("\n") if journal.exists() else ""
+    blocks = text.split("\n\n") if text else []
     i = len(blocks)
     for j, block in enumerate(blocks):
         if re.match(r"\d{4}-\d\d-\d\d", block) and block[:10] > date:
@@ -268,6 +239,17 @@ def declare_new_accounts(entries: list[tuple[str, str]], backups: dict[Path, str
     return declared
 
 
+def format_journals(paths: list[Path]) -> None:
+    """Run the repo's hledger-fmt pre-commit hook on the files we changed, so
+    they're already formatted the way the commit hook wants them."""
+    if not paths or not shutil.which("pre-commit"):
+        return
+    subprocess.run(
+        ["pre-commit", "run", "hledger-fmt", "--files", *(str(p) for p in paths)],
+        cwd=REPO_ROOT, capture_output=True,
+    )
+
+
 def ledger_ok() -> tuple[bool, str]:
     r = subprocess.run(
         ["hledger", "-f", str(LEDGER_DIR / "all.journal"), "check", "-s", "ordereddates"],
@@ -300,8 +282,8 @@ def main() -> None:
     outcomes: list[Outcome] = []
     with tempfile.TemporaryDirectory() as tmp:
         for m in read_messages(inbox):
-            for handler in HANDLERS:
-                outcome = handler(m, Path(tempfile.mkdtemp(dir=tmp)))
+            for v in VENDORS:
+                outcome = handle(v, m, Path(tempfile.mkdtemp(dir=tmp)))
                 if outcome:
                     outcomes.append(outcome)
                     break
@@ -335,6 +317,8 @@ def main() -> None:
     added = [(v, e) for o in outcomes if o.status == "added" for v, e in o.entries] + reconciled
     for d in declare_new_accounts(added, backups):
         print(f"declared {d}")
+
+    format_journals([p for p in backups if p.exists()])
 
     if backups:
         ok, err = ledger_ok()

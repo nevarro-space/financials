@@ -17,15 +17,14 @@ Requires `pdftotext` (poppler-utils) and `hledger` on PATH.
 """
 
 import re
-import subprocess
 import sys
 from dataclasses import dataclass, field
 from datetime import date, datetime
 from decimal import Decimal
 from pathlib import Path
 
-REPO_ROOT = Path(__file__).resolve().parent.parent
-LEDGER_FILE = REPO_ROOT / "ledger" / "all.journal"
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+import invoicelib as lib  # noqa: E402
 
 AP = "liabilities:accounts-payable:sendgrid"
 EXPENSE = "expenses:communication:sendgrid"
@@ -61,14 +60,9 @@ def money(s: str) -> Decimal:
     return Decimal(s.replace(",", ""))
 
 
-def pdf_text(path: Path, *opts: str) -> str:
-    return subprocess.run(
-        ["pdftotext", *opts, str(path), "-"], capture_output=True, text=True, check=True
-    ).stdout
-
 
 def parse(path: Path) -> Invoice:
-    layout = pdf_text(path, "-layout")
+    layout = lib.pdf_text(path, "-layout")
     num = re.search(r"Invoice Number:\s*(INV\d+)", layout)
     d = re.search(r"Invoice Date:\s*(\d\d-\w{3}-\d{4})", layout)
     total = re.search(rf"Total Including Taxes in USD\s+{MONEY}", layout)
@@ -79,7 +73,7 @@ def parse(path: Path) -> Invoice:
     # In -raw mode each charge row is: name lines, description lines, a
     # "DD-Mon-YYYY -" / "DD-Mon-YYYY" service period, then
     # "[quantity] $subtotal $tax $total" (quantity was added in 2026-11).
-    raw = pdf_text(path, "-raw")
+    raw = lib.pdf_text(path, "-raw")
     section = raw[raw.index("CHARGE SUMMARY"):raw.index("TAX SUMMARY")]
     lines = section.splitlines()[2:]  # skip the title and column headers
     row: list[str] = []
@@ -121,40 +115,10 @@ def render(inv: Invoice) -> str:
     return "\n".join(lines) + "\n"
 
 
-def invoices_in_ledger() -> set[str]:
-    out = subprocess.run(
-        ["hledger", "-f", str(LEDGER_FILE), "print", "desc:^SendGrid invoice "],
-        capture_output=True, text=True, check=True,
-    ).stdout
-    return set(re.findall(r"SendGrid invoice (INV\d+)", out))
-
-
-@dataclass
-class Result:
-    invoice: Invoice
-    status: str  # "added" or "exists"
-    entry: str = ""
-
-
-def generate(paths: list[Path]) -> list[Result]:
-    seen = invoices_in_ledger()
-    results = []
-    for inv in sorted((parse(p) for p in paths), key=lambda i: (i.date, i.number)):
-        if inv.number in seen:
-            results.append(Result(inv, "exists"))
-        else:
-            seen.add(inv.number)
-            results.append(Result(inv, "added", render(inv)))
-    return results
-
-
-def main() -> None:
-    results = generate([Path(p) for p in sys.argv[1:]])
-    for r in results:
-        if r.status == "exists":
-            print(f"skip {r.invoice.number}: already in ledger", file=sys.stderr)
-    sys.stdout.write("\n".join(r.entry for r in results if r.status == "added"))
+def generate(paths: list[Path]) -> list[lib.Result]:
+    seen = lib.numbers_in_ledger("desc:^SendGrid invoice ", r"SendGrid invoice (INV\d+)")
+    return lib.generate((parse(p) for p in paths), seen, render, lambda i: f"invoice {i.number}")
 
 
 if __name__ == "__main__":
-    main()
+    lib.main(lambda args: generate([Path(a) for a in args]))

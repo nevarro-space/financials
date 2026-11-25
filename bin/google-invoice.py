@@ -19,15 +19,14 @@ Requires `pdftotext` (poppler-utils) and `hledger` on PATH.
 """
 
 import re
-import subprocess
 import sys
 from dataclasses import dataclass, field
 from datetime import date, datetime
 from decimal import Decimal
 from pathlib import Path
 
-REPO_ROOT = Path(__file__).resolve().parent.parent
-LEDGER_FILE = REPO_ROOT / "ledger" / "all.journal"
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+import invoicelib as lib  # noqa: E402
 
 AP = "liabilities:accounts-payable:google"
 EXPENSE = "expenses:communication:google-workspace"
@@ -54,14 +53,9 @@ def money(s: str) -> Decimal:
     return Decimal(s.replace(",", "").replace("$", ""))
 
 
-def pdf_text(path: Path) -> str:
-    return subprocess.run(
-        ["pdftotext", "-layout", str(path), "-"], capture_output=True, text=True, check=True
-    ).stdout
-
 
 def parse(path: Path) -> Invoice:
-    text = pdf_text(path)
+    text = lib.pdf_text(path, "-layout")
     num = re.search(r"Invoice number:\s*(\d+)", text)
     # The invoice date sits on the summary's first "Total in USD" line.
     d = re.search(r"(\w{3} \d{1,2}, \d{4})\s+Total in USD", text)
@@ -108,40 +102,10 @@ def render(inv: Invoice) -> str:
     return "\n".join(lines) + "\n"
 
 
-def invoices_in_ledger() -> set[str]:
-    out = subprocess.run(
-        ["hledger", "-f", str(LEDGER_FILE), "print", "desc:^Google Workspace invoice "],
-        capture_output=True, text=True, check=True,
-    ).stdout
-    return set(re.findall(r"Google Workspace invoice (\d+)", out))
-
-
-@dataclass
-class Result:
-    invoice: Invoice
-    status: str  # "added" or "exists"
-    entry: str = ""
-
-
-def generate(paths: list[Path]) -> list[Result]:
-    seen = invoices_in_ledger()
-    results = []
-    for inv in sorted((parse(p) for p in paths), key=lambda i: (i.date, i.number)):
-        if inv.number in seen:
-            results.append(Result(inv, "exists"))
-        else:
-            seen.add(inv.number)
-            results.append(Result(inv, "added", render(inv)))
-    return results
-
-
-def main() -> None:
-    results = generate([Path(p) for p in sys.argv[1:]])
-    for r in results:
-        if r.status == "exists":
-            print(f"skip {r.invoice.number}: already in ledger", file=sys.stderr)
-    sys.stdout.write("\n".join(r.entry for r in results if r.status == "added"))
+def generate(paths: list[Path]) -> list[lib.Result]:
+    seen = lib.numbers_in_ledger("desc:^Google Workspace invoice ", r"Google Workspace invoice (\d+)")
+    return lib.generate((parse(p) for p in paths), seen, render, lambda i: f"invoice {i.number}")
 
 
 if __name__ == "__main__":
-    main()
+    lib.main(lambda args: generate([Path(a) for a in args]))

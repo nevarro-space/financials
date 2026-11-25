@@ -18,15 +18,14 @@ Requires `pdftotext` (poppler-utils) and `hledger` on PATH.
 """
 
 import re
-import subprocess
 import sys
 from dataclasses import dataclass, field
 from datetime import date
 from decimal import Decimal
 from pathlib import Path
 
-REPO_ROOT = Path(__file__).resolve().parent.parent
-LEDGER_FILE = REPO_ROOT / "ledger" / "all.journal"
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+import invoicelib as lib  # noqa: E402
 
 AP = "liabilities:accounts-payable:github"
 DONATION = "expenses:donations:github"
@@ -49,15 +48,13 @@ class Receipt:
     lines: list[Line] = field(default_factory=list)
     total: Decimal = Decimal(0)
 
-
-def pdf_text(path: Path) -> str:
-    return subprocess.run(
-        ["pdftotext", "-layout", str(path), "-"], capture_output=True, text=True, check=True
-    ).stdout
+    @property
+    def number(self) -> str:
+        return self.txn_id
 
 
 def parse(path: Path) -> Receipt:
-    text = pdf_text(path)
+    text = lib.pdf_text(path, "-layout")
     d = re.search(r"^\s*Date\s+(\d{4}-\d\d-\d\d)", text, re.M)
     tid = re.search(r"^\s*Transaction ID\s+(\S+)", text, re.M)
     total = re.search(r"^\s*Total\s+\$([\d,]+\.\d\d)", text, re.M)
@@ -98,40 +95,10 @@ def render(r: Receipt) -> str:
     return "\n".join(lines) + "\n"
 
 
-def receipts_in_ledger() -> set[str]:
-    out = subprocess.run(
-        ["hledger", "-f", str(LEDGER_FILE), "print", "desc:^GitHub Sponsors receipt "],
-        capture_output=True, text=True, check=True,
-    ).stdout
-    return set(re.findall(r"GitHub Sponsors receipt (\S+)", out))
-
-
-@dataclass
-class Result:
-    receipt: Receipt
-    status: str  # "added" or "exists"
-    entry: str = ""
-
-
-def generate(paths: list[Path]) -> list[Result]:
-    seen = receipts_in_ledger()
-    results = []
-    for r in sorted((parse(p) for p in paths), key=lambda r: (r.date, r.txn_id)):
-        if r.txn_id in seen:
-            results.append(Result(r, "exists"))
-        else:
-            seen.add(r.txn_id)
-            results.append(Result(r, "added", render(r)))
-    return results
-
-
-def main() -> None:
-    results = generate([Path(p) for p in sys.argv[1:]])
-    for r in results:
-        if r.status == "exists":
-            print(f"skip {r.receipt.txn_id}: already in ledger", file=sys.stderr)
-    sys.stdout.write("\n".join(r.entry for r in results if r.status == "added"))
+def generate(paths: list[Path]) -> list[lib.Result]:
+    seen = lib.numbers_in_ledger("desc:^GitHub Sponsors receipt ", r"GitHub Sponsors receipt (\S+)")
+    return lib.generate((parse(p) for p in paths), seen, render, lambda r: f"receipt {r.txn_id}")
 
 
 if __name__ == "__main__":
-    main()
+    lib.main(lambda args: generate([Path(a) for a in args]))

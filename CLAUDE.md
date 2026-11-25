@@ -78,7 +78,7 @@ Useful queries in place of the old reports:
 ```bash
 hledger bs -e 2026-10-01                  # equity at a point in time
 hledger is -M -p 2026                     # revenue/expenses by month
-hledger bal --budget -Q -p 2026           # budget vs. actual by quarter
+hledger bal --budget -Q -p 2026 expenses  # budget vs. actual by quarter
 hledger print tag:commentary              # all period commentary
 hledger print tag:commentary -p 2026q3    # commentary for a period
 ```
@@ -204,10 +204,18 @@ since been imported, even with no new mail. Messages stay in INBOX only when
 no handler recognizes them or they fail sender verification: the sender is
 taken from `X-Original-Sender` (mail relayed by the admin@nevarro.space group)
 or `From`, and must have a DKIM pass for the vendor's domain recorded by Google
-or Migadu. Handlers so far: Hetzner, GitHub, SendGrid, Namecheap, Google. Add new vendors as `handle_<vendor>`
-functions in `HANDLERS` (and a `RECONCILERS` entry if they need one). New
-subaccounts under the prefixes in `AUTO_DECLARE` (per domain, per GitHub
-maintainer) are declared in that year's `accounts.journal` automatically.
+or Migadu. Vendors so far: Hetzner, GitHub, SendGrid, Namecheap, Google.
+Changed journals are formatted with the repo's `hledger-fmt` pre-commit hook
+before the check, so commits don't trip it.
+
+To add a vendor: write `bin/<vendor>-invoice.py` with `parse()` (documents
+with `number` and `date`) and `render()`, using `bin/invoicelib.py` for the
+shared `generate()`/`main()` plumbing; add a `Vendor` row to `VENDORS` in
+`process-mail.py` (senders, DKIM domain, subject prefixes); and a
+`RECONCILERS` entry if entries depend on other imports (like Hetzner's
+payments). New subaccounts under the prefixes in `AUTO_DECLARE` (per domain,
+per GitHub maintainer) are declared in that year's `accounts.journal`
+automatically.
 
 ### Prices
 

@@ -26,18 +26,15 @@ reported on stderr.
 Requires `pdftotext` (poppler-utils) and `hledger` on PATH.
 """
 
-import csv
-import io
 import re
-import subprocess
 import sys
 from dataclasses import dataclass, field
 from datetime import date, datetime, timedelta
 from decimal import Decimal
 from pathlib import Path
 
-REPO_ROOT = Path(__file__).resolve().parent.parent
-LEDGER_FILE = REPO_ROOT / "ledger" / "all.journal"
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+import invoicelib as lib  # noqa: E402
 
 AP = "liabilities:accounts-payable:hetzner"
 EXPENSE = "expenses:hosting:hetzner"
@@ -72,14 +69,9 @@ def eur(s: str) -> Decimal:
     return Decimal(s.replace(",", ""))
 
 
-def pdf_text(path: Path) -> str:
-    return subprocess.run(
-        ["pdftotext", "-layout", str(path), "-"], capture_output=True, text=True, check=True
-    ).stdout
-
 
 def parse(path: Path) -> Invoice:
-    text = pdf_text(path)
+    text = lib.pdf_text(path, "-layout")
     m = re.search(r"^(Invoice|Cancellation) (\w+)(?: for invoice (\w+))?\s*$", text, re.M)
     if not m:
         raise ValueError(f"{path}: no invoice/cancellation header")
@@ -160,14 +152,6 @@ def parse_old_items(text: str, inv: Invoice) -> None:
         inv.items.append(Item(amount, comment))
 
 
-def hledger_csv(*args: str) -> list[dict]:
-    out = subprocess.run(
-        ["hledger", "-f", str(LEDGER_FILE), *args, "-O", "csv"],
-        capture_output=True, text=True, check=True,
-    ).stdout
-    return list(csv.DictReader(io.StringIO(out)))
-
-
 def amount(s: str) -> Decimal:
     return Decimal(re.sub(r"[A-Z, ]", "", s))
 
@@ -214,10 +198,7 @@ class LedgerDoc:
 
 def ledger_docs() -> dict[str, LedgerDoc]:
     """Hetzner invoices/cancellations already in the ledger, by number."""
-    out = subprocess.run(
-        ["hledger", "-f", str(LEDGER_FILE), "print", "desc:^Hetzner (Invoice|Cancellation) "],
-        capture_output=True, text=True, check=True,
-    ).stdout
+    out = lib.hledger("print", "desc:^Hetzner (Invoice|Cancellation) ")
     docs = {}
     for m in re.finditer(
         r"^(\d{4}-\d\d-\d\d) \S* ?Hetzner (Invoice|Cancellation) (\w+)"
@@ -239,23 +220,16 @@ def credit_settled_invoices(docs: dict[str, LedgerDoc]) -> set[str]:
     }
 
 
-@dataclass
-class Result:
-    invoice: Invoice
-    status: str  # "added" or "exists"
-    entry: str = ""
-
-
-def generate(paths: list[Path]) -> list[Result]:
+def generate(paths: list[Path]) -> list[lib.Result]:
     """Parse the given PDFs and return one Result per document, in date order.
     Only "added" results carry a journal entry."""
     in_ledger = ledger_docs()
     results = []
     for inv in sorted((parse(p) for p in paths), key=lambda i: (i.date, i.number)):
         if inv.number in in_ledger:
-            results.append(Result(inv, "exists"))
+            results.append(lib.Result(inv, "exists", f"{inv.kind.lower()} {inv.number}"))
         else:
-            results.append(Result(inv, "added", render(inv)))
+            results.append(lib.Result(inv, "added", f"{inv.kind.lower()} {inv.number}", render(inv)))
     return results
 
 
@@ -265,11 +239,11 @@ def payments() -> list[str]:
     docs = ledger_docs()
     skip = credit_settled_invoices(docs)
     paid = {
-        m[1] for r in hledger_csv("register", f"acct:^{AP}$", "desc:^Hetzner payment for invoice")
+        m[1] for r in lib.hledger_csv("register", f"acct:^{AP}$", "desc:^Hetzner payment for invoice")
         if (m := re.search(r"invoice (\w+)", r["description"]))
     }
     owed = {}  # invoice number -> EUR total, from the invoice's payable posting
-    for r in hledger_csv("register", f"acct:^{AP}$", "cur:EUR", "desc:^Hetzner Invoice "):
+    for r in lib.hledger_csv("register", f"acct:^{AP}$", "cur:EUR", "desc:^Hetzner Invoice "):
         m = re.match(r"Hetzner Invoice (\w+)", r["description"])
         if m:
             owed[m[1]] = -amount(r["amount"])
@@ -280,11 +254,11 @@ def payments() -> list[str]:
 
     charges = [
         (date.fromisoformat(r["date"]), amount(r["amount"]))
-        for r in hledger_csv("register", f"acct:^{AP}$", "cur:USD", "desc:hetzner")
+        for r in lib.hledger_csv("register", f"acct:^{AP}$", "cur:USD", "desc:hetzner")
         if not re.match(r"Hetzner (payment|Invoice|Cancellation) ", r["description"])
         and amount(r["amount"]) > 0
     ]
-    for r in hledger_csv("register", f"acct:^{AP}$", "cur:USD", "desc:^Hetzner payment for invoice"):
+    for r in lib.hledger_csv("register", f"acct:^{AP}$", "cur:USD", "desc:^Hetzner payment for invoice"):
         c = (date.fromisoformat(r["date"]), -amount(r["amount"]))
         if c in charges:
             charges.remove(c)
@@ -304,11 +278,7 @@ def main() -> None:
     if sys.argv[1:] == ["--payments"]:
         sys.stdout.write("\n".join(payments()))
         return
-    results = generate([Path(p) for p in sys.argv[1:]])
-    for r in results:
-        if r.status == "exists":
-            print(f"skip {r.invoice.number}: already in ledger", file=sys.stderr)
-    sys.stdout.write("\n".join(r.entry for r in results if r.status == "added"))
+    lib.main(lambda args: generate([Path(a) for a in args]))
 
 
 if __name__ == "__main__":

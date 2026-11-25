@@ -23,7 +23,6 @@ import email
 import email.policy
 import html
 import re
-import subprocess
 import sys
 from dataclasses import dataclass, field
 from datetime import date, datetime
@@ -31,8 +30,8 @@ from decimal import Decimal
 from email.message import EmailMessage
 from pathlib import Path
 
-REPO_ROOT = Path(__file__).resolve().parent.parent
-LEDGER_FILE = REPO_ROOT / "ledger" / "all.journal"
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+import invoicelib as lib  # noqa: E402
 
 AP = "liabilities:accounts-payable:namecheap"
 EXPENSE = "expenses:domains:namecheap"
@@ -137,44 +136,15 @@ def render(o: Order) -> str:
     return "\n".join(lines) + "\n"
 
 
-def orders_in_ledger() -> set[str]:
-    out = subprocess.run(
-        ["hledger", "-f", str(LEDGER_FILE), "print", "desc:^Namecheap order "],
-        capture_output=True, text=True, check=True,
-    ).stdout
-    return set(re.findall(r"Namecheap order (\d+)", out))
+def generate(messages: list[EmailMessage]) -> list[lib.Result]:
+    seen = lib.numbers_in_ledger("desc:^Namecheap order ", r"Namecheap order (\d+)")
+    return lib.generate((parse_message(m) for m in messages), seen, render, lambda o: f"order {o.number}")
 
 
-@dataclass
-class Result:
-    order: Order
-    status: str  # "added" or "exists"
-    entry: str = ""
-
-
-def generate(messages: list[EmailMessage]) -> list[Result]:
-    seen = orders_in_ledger()
-    results = []
-    for o in sorted((parse_message(m) for m in messages), key=lambda o: (o.date, o.number)):
-        if o.number in seen:
-            results.append(Result(o, "exists"))
-        else:
-            seen.add(o.number)
-            results.append(Result(o, "added", render(o)))
-    return results
-
-
-def main() -> None:
-    msgs = []
-    for p in sys.argv[1:]:
-        with open(p, "rb") as f:
-            msgs.append(email.message_from_binary_file(f, policy=email.policy.default))
-    results = generate(msgs)
-    for r in results:
-        if r.status == "exists":
-            print(f"skip order {r.order.number}: already in ledger", file=sys.stderr)
-    sys.stdout.write("\n".join(r.entry for r in results if r.status == "added"))
+def read_eml(path: str) -> EmailMessage:
+    with open(path, "rb") as f:
+        return email.message_from_binary_file(f, policy=email.policy.default)
 
 
 if __name__ == "__main__":
-    main()
+    lib.main(lambda args: generate([read_eml(a) for a in args]))
