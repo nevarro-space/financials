@@ -29,7 +29,7 @@ LEDGER_FILE = REPO_ROOT / "ledger" / "all.journal"
 
 AP = "liabilities:accounts-payable:sendgrid"
 EXPENSE = "expenses:communication:sendgrid"
-TAX = "expenses:taxes:sales"
+TAX = "expenses:taxes:sales:sendgrid"
 
 # Charge name prefix -> subaccount of EXPENSE.
 PLANS = [

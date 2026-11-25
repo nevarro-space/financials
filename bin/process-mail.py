@@ -29,6 +29,8 @@ Handlers:
              successful" confirmations are just filed
     namecheap "Namecheap Order Summary (Order# N)" (items are in the HTML part;
              see bin/namecheap-order.py)
+    google   "Google Workspace: Your invoice is available ..." with a PDF
+             (see bin/google-invoice.py)
 """
 
 import argparse
@@ -63,6 +65,7 @@ hetzner = load("hetzner_invoice", "hetzner-invoice.py")
 github = load("github_receipt", "github-receipt.py")
 sendgrid = load("sendgrid_invoice", "sendgrid-invoice.py")
 namecheap = load("namecheap_order", "namecheap-order.py")
+google = load("google_invoice", "google-invoice.py")
 
 
 @dataclass
@@ -176,7 +179,23 @@ def handle_namecheap(m: Message, tmp: Path) -> Outcome | None:
     return Outcome(m, "added" if entries else "exists", detail, entries)
 
 
-HANDLERS = [handle_hetzner, handle_github, handle_sendgrid, handle_namecheap]
+def handle_google(m: Message, tmp: Path) -> Outcome | None:
+    if m.sender != "payments-noreply@google.com" or not m.subject.startswith(
+        "Google Workspace: Your invoice is available"
+    ):
+        return None
+    if not m.dkim_verified("google.com"):
+        return Outcome(m, "held", "DKIM for google.com not verified; check this message by hand", [])
+    pdfs = m.pdfs(tmp)
+    if not pdfs:
+        return None
+    results = google.generate(pdfs)
+    detail = ", ".join(f"invoice {r.invoice.number} {r.status}" for r in results)
+    entries = [("google", r.entry) for r in results if r.status == "added"]
+    return Outcome(m, "added" if entries else "exists", detail, entries)
+
+
+HANDLERS = [handle_hetzner, handle_github, handle_sendgrid, handle_namecheap, handle_google]
 
 # Called after handler entries are written; each returns (vendor, entry) pairs
 # for entries that can now be completed from what's in the ledger.

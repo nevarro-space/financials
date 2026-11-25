@@ -16,3 +16,4 @@ include fidelity.journal
 include github.journal
 include sendgrid.journal
 include namecheap.journal
+include google.journal

@@ -31,7 +31,7 @@ account expenses:hosting:hetzner
 account expenses:marketing:tutors.com
 account expenses:monitoring:uptimerobot
 account expenses:supplies
-account expenses:taxes:vat:hetzner
+account expenses:taxes:sales:hetzner
 account expenses:tutoring
 
 ; Equity

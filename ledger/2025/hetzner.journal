@@ -3,7 +3,7 @@
     expenses:hosting:hetzner               13.100 EUR  ; 1 CPX31 Cloud Server, 1 mo @ €13.1000
     expenses:hosting:hetzner                1.500 EUR  ; 3 Primary IPv4, 3 mo @ €0.5000
     expenses:hosting:hetzner                6.600 EUR  ; 1 Volume, 150 GB-mo @ €0.0440
-    expenses:taxes:vat:hetzner              1.420 EUR  ; 4.93%
+    expenses:taxes:sales:hetzner            1.420 EUR  ; 4.93%
     liabilities:accounts-payable:hetzner  -30.320 EUR
 
 2025-01-27 * Hetzner payment for invoice 081000159386
@@ -17,7 +17,7 @@
     expenses:hosting:hetzner               13.100 EUR  ; 1 CPX31 Cloud Server, 1 mo @ €13.1000
     expenses:hosting:hetzner                1.500 EUR  ; 3 Primary IPv4, 3 mo @ €0.5000
     expenses:hosting:hetzner                6.600 EUR  ; 1 Volume, 150 GB-mo @ €0.0440
-    expenses:taxes:vat:hetzner              1.420 EUR  ; 4.93%
+    expenses:taxes:sales:hetzner            1.420 EUR  ; 4.93%
     liabilities:accounts-payable:hetzner  -30.320 EUR
 
 2025-02-25 * Hetzner payment for invoice 088000194755
@@ -31,7 +31,7 @@
     expenses:hosting:hetzner               15.990 EUR  ; 1 CPX31 Cloud Server, 1 mo @ €15.9900
     expenses:hosting:hetzner                1.500 EUR  ; 3 Primary IPv4, 3 mo @ €0.5000
     expenses:hosting:hetzner                6.600 EUR  ; 1 Volume, 150 GB-mo @ €0.0440
-    expenses:taxes:vat:hetzner              1.630 EUR  ; 4.93%
+    expenses:taxes:sales:hetzner            1.630 EUR  ; 4.93%
     liabilities:accounts-payable:hetzner  -34.700 EUR
 
 2025-03-25 * Hetzner payment for invoice 086000211155
@@ -45,7 +45,7 @@
     expenses:hosting:hetzner               15.990 EUR  ; 1 CPX31 Cloud Server, 1 mo @ €15.9900
     expenses:hosting:hetzner                1.500 EUR  ; 3 Primary IPv4, 3 mo @ €0.5000
     expenses:hosting:hetzner                6.600 EUR  ; 1 Volume, 150 GB-mo @ €0.0440
-    expenses:taxes:vat:hetzner              1.630 EUR  ; 4.93%
+    expenses:taxes:sales:hetzner            1.630 EUR  ; 4.93%
     liabilities:accounts-payable:hetzner  -34.700 EUR
 
 2025-04-25 * Hetzner payment for invoice 087000289331
@@ -59,7 +59,7 @@
     expenses:hosting:hetzner               15.990 EUR  ; 1 CPX31 Cloud Server, 1 mo @ €15.9900
     expenses:hosting:hetzner                1.500 EUR  ; 3 Primary IPv4, 3 mo @ €0.5000
     expenses:hosting:hetzner                6.600 EUR  ; 1 Volume, 150 GB-mo @ €0.0440
-    expenses:taxes:vat:hetzner              1.630 EUR  ; 4.93%
+    expenses:taxes:sales:hetzner            1.630 EUR  ; 4.93%
     liabilities:accounts-payable:hetzner  -34.700 EUR
 
 2025-05-25 * Hetzner payment for invoice 089000364415
@@ -73,7 +73,7 @@
     expenses:hosting:hetzner               15.990 EUR  ; 1 CPX31 Cloud Server, 1 mo @ €15.9900
     expenses:hosting:hetzner                1.500 EUR  ; 3 Primary IPv4, 3 mo @ €0.5000
     expenses:hosting:hetzner                6.600 EUR  ; 1 Volume, 150 GB-mo @ €0.0440
-    expenses:taxes:vat:hetzner              1.630 EUR  ; 4.93%
+    expenses:taxes:sales:hetzner            1.630 EUR  ; 4.93%
     liabilities:accounts-payable:hetzner  -34.700 EUR
 
 2025-06-25 * Hetzner payment for invoice 080000363160
@@ -87,7 +87,7 @@
     expenses:hosting:hetzner               15.990 EUR  ; 1 CPX31 Cloud Server, 1 mo @ €15.9900
     expenses:hosting:hetzner                1.500 EUR  ; 3 Primary IPv4, 3 mo @ €0.5000
     expenses:hosting:hetzner                6.600 EUR  ; 1 Volume, 150 GB-mo @ €0.0440
-    expenses:taxes:vat:hetzner              1.630 EUR  ; 4.93%
+    expenses:taxes:sales:hetzner            1.630 EUR  ; 4.93%
     liabilities:accounts-payable:hetzner  -34.700 EUR
 
 2025-07-25 * Hetzner payment for invoice 086000367091
@@ -101,7 +101,7 @@
     expenses:hosting:hetzner               15.990 EUR  ; 1 CPX31 Cloud Server, 1 mo @ €15.9900
     expenses:hosting:hetzner                1.500 EUR  ; 3 Primary IPv4, 3 mo @ €0.5000
     expenses:hosting:hetzner                6.600 EUR  ; 1 Volume, 150 GB-mo @ €0.0440
-    expenses:taxes:vat:hetzner              1.630 EUR  ; 4.93%
+    expenses:taxes:sales:hetzner            1.630 EUR  ; 4.93%
     liabilities:accounts-payable:hetzner  -34.700 EUR
 
 2025-08-25 * Hetzner payment for invoice 087000469156
@@ -115,7 +115,7 @@
     expenses:hosting:hetzner               15.990 EUR  ; 1 CPX31 Cloud Server, 1 mo @ €15.9900
     expenses:hosting:hetzner                1.500 EUR  ; 3 Primary IPv4, 3 mo @ €0.5000
     expenses:hosting:hetzner                6.600 EUR  ; 1 Volume, 150 GB-mo @ €0.0440
-    expenses:taxes:vat:hetzner              1.630 EUR  ; 4.93%
+    expenses:taxes:sales:hetzner            1.630 EUR  ; 4.93%
     liabilities:accounts-payable:hetzner  -34.700 EUR
 
 2025-09-25 * Hetzner payment for invoice 088000511765
@@ -129,7 +129,7 @@
     expenses:hosting:hetzner               15.990 EUR  ; 1 CPX31 Cloud Server, 1 mo @ €15.9900
     expenses:hosting:hetzner                1.500 EUR  ; 3 Primary IPv4, 3 mo @ €0.5000
     expenses:hosting:hetzner                6.600 EUR  ; 1 Volume, 150 GB-mo @ €0.0440
-    expenses:taxes:vat:hetzner              1.630 EUR  ; 4.93%
+    expenses:taxes:sales:hetzner            1.630 EUR  ; 4.93%
     liabilities:accounts-payable:hetzner  -34.700 EUR
 
 2025-10-25 * Hetzner payment for invoice 083000536405
@@ -143,7 +143,7 @@
     expenses:hosting:hetzner               15.990 EUR  ; 1 CPX31 Cloud Server, 1 mo @ €15.9900
     expenses:hosting:hetzner                1.500 EUR  ; 3 Primary IPv4, 3 mo @ €0.5000
     expenses:hosting:hetzner                6.600 EUR  ; 1 Volume, 150 GB-mo @ €0.0440
-    expenses:taxes:vat:hetzner              1.630 EUR  ; 4.93%
+    expenses:taxes:sales:hetzner            1.630 EUR  ; 4.93%
     liabilities:accounts-payable:hetzner  -34.700 EUR
 
 2025-11-25 * Hetzner payment for invoice 082000590677
@@ -157,7 +157,7 @@
     expenses:hosting:hetzner               15.990 EUR  ; 1 CPX31 Cloud Server, 1 mo @ €15.9900
     expenses:hosting:hetzner                1.500 EUR  ; 3 Primary IPv4, 3 mo @ €0.5000
     expenses:hosting:hetzner                6.600 EUR  ; 1 Volume, 150 GB-mo @ €0.0440
-    expenses:taxes:vat:hetzner              1.630 EUR  ; 4.93%
+    expenses:taxes:sales:hetzner            1.630 EUR  ; 4.93%
     liabilities:accounts-payable:hetzner  -34.700 EUR
 
 2025-12-25 * Hetzner payment for invoice 089000661079

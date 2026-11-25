@@ -4,7 +4,7 @@
     expenses:hosting:hetzner               37.900 EUR  ; CCX22 (monthly)
     expenses:hosting:hetzner                3.850 EUR  ; CPX11 (monthly)
     expenses:hosting:hetzner                3.850 EUR  ; CPX11 (monthly)
-    expenses:taxes:vat:hetzner             2.6878 EUR
+    expenses:taxes:sales:hetzner           2.6878 EUR
     equity:rounding
     liabilities:accounts-payable:hetzner  -56.390 EUR
 
@@ -15,7 +15,7 @@
     expenses:hosting:hetzner                3.850 EUR  ; CPX11 (monthly)
     expenses:hosting:hetzner               1.9412 EUR  ; 92 hours of CPX31
     expenses:hosting:hetzner               37.900 EUR  ; CCX22 (monthly)
-    expenses:taxes:vat:hetzner             2.7775 EUR
+    expenses:taxes:sales:hetzner           2.7775 EUR
     equity:rounding
     liabilities:accounts-payable:hetzner  -58.420 EUR
 
@@ -26,7 +26,7 @@
     expenses:hosting:hetzner                3.850 EUR  ; CPX11 (monthly)
     expenses:hosting:hetzner                3.850 EUR  ; CPX11 (monthly)
     expenses:hosting:hetzner               13.100 EUR  ; CPX31 (monthly)
-    expenses:taxes:vat:hetzner              1.440 EUR
+    expenses:taxes:sales:hetzner            1.440 EUR
     liabilities:accounts-payable:hetzner
 
 2024-04-24 * Hetzner Invoice R0022831046  ; period 03/2024
@@ -34,7 +34,7 @@
     expenses:hosting:hetzner                6.600 EUR  ; Volume 1 Volume, 150 @ €0.0440
     expenses:hosting:hetzner               13.100 EUR  ; Server cpx31 1 Server, 1 @ €13.1000
     expenses:hosting:hetzner                7.700 EUR  ; Server cpx11 2 Servers, 2 @ €3.8500
-    expenses:taxes:vat:hetzner             1.4428 EUR  ; 5%
+    expenses:taxes:sales:hetzner           1.4428 EUR  ; 5%
     equity:rounding                       -0.0028 EUR
     liabilities:accounts-payable:hetzner  -30.340 EUR
 
@@ -49,7 +49,7 @@
     expenses:hosting:hetzner                6.600 EUR  ; Volume 1 Volume, 150 @ €0.0440
     expenses:hosting:hetzner               13.100 EUR  ; Server cpx31 1 Server, 1 @ €13.1000
     expenses:hosting:hetzner                7.700 EUR  ; Server cpx11 2 Servers, 2 @ €3.8500
-    expenses:taxes:vat:hetzner             1.4465 EUR  ; 5%
+    expenses:taxes:sales:hetzner           1.4465 EUR  ; 5%
     equity:rounding                        0.0035 EUR
     liabilities:accounts-payable:hetzner  -30.350 EUR
 
@@ -64,7 +64,7 @@
     expenses:hosting:hetzner               13.100 EUR  ; Server cpx31 1 Server, 1 @ €13.1000
     expenses:hosting:hetzner                6.600 EUR  ; Volume 1 Volume, 150 @ €0.0440
     expenses:hosting:hetzner                7.700 EUR  ; Server cpx11 2 Servers, 2 @ €3.8500
-    expenses:taxes:vat:hetzner             1.4409 EUR  ; 5%
+    expenses:taxes:sales:hetzner           1.4409 EUR  ; 5%
     equity:rounding                       -0.0009 EUR
     liabilities:accounts-payable:hetzner  -30.340 EUR
 
@@ -79,7 +79,7 @@
     expenses:hosting:hetzner               13.100 EUR  ; Server cpx31 1 Server, 1 @ €13.1000
     expenses:hosting:hetzner                6.600 EUR  ; Volume 1 Volume, 150 @ €0.0440
     expenses:hosting:hetzner                7.700 EUR  ; Server cpx11 2 Servers, 2 @ €3.8500
-    expenses:taxes:vat:hetzner             1.4457 EUR  ; 5%
+    expenses:taxes:sales:hetzner           1.4457 EUR  ; 5%
     equity:rounding                        0.0043 EUR
     liabilities:accounts-payable:hetzner  -30.350 EUR
 
@@ -94,7 +94,7 @@
     expenses:hosting:hetzner                6.600 EUR  ; Volume 1 Volume, 150 @ €0.0440
     expenses:hosting:hetzner               13.100 EUR  ; Server cpx31 1 Server, 1 @ €13.1000
     expenses:hosting:hetzner                7.700 EUR  ; Server cpx11 2 Servers, 2 @ €3.8500
-    expenses:taxes:vat:hetzner             1.4477 EUR  ; 5%
+    expenses:taxes:sales:hetzner           1.4477 EUR  ; 5%
     equity:rounding                        0.0023 EUR
     liabilities:accounts-payable:hetzner  -30.350 EUR
 
@@ -109,7 +109,7 @@
     expenses:hosting:hetzner                6.600 EUR  ; Volume 1 Volume, 150 @ €0.0440
     expenses:hosting:hetzner               13.100 EUR  ; Server cpx31 1 Server, 1 @ €13.1000
     expenses:hosting:hetzner                7.700 EUR  ; Server cpx11 2 Servers, 2 @ €3.8500
-    expenses:taxes:vat:hetzner              1.448 EUR  ; 5%
+    expenses:taxes:sales:hetzner            1.448 EUR  ; 5%
     equity:rounding                         0.002 EUR
     liabilities:accounts-payable:hetzner  -30.350 EUR
 
@@ -125,7 +125,7 @@
     expenses:hosting:hetzner               0.0088 EUR  ; 1 Load Balancer 11, 1 Hours @ €0.0088
     expenses:hosting:hetzner                1.500 EUR  ; 3 Primary IPv4, 3 mo @ €0.5000
     expenses:hosting:hetzner                6.600 EUR  ; 1 Volume, 150 GB-mo @ €0.0440
-    expenses:taxes:vat:hetzner              1.420 EUR  ; 4.93%
+    expenses:taxes:sales:hetzner            1.420 EUR  ; 4.93%
     equity:rounding                        0.0012 EUR
     liabilities:accounts-payable:hetzner  -30.330 EUR
 
@@ -140,7 +140,7 @@
     expenses:hosting:hetzner               13.100 EUR  ; 1 CPX31 Cloud Server, 1 mo @ €13.1000
     expenses:hosting:hetzner                1.500 EUR  ; 3 Primary IPv4, 3 mo @ €0.5000
     expenses:hosting:hetzner                6.600 EUR  ; 1 Volume, 150 GB-mo @ €0.0440
-    expenses:taxes:vat:hetzner              1.420 EUR  ; 4.93%
+    expenses:taxes:sales:hetzner            1.420 EUR  ; 4.93%
     liabilities:accounts-payable:hetzner  -30.320 EUR
 
 2024-11-25 * Hetzner payment for invoice 083000076883
@@ -154,7 +154,7 @@
     expenses:hosting:hetzner               13.100 EUR  ; 1 CPX31 Cloud Server, 1 mo @ €13.1000
     expenses:hosting:hetzner                1.500 EUR  ; 3 Primary IPv4, 3 mo @ €0.5000
     expenses:hosting:hetzner                6.600 EUR  ; 1 Volume, 150 GB-mo @ €0.0440
-    expenses:taxes:vat:hetzner              1.420 EUR  ; 4.93%
+    expenses:taxes:sales:hetzner            1.420 EUR  ; 4.93%
     liabilities:accounts-payable:hetzner  -30.320 EUR
 
 2024-12-27 * Hetzner payment for invoice 084000092464

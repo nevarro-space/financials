@@ -142,7 +142,7 @@ days later as `TWILIO SENDGRID`. Each invoice is a transaction in
 `ledger/YYYY/sendgrid.journal` with a posting per plan
 (`expenses:communication:sendgrid:essentials` for Essentials 50K,
 `...:marketing-campaigns` for Marketing Campaigns Basic 5K since 2026-01) plus
-any overage or sales tax (`expenses:taxes:sales`), against
+any overage or sales tax (`expenses:taxes:sales:sendgrid`), against
 `liabilities:accounts-payable:sendgrid`; the Chase import rule posts the card
 charge to that payable. `bin/sendgrid-invoice.py` parses the invoice PDFs
 (`process-mail.py` runs it on "You have a new invoice from SendGrid" emails).
@@ -163,6 +163,24 @@ registration/renewal/transfer price and its ICANN fee under
 `.eml` files; `process-mail.py` handles the emails. Any USD balance on the
 payable is a card charge whose receipt hasn't been booked yet. Itemized from 2026-06 on; earlier charges stay as single
 `expenses:domains:namecheap` postings (domains noted in the comment).
+
+### Google Workspace invoices
+
+Google bills Workspace monthly in arrears: the invoice is dated the last day
+of the month and charged on the 1st as `GOOGLE *Workspace_nevarro`. Each
+invoice is a transaction in `ledger/YYYY/google.journal` with the subscription
+(`expenses:communication:google-workspace`) and sales tax
+(`expenses:taxes:sales:google`) against `liabilities:accounts-payable:google`;
+the Chase import rule posts the card charge to that payable.
+`bin/google-invoice.py` parses the invoice PDFs (`process-mail.py` runs it on
+"Google Workspace: Your invoice is available" emails). June and August 2026
+have no invoice and are tagged `reconstructed:`.
+
+### Sales tax
+
+Vendors' US sales tax is booked per vendor under `expenses:taxes:sales:<vendor>`
+(Hetzner, Google, and SendGrid if it ever charges any), so
+`hledger bal expenses:taxes:sales` is the total paid. Hetzner's is in EUR.
 
 ### Invoice mail
 
@@ -186,7 +204,7 @@ since been imported, even with no new mail. Messages stay in INBOX only when
 no handler recognizes them or they fail sender verification: the sender is
 taken from `X-Original-Sender` (mail relayed by the admin@nevarro.space group)
 or `From`, and must have a DKIM pass for the vendor's domain recorded by Google
-or Migadu. Handlers so far: Hetzner, GitHub, SendGrid, Namecheap. Add new vendors as `handle_<vendor>`
+or Migadu. Handlers so far: Hetzner, GitHub, SendGrid, Namecheap, Google. Add new vendors as `handle_<vendor>`
 functions in `HANDLERS` (and a `RECONCILERS` entry if they need one). New
 subaccounts under the prefixes in `AUTO_DECLARE` (per domain, per GitHub
 maintainer) are declared in that year's `accounts.journal` automatically.

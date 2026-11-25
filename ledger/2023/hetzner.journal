@@ -3,7 +3,7 @@
     expenses:hosting:hetzner                0.441 EUR   ; CPX11 @ 0.0063 EUR/hr for 70 hrs
     expenses:hosting:hetzner                0.441 EUR   ; CPX11 @ 0.0063 EUR/hr for 70 hrs
     expenses:hosting:hetzner                0.441 EUR   ; CPX11 @ 0.0063 EUR/hr for 70 hrs
-    expenses:taxes:vat:hetzner             0.0188 EUR
+    expenses:taxes:sales:hetzner           0.0188 EUR
     equity:rounding
     liabilities:accounts-payable:hetzner   -0.520 EUR
 
@@ -11,7 +11,7 @@
     expenses:hosting:hetzner                1.000 EUR   ; 2 IPs @ 0.5000 EUR/mo
     expenses:hosting:hetzner                3.850 EUR   ; CPX11 (monthly)
     expenses:hosting:hetzner                3.850 EUR   ; CPX11 (monthly)
-    expenses:taxes:vat:hetzner             0.3954 EUR
+    expenses:taxes:sales:hetzner           0.3954 EUR
     equity:rounding
     liabilities:accounts-payable:hetzner   -9.100 EUR
 
@@ -21,7 +21,7 @@
     expenses:hosting:hetzner               5.3928 EUR   ; 3 CPX11 servers, 856 hrs @ 0.0063 EUR/hr
     expenses:hosting:hetzner                3.850 EUR   ; CPX11 (monthly)
     expenses:hosting:hetzner               1.8032 EUR   ; CCX12, 56 hrs @@ 0.0322 EUR/hr
-    expenses:taxes:vat:hetzner             0.5555 EUR
+    expenses:taxes:sales:hetzner           0.5555 EUR
     equity:rounding
     liabilities:accounts-payable:hetzner  -12.830 EUR
 
@@ -31,7 +31,7 @@
     expenses:hosting:hetzner               21.350 EUR   ; CCX12 (monthly)
     expenses:hosting:hetzner                0.004 EUR   ; 1 Floating IP for 0.0013 months @ 3.0000 EUR
     expenses:hosting:hetzner               2.5223 EUR   ; 2 volumes,  57.3253 GB @ 0.0440 EUR/GB
-    expenses:taxes:vat:hetzner             1.6568 EUR
+    expenses:taxes:sales:hetzner           1.6568 EUR
     equity:rounding
     liabilities:accounts-payable:hetzner  -34.730 EUR
 
@@ -40,7 +40,7 @@
     expenses:hosting:hetzner                4.400 EUR   ; Volume, 100 GB @ 0.0440 EUR/GB
     expenses:hosting:hetzner                7.700 EUR   ; 2 CPX11 (monthly)
     expenses:hosting:hetzner               21.350 EUR   ; CCX12 (monthly)
-    expenses:taxes:vat:hetzner             1.7486 EUR
+    expenses:taxes:sales:hetzner           1.7486 EUR
     equity:rounding
     liabilities:accounts-payable:hetzner  -36.700 EUR
 
@@ -51,7 +51,7 @@
     expenses:hosting:hetzner                7.700 EUR   ; 2 CPX11 (monthly)
     expenses:hosting:hetzner               21.350 EUR   ; CCX12 (monthly)
     expenses:hosting:hetzner               3.4556 EUR   ; CCX22, 1 hr @ 0.0652 EUR
-    expenses:taxes:vat:hetzner             1.9323 EUR
+    expenses:taxes:sales:hetzner           1.9323 EUR
     equity:rounding
     liabilities:accounts-payable:hetzner  -40.510 EUR
 
@@ -60,7 +60,7 @@
     expenses:hosting:hetzner                6.600 EUR   ; Volume, 150 GB @ 0.0440
     expenses:hosting:hetzner               37.900 EUR   ; CCX22 (monthly)
     expenses:hosting:hetzner                7.700 EUR   ; 2 CPX11 (monthly)
-    expenses:taxes:vat:hetzner             2.6868 EUR
+    expenses:taxes:sales:hetzner           2.6868 EUR
     equity:rounding
     liabilities:accounts-payable:hetzner  -56.390 EUR
 
@@ -69,7 +69,7 @@
     expenses:hosting:hetzner                6.600 EUR   ; Volume, 150 GB @ 0.0440
     expenses:hosting:hetzner               37.900 EUR   ; CCX22 (monthly)
     expenses:hosting:hetzner                7.700 EUR   ; 2 CPX11 (monthly)
-    expenses:taxes:vat:hetzner             2.6868 EUR
+    expenses:taxes:sales:hetzner           2.6868 EUR
     equity:rounding
     liabilities:accounts-payable:hetzner  -56.390 EUR
 
@@ -78,7 +78,7 @@
     expenses:hosting:hetzner                6.600 EUR   ; Volume, 150 GB @ 0.0440
     expenses:hosting:hetzner               37.900 EUR   ; CCX22 (monthly)
     expenses:hosting:hetzner                7.700 EUR   ; 2 CPX11 (monthly)
-    expenses:taxes:vat:hetzner             2.6839 EUR
+    expenses:taxes:sales:hetzner           2.6839 EUR
     equity:rounding
     liabilities:accounts-payable:hetzner  -56.380 EUR
 
@@ -87,6 +87,6 @@
     expenses:hosting:hetzner                6.600 EUR   ; Volume, 150 GB @ 0.0440
     expenses:hosting:hetzner               37.900 EUR   ; CCX22 (monthly)
     expenses:hosting:hetzner                7.700 EUR   ; 2 CPX11 (monthly)
-    expenses:taxes:vat:hetzner             2.6805 EUR
+    expenses:taxes:sales:hetzner           2.6805 EUR
     equity:rounding
     liabilities:accounts-payable:hetzner  -56.380 EUR

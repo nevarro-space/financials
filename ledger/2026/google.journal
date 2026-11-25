@@ -1,0 +1,24 @@
+2026-06-30 * Google Workspace  ; reconstructed: from the card charge, no invoice
+    expenses:communication:google-workspace   14.56 USD  ; Business Starter, 2 users, prorated first month
+    expenses:taxes:sales:google                0.75 USD  ; Local sales tax (5.15%)
+    liabilities:accounts-payable:google      -15.31 USD
+
+2026-07-31 * Google Workspace invoice 5641519232
+    expenses:communication:google-workspace   16.80 USD  ; Business Starter, 2 users, Jul 1 - Jul 31
+    expenses:taxes:sales:google                0.87 USD  ; Local sales tax (5.15%)
+    liabilities:accounts-payable:google      -17.67 USD
+
+2026-08-31 * Google Workspace  ; reconstructed: from the card charge, no invoice
+    expenses:communication:google-workspace   16.80 USD  ; Business Starter, 2 users, Aug 1 - Aug 31
+    expenses:taxes:sales:google                0.87 USD  ; Local sales tax (5.15%)
+    liabilities:accounts-payable:google      -17.67 USD
+
+2026-09-30 * Google Workspace invoice 5698386383
+    expenses:communication:google-workspace   16.80 USD  ; Business Starter, 2 users, Sep 1 - Sep 30
+    expenses:taxes:sales:google                0.87 USD  ; Local sales tax (5.15%)
+    liabilities:accounts-payable:google      -17.67 USD
+
+2026-10-31 * Google Workspace invoice 5726506983
+    expenses:communication:google-workspace   16.80 USD  ; Business Starter, 2 users, Oct 1 - Oct 31
+    expenses:taxes:sales:google                0.87 USD  ; Local sales tax (5.15%)
+    liabilities:accounts-payable:google      -17.67 USD

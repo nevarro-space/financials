@@ -21,7 +21,7 @@ account expenses:fees:government
 account expenses:hosting:hetzner
 account expenses:monitoring
 account expenses:monitoring:uptimerobot
-account expenses:taxes:vat:hetzner
+account expenses:taxes:sales:hetzner
 
 ; Equity
 account equity:member:sumner

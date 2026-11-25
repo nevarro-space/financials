@@ -25,6 +25,7 @@ account expenses:fees:github-sponsors
 account expenses:fees:government
 account expenses:hosting:hetzner
 account expenses:monitoring:uptimerobot
+account expenses:taxes:sales:hetzner
 
 ; Equity
 account equity:conversion  ; type:V

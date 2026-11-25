@@ -41,7 +41,7 @@ LEDGER_FILE = REPO_ROOT / "ledger" / "all.journal"
 
 AP = "liabilities:accounts-payable:hetzner"
 EXPENSE = "expenses:hosting:hetzner"
-TAX = "expenses:taxes:vat:hetzner"
+TAX = "expenses:taxes:sales:hetzner"
 ROUNDING = "equity:rounding"
 CONVERSION = "equity:conversion"
 

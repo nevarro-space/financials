@@ -33,9 +33,10 @@ if MIGADU
 if GITHUB
     account2 liabilities:accounts-payable:github
 
+# Settles the itemized invoice from bin/google-invoice.py (in google.journal).
 if GOOGLE Workspace
 GOOGLE \*Workspace
-    account2 expenses:communication:google-workspace
+    account2 liabilities:accounts-payable:google
 
 if BACKBLAZE
     account2 expenses:backup:backblaze
