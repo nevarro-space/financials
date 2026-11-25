@@ -1,5 +1,6 @@
 include accounts.journal
 include commodities.journal
+include commentary.journal
 
 2024-01-01 * Opening Balances
     assets:cash:bluevine                             539.08 USD =  539.08 USD
@@ -11,7 +12,7 @@ include chase-*.journal
 include hetzner.journal
 include square.journal
 
-2024-12-31 * Closing Balances
+2024-12-31 * Closing Balances  ; clopen:
     assets:cash:bluevine                          -1,929.19 USD = 0.00 USD
     liabilities:credit-cards:chase:ink-unlimited      79.31 USD = 0.00 USD
     equity:opening/closing balances

@@ -1,0 +1,69 @@
+; Period commentary for 2023. Each entry is a transaction with no postings,
+; dated at the end of the period it covers, so it never affects balances.
+; Read with e.g. `hledger print tag:commentary -p 2023q1`. Note that any
+; `word:` in the text below would be parsed as a tag, so avoid writing that.
+
+2023-02-28 February 2023  ; commentary:
+    ; I moved hosting of mineshspc.com under Nevarro LLC late in the month,
+    ; hence the low server costs. I was spinning servers up and down to find
+    ; the right setup, which is why there were 3 servers/IPs on the Hetzner
+    ; bill. I also tried two uptime monitoring services, Nodeping and
+    ; UptimeRobot.
+
+2023-03-31 March 2023  ; commentary:
+    ; First full month hosting mineshspc.com on Nevarro infrastructure. One
+    ; node runs the website and a monitoring node runs Grafana + Loki. Adding
+    ; more resources to the cluster won't need more monitoring nodes, so that
+    ; cost should stay stable.
+
+2023-03-31 Q1 2023  ; commentary:
+    ; Nevarro LLC was formed on 24 January 2023 and incurred many startup
+    ; costs in its first quarter, funded by an initial $1,500.00 capital
+    ; contribution.
+    ;
+    ; Runway. $387.00 of this quarter's expenses were annual subscriptions.
+    ; Amortized, that's $32.25/mo, plus $24.80/mo of other expenses, for an
+    ; amortized burn of about $57/mo and roughly 18 months of runway.
+    ;
+    ; Looking ahead to Q2, the nevarro.space Matrix homeserver will move from
+    ; Sumner's personal infrastructure (€25.75/mo) to Nevarro, raising Hetzner
+    ; from €9.10/mo to about €34.85/mo. A few domain renewals are also due.
+
+2023-04-30 April 2023  ; commentary:
+    ; Two domain renewals came in, and I started migrating my Matrix server to
+    ; Nevarro infrastructure.
+
+2023-05-31 May 2023  ; commentary:
+    ; The Twilio Sendgrid upgrade continued while HSPC email volume stayed
+    ; high. I've since cancelled it, so we're back on the 100/month plan until
+    ; registrations pick up again.
+    ;
+    ; I moved house, so the business address changed, which meant fees to the
+    ; Colorado Secretary of State and USPS.
+
+2023-06-30 Q2 2023  ; commentary:
+    ; A quiet quarter; the main costs were maintaining servers. Burn was about
+    ; $66/mo. Using a more conservative $75/mo gives roughly 12 months of
+    ; runway. Server costs should stay at June levels next quarter.
+
+2023-09-30 Q3 2023  ; commentary:
+    ; Another quiet quarter of mostly server costs. Burn looks like $54/mo,
+    ; but that's understated by the mid-quarter accounting change (Hetzner
+    ; charges are now dated by the month they post). A better estimate is
+    ; about $100/mo, or roughly 7 months of runway. Server costs should stay
+    ; at September levels.
+
+2023-12-31 December 2023  ; commentary:
+    ; Nothing of note this month. I'll put another $1k into the company in
+    ; January.
+
+2023-12-31 Q4 2023  ; commentary:
+    ; Mostly quiet, until a flurry of yearly subscriptions came due at the end
+    ; of December. Burn was about $107/mo, roughly 2 months of runway, and
+    ; even that is generous since several annual renewals land early in the
+    ; year. Nevarro will need another cash infusion in January to stay
+    ; solvent.
+    ;
+    ; Looking ahead to Q1 2024, server costs should stay at December levels.
+    ; Several domain renewals and transfers are coming as I centralize all
+    ; registrations in Namecheap (about $20/yr each).

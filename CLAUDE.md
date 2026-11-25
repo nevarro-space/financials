@@ -4,34 +4,33 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## What This Repo Is
 
-Financial reports for Nevarro LLC, a single-member Colorado LLC owned by Sumner Evans. Three report types:
+Financials for Nevarro LLC, a single-member Colorado LLC owned by Sumner Evans.
 
-- `by-month/YYYY-MM.md` — monthly reports (equity, revenue events, expenditures)
-- `quarterly-reports/YYYY-QN.md` — quarterly summaries (equity, runway)
-- `annual-reports/YYYY.md` — annual summaries (revenue, expenses, equity, plans)
+- `ledger/` — the [hledger](https://hledger.org) plaintext-accounting ledger.
+  This is the source of truth for every number; query it with hledger rather
+  than keeping derived reports.
+- `annual-reports/YYYY.md` — hand-written annual summaries (revenue, expenses,
+  equity, goal review, plans for next year).
 
-## Accounting Method
+There are no monthly or quarterly report files. Period commentary lives in the
+ledger (see below); the numbers come from hledger.
 
-Two eras coexist in this repo:
+## Ledger layout
 
-- **2023–2025**: `by-month/` and `quarterly-reports/` for these years are
-  hand-maintained Markdown, summed with `bin/sum-amount.py` (below).
-- **2026 onward**: `by-month/` and `quarterly-reports/` are generated from an
-  [hledger](https://hledger.org) plaintext-accounting ledger by
-  `bin/generate-report.py`. Don't hand-edit the generated sections of these
-  files — edit the ledger and regenerate instead. Annual reports
-  (`annual-reports/`) stay hand-written in both eras.
-
-### Ledger layout
-
-- `ledger/all.journal` — entry point (`include`s each year's journal).
-- `ledger/2026.journal` — 2026 transactions, `account` declarations, the
-  `equity:opening-balances` entry, and periodic budget transactions
-  (`~ monthly`, `~ yearly from ...`) used for budget-vs-actual reporting.
-- `csv/<source>-YYYY.csv` — raw bank/card exports (Bluevine checking, Chase
-  credit card, Fidelity/SPAXX), one file per source per year.
-- `rules/<source>.csv.rules` — hledger CSV import rules mapping each
-  source's columns and description patterns to ledger accounts.
+- `ledger/all.journal` — entry point (`include`s each year's `index.journal`).
+- `ledger/YYYY/index.journal` — includes that year's files, plus the
+  `Opening Balances` entry on Jan 1 and the `clopen:`-tagged closing entry on
+  Dec 31.
+- `ledger/YYYY/accounts.journal` — `account` declarations for the year.
+- `ledger/YYYY/commodities.journal` — `commodity 1,000.00 USD` (and EUR where
+  needed).
+- `ledger/YYYY/<source>.journal` — imported transactions, one file per source
+  (`bluevine`, `chase-ink-unlimited`, `fidelity`, ...).
+- `ledger/YYYY/commentary.journal` — period commentary (see below).
+- `ledger/2026/budget.journal` — periodic budget transactions (`~ monthly`,
+  `~ yearly from ...`) for `hledger balance --budget`.
+- `rules/<source>.csv.rules` — hledger CSV import rules; each includes
+  `rules/global.rules` (shared description → account mappings) first.
 
 Key accounts: `assets:cash:bluevine`, `assets:cash:fidelity`,
 `liabilities:credit-cards:chase:ink-unlimited`,
@@ -46,65 +45,72 @@ Unmatched imports land in `revenue:unknown` (inflows, set in
 Both are deliberately left undeclared so the `hledger check -s` pre-commit
 hook fails until they are re-categorized by hand.
 
-### Workflow
+## Commentary
+
+Notes about a single charge go in that transaction's comment
+(`2026-01-14 * NAME-CHEAP.COM* CSBRIF  ; mentalmodels.education`).
+
+Notes about a month or quarter go in `ledger/YYYY/commentary.journal` as a
+transaction with **no postings**, dated on the last day of the period and
+tagged `commentary:`:
+
+```journal
+2026-03-31 Q1 2026  ; commentary:
+    ; I made a capital contribution of $1,000.00 to fund the business ...
+```
+
+With no postings these never affect balances or show up in `bal`/`reg`.
+Read them with `hledger print tag:commentary -p 2026q1`. Avoid writing
+`word:` anywhere in the text — hledger parses it as a tag (`hledger tags`
+should list only `clopen`, `commentary`, and `date`). Query by tag name plus
+a period; `tag:commentary=<value>` matching is unreliable here.
+
+## Workflow
 
 Import new transactions from a freshly downloaded CSV:
 
 ```bash
-hledger import csv/<source>-2026.csv --rules rules/<source>.csv.rules -f ledger/2026.journal
+hledger import <export>.csv --rules rules/<source>.csv.rules -f ledger/2026/<source>.journal
 ```
 
-Then regenerate the affected report(s):
+Useful queries in place of the old reports:
 
 ```bash
-python3 bin/generate-report.py month 2026-07
-python3 bin/generate-report.py quarter 2026-Q3
-python3 bin/generate-report.py all       # regenerate everything the ledger has data for
+hledger bs -e 2026-10-01                  # equity at a point in time
+hledger is -M -p 2026                     # revenue/expenses by month
+hledger bal --budget -Q -p 2026           # budget vs. actual by quarter
+hledger print tag:commentary              # all period commentary
+hledger print tag:commentary -p 2026q3    # commentary for a period
 ```
 
-`generate-report.py` extracts and preserves whatever is already written in a
-file's `## Commentary` section before overwriting it, so hand-written prose
-(narrative, budget commentary) survives regeneration — only the
-ledger-derived sections (Equity, Revenue Events, Expenditures, Runway,
-Budget vs. Actual) are recomputed.
+Runway is `equity / average monthly burn`; take the two inputs from `bs` and
+`is`.
 
-### Dev environment
+## Dev environment
 
 `nix develop` (or `direnv allow`, since `.envrc` has `use flake`) provides
-`hledger`, `hledger-web`, and `python3`, and sets `LEDGER_FILE` to
-`ledger/all.journal`. `hledger-web` starts a local browser UI for exploring
+`hledger`, `hledger-web`, `pre-commit`, and `python3`, and sets `LEDGER_FILE`
+to `ledger/all.journal`. `hledger-web` starts a local browser UI for exploring
 the ledger.
 
-## Tooling
+Pre-commit runs `hledger-fmt` (from `juev/hledger-lsp`, installed by
+pre-commit via Go) and `hledger check -s ordereddates`.
 
-### `bin/sum-amount.py`
+## Annual Report Conventions
 
-For hand-maintained reports only (2023–2025 by-month/quarterly reports, and
-annual reports in any year). Reads Markdown pipe-delimited table rows from
-stdin; sums the second-to-last column as a dollar amount.
+Annual reports are commentary only: narrative, a review of last year's goals,
+and plans/budget targets for next year. Don't add tables of numbers the ledger
+can produce (revenue, expenses by category, equity); get those from hledger
+instead:
 
 ```bash
-# Sum all expenditures in a month report
-grep "^|" by-month/2025-01.md | python3 bin/sum-amount.py
-
-# Sum with category breakdown (column 2 = category column, 0-indexed)
-grep "^|" file.md | python3 bin/sum-amount.py 2
+hledger is -p 2025 --flat                                   # revenue/expenses for the year
+hledger -f ledger/2025/index.journal bs not:tag:clopen      # equity at year end
 ```
 
-Amount field parsing rules:
-- Strips `$`, `,`, leading `-`
-- Handles `= $X.XX` suffix (e.g. `30.32€ + $0.95 FTF = $32.86` → uses `$32.86`)
-- Leading `-` in field = negative amount
-- Categories split on `::` for subcategory grouping (e.g. `Server Costs::Hetzner`)
-
-## Report Conventions
-
-**Expenditure table columns:** `Date | Event | Amount`
-
-**Amount format:** `$X.XX` for positive, `-$X.XX` for negative (credits/redemptions). Foreign currency entries show conversion: `30.32€ + $0.95 FTF = $32.86`.
-
-**Equity table:** two-column layout — Assets on left, Liabilities on right. Equity = Assets − Liabilities.
-
-**Quarterly reports** include a runway calculation: `equity / monthly_burn_rate = months of runway`.
-
-**Annual reports** include expense category breakdown and goals for the next year.
+Query a single year's `index.journal` for year-end equity: `not:tag:clopen`
+drops that year's Dec 31 closing entry, and using only that year's file avoids
+double-counting earlier years (whose closing entries would also be excluded).
+Hetzner charges in 2023–2024 are recorded in EUR (invoices are EUR; the USD
+cost is on the `@@` price when the payable is settled), so those years' Hetzner
+expense totals show in EUR.

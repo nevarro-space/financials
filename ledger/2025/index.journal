@@ -1,5 +1,6 @@
 include accounts.journal
 include commodities.journal
+include commentary.journal
 
 2025-01-01 * Opening Balances
     assets:cash:bluevine                          1,929.19 USD = 1,929.19 USD

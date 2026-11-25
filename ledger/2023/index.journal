@@ -1,11 +1,12 @@
 include accounts.journal
 include commodities.journal
+include commentary.journal
 
 include bluevine.journal
 include chase-*.journal
 include hetzner.journal
 
-2023-12-31 * Closing Balances
+2023-12-31 * Closing Balances  ; clopen:
     assets:cash:bluevine                          -539.08 USD = 0.00 USD
     liabilities:credit-cards:chase:ink-unlimited   183.39 USD = 0.00 USD  ; This is off by 0.21 USD due to some accounting error.
     equity:opening/closing balances

@@ -1,0 +1,32 @@
+; Period commentary for 2024. See ../2023/commentary.journal for the format.
+
+2024-03-31 Q1 2024  ; commentary:
+    ; First revenue apart from capital contributions (tutoring), and I put
+    ; another $2k into the business as a capital contribution. Spending came
+    ; in over the $741 budget, mainly from paying for Twilio (about $20/mo)
+    ; and adding a GitHub sponsorship for GoatCounter.
+    ;
+    ; Burn was about $274/mo, roughly 6 months of runway, but many annual
+    ; subscriptions land in Q1, so burn should drop next quarter.
+    ;
+    ; Looking ahead to Q2, downsizing the main Matrix instance should cut
+    ; server costs to about $35/mo. Domain renewals and transfers continue as
+    ; registrations move to Namecheap (about $20/yr each).
+
+2024-06-30 Q2 2024  ; commentary:
+    ; Nothing of interest happened. Burn was about $67/mo, roughly 26 months
+    ; of runway, but that's skewed low because most subscriptions renew in Q1
+    ; rather than Q2. (Written retroactively, so there's no equity breakdown
+    ; or Q3 budget for this quarter.)
+
+2024-09-30 Q3 2024  ; commentary:
+    ; I opened a new line of business, a contract position helping manage the
+    ; martial arts school I'm a member of. The management contract was a
+    ; one-off, so it's excluded from runway. Burn was about $66/mo, roughly 29
+    ; months of runway, again skewed low because most renewals land in Q1.
+
+2024-12-31 Q4 2024  ; commentary:
+    ; I earned commissions for students who started while I was managing the
+    ; taekwondo school. Burn was about $54/mo, roughly 34 months of runway,
+    ; skewed low by Q1-heavy renewals and a points redemption on the business
+    ; credit card.

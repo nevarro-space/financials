@@ -1,5 +1,6 @@
 include accounts.journal
 include commodities.journal
+include commentary.journal
 
 include budget.journal
 

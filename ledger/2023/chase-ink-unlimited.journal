@@ -2,7 +2,7 @@
     liabilities:credit-cards:chase:ink-unlimited               -19.00 USD
     expenses:communication:migadu                               19.00 USD
 
-2023-02-23 * Nodeping
+2023-02-23 * Nodeping  ; trial expired before I cancelled, so one month was charged
     liabilities:credit-cards:chase:ink-unlimited               -25.00 USD
     expenses:monitoring                                         25.00 USD
 
@@ -15,7 +15,7 @@
     liabilities:credit-cards:chase:ink-unlimited               -34.00 USD
     expenses:monitoring:uptimerobot                             34.00 USD
 
-2023-03-13 * UptimeRobot  ; yearly
+2023-03-13 * UptimeRobot  ; yearly, $29/mo amortized vs $34 monthly, saves $60/yr
     liabilities:credit-cards:chase:ink-unlimited              -318.86 USD
     expenses:monitoring:uptimerobot                            318.86 USD
 
@@ -44,7 +44,7 @@
     liabilities:credit-cards:chase:ink-unlimited                 5.45 USD
     revenue:credits-and-adjustments                             -5.45 USD
 
-2023-04-19 * TWILIO SENDGRID
+2023-04-19 * TWILIO SENDGRID  ; plan upgrade, ran out of free emails as HSPC approached
     liabilities:credit-cards:chase:ink-unlimited                -7.98 USD
     expenses:communication:sendgrid                              7.98 USD
 
