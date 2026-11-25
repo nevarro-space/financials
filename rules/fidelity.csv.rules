@@ -28,12 +28,6 @@ if DIRECT DEBIT CHASE CREDIT
     account2 equity:transfers
     description Chase Credit Card autopay
 
-# Transfers to/from Sumner's personal Fidelity account are owner capital
-# contributions/distributions. Pass-throughs (e.g. the 2026-05 Bluevine
-# wind-down) still need to be re-booked to equity:transfers by hand.
-if TRANSFERRED (FROM|TO) VS Z34-231545
-    account2 equity:member:sumner
-
 if
 %date The data and information in this spreadsheet is provided to you solely for your use and is not for distribution. The spreadsheet is provided for
 %date informational purposes only, and is not intended to provide advice, nor should it be construed as an offer to sell, a solicitation of an offer to buy or a
