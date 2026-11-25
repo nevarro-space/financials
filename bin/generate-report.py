@@ -67,7 +67,7 @@ def hledger(*args: str) -> str:
 
 
 def parse_amount(s: str) -> Decimal:
-    return Decimal(s.replace("$", "").replace(",", "") or "0")
+    return Decimal(s.replace("USD", "").replace("$", "").replace(",", "").strip() or "0")
 
 
 def fmt_amount(d: Decimal) -> str:

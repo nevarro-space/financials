@@ -5,7 +5,7 @@ fields card, date, posteddate, description, category, txntype, amount, memo
 
 date-format %m/%d/%Y
 
-currency $
+currency USD
 
 account1 liabilities:credit-cards:chase:ink-unlimited
 comment1 date:%posteddate

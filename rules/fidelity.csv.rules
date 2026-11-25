@@ -5,7 +5,7 @@ fields date, action, symbol, fdesc, txntype, price, quantity, commission, fees, 
 
 date-format %m/%d/%Y
 
-currency $
+currency USD
 
 account1 assets:cash:fidelity
 balance %balance

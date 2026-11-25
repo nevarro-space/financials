@@ -1,165 +1,165 @@
 2023-02-21 * Migadu Micro yearly plan
-    liabilities:credit-cards:chase:ink-unlimited  -$19.00
-    expenses:communication:migadu                  $19.00
+    liabilities:credit-cards:chase:ink-unlimited  -19.00 USD
+    expenses:communication:migadu                  19.00 USD
 
 2023-02-23 * Nodeping
-    liabilities:credit-cards:chase:ink-unlimited  -$25.00
-    expenses:monitoring                            $25.00
+    liabilities:credit-cards:chase:ink-unlimited  -25.00 USD
+    expenses:monitoring                            25.00 USD
 
 2023-02-28 * Hetzner
-    liabilities:credit-cards:chase:ink-unlimited  -$0.57
-    expenses:fees:foreign-transaction              $0.01
-    liabilities:accounts-payable:hetzner            0.52 EUR  @@  $0.56
+    liabilities:credit-cards:chase:ink-unlimited  -0.57 USD
+    expenses:fees:foreign-transaction              0.01 USD
+    liabilities:accounts-payable:hetzner           0.52 EUR  @@  0.56 USD
 
 2023-03-08 * UptimeRobot
-    liabilities:credit-cards:chase:ink-unlimited  -$34.00
-    expenses:monitoring:uptimerobot                $34.00
+    liabilities:credit-cards:chase:ink-unlimited  -34.00 USD
+    expenses:monitoring:uptimerobot                34.00 USD
 
 2023-03-13 * UptimeRobot  ; yearly
-    liabilities:credit-cards:chase:ink-unlimited  -$318.86
-    expenses:monitoring:uptimerobot                $318.86
+    liabilities:credit-cards:chase:ink-unlimited  -318.86 USD
+    expenses:monitoring:uptimerobot                318.86 USD
 
 2023-03-19 * Fee for registering DBA
-    liabilities:credit-cards:chase:ink-unlimited  -$1.00
-    expenses:fees:government                       $1.00
+    liabilities:credit-cards:chase:ink-unlimited  -1.00 USD
+    expenses:fees:government                       1.00 USD
 
 2023-03-21 * Points Redemption
-    liabilities:credit-cards:chase:ink-unlimited   $0.56
-    revenue:credits-and-adjustments               -$0.56
+    liabilities:credit-cards:chase:ink-unlimited   0.56 USD
+    revenue:credits-and-adjustments               -0.56 USD
 
 2023-03-31 * Hetzner
-    liabilities:credit-cards:chase:ink-unlimited  -$10.23
-    expenses:fees:foreign-transaction               $0.29
-    liabilities:accounts-payable:hetzner             9.10 EUR  @@  $9.94
+    liabilities:credit-cards:chase:ink-unlimited  -10.23 USD
+    expenses:fees:foreign-transaction               0.29 USD
+    liabilities:accounts-payable:hetzner            9.10 EUR  @@  9.94 USD
 
 2023-04-05 * Points Redemption
-    liabilities:credit-cards:chase:ink-unlimited   $0.75
-    revenue:credits-and-adjustments               -$0.75
+    liabilities:credit-cards:chase:ink-unlimited   0.75 USD
+    revenue:credits-and-adjustments               -0.75 USD
 
 2023-04-10 * Google Domains  ; mineshspc.com renewal
-    liabilities:credit-cards:chase:ink-unlimited  -$12.00
-    expenses:domains:google-domains                $12.00
+    liabilities:credit-cards:chase:ink-unlimited  -12.00 USD
+    expenses:domains:google-domains                12.00 USD
 
 2023-04-16 * Points Redemption
-    liabilities:credit-cards:chase:ink-unlimited   $5.45
-    revenue:credits-and-adjustments               -$5.45
+    liabilities:credit-cards:chase:ink-unlimited   5.45 USD
+    revenue:credits-and-adjustments               -5.45 USD
 
 2023-04-19 * TWILIO SENDGRID
-    liabilities:credit-cards:chase:ink-unlimited  $-7.98
-    expenses:communication:sendgrid                $7.98
+    liabilities:credit-cards:chase:ink-unlimited  -7.98 USD
+    expenses:communication:sendgrid                7.98 USD
 
 2023-04-23 * Google Domains  ; sublimemusic.app renewal
-    liabilities:credit-cards:chase:ink-unlimited  -$14.00
-    expenses:domains:google-domains                $14.00
+    liabilities:credit-cards:chase:ink-unlimited  -14.00 USD
+    expenses:domains:google-domains                14.00 USD
 
 2023-04-30 * Hetzner
-    liabilities:credit-cards:chase:ink-unlimited  -$14.58
-    expenses:fees:foreign-transaction               $0.42
-    liabilities:accounts-payable:hetzner            12.83 EUR  @@  $14.16
+    liabilities:credit-cards:chase:ink-unlimited  -14.58 USD
+    expenses:fees:foreign-transaction               0.42 USD
+    liabilities:accounts-payable:hetzner           12.83 EUR  @@  14.16 USD
 
 2023-05-03 * Google Domains  ; matrixexporter.com registration
-    liabilities:credit-cards:chase:ink-unlimited  -$12.00
-    expenses:domains:google-domains                $12.00
+    liabilities:credit-cards:chase:ink-unlimited  -12.00 USD
+    expenses:domains:google-domains                12.00 USD
 
 2023-05-04 * Twilio SendGrid
-    liabilities:credit-cards:chase:ink-unlimited  -$19.95
-    expenses:communication:sendgrid                $19.95
+    liabilities:credit-cards:chase:ink-unlimited  -19.95 USD
+    expenses:communication:sendgrid                19.95 USD
 
 2023-05-19 * Backblaze
-    liabilities:credit-cards:chase:ink-unlimited  -$0.66
-    expenses:backup:backblaze                      $0.66
+    liabilities:credit-cards:chase:ink-unlimited  -0.66 USD
+    expenses:backup:backblaze                      0.66 USD
 
 2023-05-23 * Google Domains  ; nevarro.space renewal
-    liabilities:credit-cards:chase:ink-unlimited  -$20.00
-    expenses:domains:google-domains                $20.00
+    liabilities:credit-cards:chase:ink-unlimited  -20.00 USD
+    expenses:domains:google-domains                20.00 USD
 
 2023-05-28 * USPS  ; Change of Address Fee
-    liabilities:credit-cards:chase:ink-unlimited  -$1.10
-    expenses:fees:government                       $1.10
+    liabilities:credit-cards:chase:ink-unlimited  -1.10 USD
+    expenses:fees:government                       1.10 USD
 
 2023-05-29 * Secretary of State  ; Registration Fee (Registered Agent Address Change)
-    liabilities:credit-cards:chase:ink-unlimited  -$10.00
-    expenses:fees:government                       $10.00
+    liabilities:credit-cards:chase:ink-unlimited  -10.00 USD
+    expenses:fees:government                       10.00 USD
 
 2023-05-29 * Secretary of State  ; Registration Fee (Principal Office Address Change)
-    liabilities:credit-cards:chase:ink-unlimited  -$10.00
-    expenses:fees:government                       $10.00
+    liabilities:credit-cards:chase:ink-unlimited  -10.00 USD
+    expenses:fees:government                       10.00 USD
 
 2023-05-31 * Hetzner
-    liabilities:credit-cards:chase:ink-unlimited  -$38.52
-    expenses:fees:foreign-transaction               $1.12
-    liabilities:accounts-payable:hetzner            34.73 EUR  @@  $37.40
+    liabilities:credit-cards:chase:ink-unlimited  -38.52 USD
+    expenses:fees:foreign-transaction               1.12 USD
+    liabilities:accounts-payable:hetzner           34.73 EUR  @@  37.40 USD
 
 2023-06-04 * Points Redemption
-    liabilities:credit-cards:chase:ink-unlimited   $1.10
-    revenue:credits-and-adjustments               -$1.10
+    liabilities:credit-cards:chase:ink-unlimited   1.10 USD
+    revenue:credits-and-adjustments               -1.10 USD
 
 2023-06-19 * Backblaze
-    liabilities:credit-cards:chase:ink-unlimited  -$4.81
-    expenses:backup:backblaze                      $4.81
+    liabilities:credit-cards:chase:ink-unlimited  -4.81 USD
+    expenses:backup:backblaze                      4.81 USD
 
 2023-06-27 * Points Redemption
-    liabilities:credit-cards:chase:ink-unlimited   $1.54
-    revenue:credits-and-adjustments               -$1.54
+    liabilities:credit-cards:chase:ink-unlimited   1.54 USD
+    revenue:credits-and-adjustments               -1.54 USD
 
 2023-06-30 * Hetzner
-    liabilities:credit-cards:chase:ink-unlimited  -$41.33
-    expenses:fees:foreign-transaction               $1.20
-    liabilities:accounts-payable:hetzner            36.70 EUR  @@  $40.13
+    liabilities:credit-cards:chase:ink-unlimited  -41.33 USD
+    expenses:fees:foreign-transaction               1.20 USD
+    liabilities:accounts-payable:hetzner           36.70 EUR  @@  40.13 USD
 
 2023-07-08 * Namecheap  ; quarkchat.app registration
-    liabilities:credit-cards:chase:ink-unlimited  -$15.16
-    expenses:domains:namecheap                     $15.16
+    liabilities:credit-cards:chase:ink-unlimited  -15.16 USD
+    expenses:domains:namecheap                     15.16 USD
 
 2023-07-19 * Backblaze
-    liabilities:credit-cards:chase:ink-unlimited  -$11.48
-    expenses:backup:backblaze                      $11.48
+    liabilities:credit-cards:chase:ink-unlimited  -11.48 USD
+    expenses:backup:backblaze                      11.48 USD
 
 2023-08-02 * Hetzner
-    liabilities:credit-cards:chase:ink-unlimited  -$45.91
-    expenses:fees:foreign-transaction               $1.33
-    liabilities:accounts-payable:hetzner            40.51 EUR  @@  $44.58
+    liabilities:credit-cards:chase:ink-unlimited  -45.91 USD
+    expenses:fees:foreign-transaction               1.33 USD
+    liabilities:accounts-payable:hetzner           40.51 EUR  @@  44.58 USD
 
 2023-08-19 * Backblaze
-    liabilities:credit-cards:chase:ink-unlimited  -$15.07
-    expenses:backup:backblaze                      $15.07
+    liabilities:credit-cards:chase:ink-unlimited  -15.07 USD
+    expenses:backup:backblaze                      15.07 USD
 
 2023-09-02 * Hetzner
-    liabilities:credit-cards:chase:ink-unlimited  -$63.21
-    expenses:fees:foreign-transaction               $1.84
-    liabilities:accounts-payable:hetzner            56.39 EUR  @@  $61.37
+    liabilities:credit-cards:chase:ink-unlimited  -63.21 USD
+    expenses:fees:foreign-transaction               1.84 USD
+    liabilities:accounts-payable:hetzner           56.39 EUR  @@  61.37 USD
 
 2023-09-19 * Backblaze
-    liabilities:credit-cards:chase:ink-unlimited  -$13.48
-    expenses:backup:backblaze                      $13.48
+    liabilities:credit-cards:chase:ink-unlimited  -13.48 USD
+    expenses:backup:backblaze                      13.48 USD
 
 2023-10-02 * Hetzner
-    liabilities:credit-cards:chase:ink-unlimited  -$61.66
-    expenses:fees:foreign-transaction               $1.79
-    liabilities:accounts-payable:hetzner            56.39 EUR  @@  $59.87
+    liabilities:credit-cards:chase:ink-unlimited  -61.66 USD
+    expenses:fees:foreign-transaction               1.79 USD
+    liabilities:accounts-payable:hetzner           56.39 EUR  @@  59.87 USD
 
 2023-10-19 * Backblaze
-    liabilities:credit-cards:chase:ink-unlimited  -$13.29
-    expenses:backup:backblaze                      $13.29
+    liabilities:credit-cards:chase:ink-unlimited  -13.29 USD
+    expenses:backup:backblaze                      13.29 USD
 
 2023-11-02 * Hetzner
-    liabilities:credit-cards:chase:ink-unlimited  -$61.47
-    expenses:fees:foreign-transaction               $1.79
-    liabilities:accounts-payable:hetzner            56.38 EUR  @@  $59.68
+    liabilities:credit-cards:chase:ink-unlimited  -61.47 USD
+    expenses:fees:foreign-transaction               1.79 USD
+    liabilities:accounts-payable:hetzner           56.38 EUR  @@  59.68 USD
 
 2023-11-19 * Backblaze
-    liabilities:credit-cards:chase:ink-unlimited  -$15.00
-    expenses:backup:backblaze                      $15.00
+    liabilities:credit-cards:chase:ink-unlimited  -15.00 USD
+    expenses:backup:backblaze                      15.00 USD
 
 2023-12-02 * Hetzner
-    liabilities:credit-cards:chase:ink-unlimited  -$63.38
-    expenses:fees:foreign-transaction               $1.84
-    liabilities:accounts-payable:hetzner            56.38 EUR  @@  $61.54
+    liabilities:credit-cards:chase:ink-unlimited  -63.38 USD
+    expenses:fees:foreign-transaction               1.84 USD
+    liabilities:accounts-payable:hetzner           56.38 EUR  @@  61.54 USD
 
 2023-12-08 * Plausible
-    liabilities:credit-cards:chase:ink-unlimited  -$90.00
-    expenses:monitoring                            $90.00
+    liabilities:credit-cards:chase:ink-unlimited  -90.00 USD
+    expenses:monitoring                            90.00 USD
 
 2023-12-19 * Backblaze
-    liabilities:credit-cards:chase:ink-unlimited  -$15.01
-    expenses:backup:backblaze                      $15.01
+    liabilities:credit-cards:chase:ink-unlimited  -15.01 USD
+    expenses:backup:backblaze                      15.01 USD

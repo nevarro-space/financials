@@ -5,7 +5,7 @@ fields date, description, amount, balance, name, info, imad, billduedate, billnu
 
 date-format %Y-%m-%d
 
-currency $
+currency USD
 
 account1 assets:cash:bluevine
 

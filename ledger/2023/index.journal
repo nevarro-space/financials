@@ -6,6 +6,6 @@ include chase-*.journal
 include hetzner.journal
 
 2023-12-31 * Closing Balances
-    assets:cash:bluevine                          -$539.08  =  $0.00
-    liabilities:credit-cards:chase:ink-unlimited   $183.39  =  $0.00  ; This is off by $0.21 due to some accounting error.
+    assets:cash:bluevine                          -539.08 USD  =  0.00 USD
+    liabilities:credit-cards:chase:ink-unlimited   183.39 USD  =  0.00 USD  ; This is off by 0.21 USD due to some accounting error.
     equity:opening/closing balances
