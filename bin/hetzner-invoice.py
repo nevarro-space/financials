@@ -2,21 +2,26 @@
 """Turn Hetzner invoice PDFs into itemized hledger transactions.
 
 Usage:
-    bin/hetzner-invoice.py ~/Downloads/Hetzner_*.pdf >> ledger/2026/hetzner.journal
+    bin/hetzner-invoice.py ~/Downloads/Hetzner_*.pdf   # print new invoice entries
+    bin/hetzner-invoice.py --payments                  # print new payment entries
 
 Each invoice becomes one transaction with a posting per line item and one for
-tax (in EUR), balanced against liabilities:accounts-payable:hetzner in USD via
-a pair of equity:conversion postings. The USD amount comes from the matching
-card charge already in the ledger: the first `Hetzner` posting to the payable,
-dated 0-7 days after the invoice, that no other invoice has claimed. The Chase
-import rule posts those charges to the payable, so it nets to zero.
+tax, in EUR, against liabilities:accounts-payable:hetzner. It's booked as soon
+as the invoice arrives, so the payable shows what's owed in EUR.
+
+When the card charge for an invoice shows up (the Chase import rule posts
+`Hetzner` charges to the payable in USD), `--payments` produces a payment
+transaction dated on the charge that converts the invoice's EUR to the charged
+USD with a pair of equity:conversion postings. After that the payable nets to
+zero in both currencies. A charge matches the earliest unpaid invoice dated
+0-10 days before it.
 
 Cancellations and the invoices that replace them are settled with account
-credit rather than a card charge, so they are booked in EUR against the
-payable and cancel each other out.
+credit rather than a card charge, so they get no payment; they cancel each
+other out in EUR.
 
-Invoices already in the ledger (matched by invoice number) are skipped, as are
-invoices with no matching card charge yet; both are reported on stderr.
+Invoices already in the ledger (matched by invoice number) are skipped and
+reported on stderr.
 
 Requires `pdftotext` (poppler-utils) and `hledger` on PATH.
 """
@@ -163,32 +168,8 @@ def hledger_csv(*args: str) -> list[dict]:
     return list(csv.DictReader(io.StringIO(out)))
 
 
-def existing_invoice_numbers() -> set[str]:
-    out = subprocess.run(
-        ["hledger", "-f", str(LEDGER_FILE), "print", f"acct:^{AP}$"],
-        capture_output=True, text=True, check=True,
-    ).stdout
-    return set(re.findall(r"Hetzner (?:Invoice|Cancellation) (\w+)", out))
-
-
-def card_charges() -> list[tuple[date, Decimal]]:
-    """USD postings to the payable from card charges (description Hetzner)."""
-    rows = hledger_csv("register", f"acct:^{AP}$", "cur:USD", "desc:hetzner")
-    charges = []
-    for r in rows:
-        amt = Decimal(r["amount"].replace("USD", "").replace(",", "").strip())
-        if amt > 0 and not r["description"].startswith("Hetzner Invoice"):
-            charges.append((date.fromisoformat(r["date"]), amt))
-    return charges
-
-
-def claimed_charges() -> list[tuple[date, Decimal]]:
-    """USD amounts already used by invoice transactions in the ledger."""
-    rows = hledger_csv("register", f"acct:^{AP}$", "cur:USD", "desc:^Hetzner Invoice")
-    return [
-        (date.fromisoformat(r["date"]), -Decimal(r["amount"].replace("USD", "").replace(",", "").strip()))
-        for r in rows
-    ]
+def amount(s: str) -> Decimal:
+    return Decimal(re.sub(r"[A-Z, ]", "", s))
 
 
 def fmt(amount: Decimal, places: int = 2) -> str:
@@ -196,7 +177,7 @@ def fmt(amount: Decimal, places: int = 2) -> str:
     return f"{amount.quantize(q):,}"
 
 
-def render(inv: Invoice, usd: Decimal | None) -> str:
+def render(inv: Invoice) -> str:
     sign = -1 if inv.kind == "Cancellation" else 1
     title = f"Hetzner {inv.kind} {inv.number}"
     if inv.cancels:
@@ -208,48 +189,126 @@ def render(inv: Invoice, usd: Decimal | None) -> str:
     rounding = inv.total - (sum(i.amount for i in inv.items) + inv.tax)
     if rounding:
         lines.append(f"    {ROUNDING}  {fmt(sign * rounding)} EUR")
-    if usd is None:
-        lines.append(f"    {AP}  {fmt(-sign * inv.total)} EUR")
-    else:
-        lines.append(f"    {CONVERSION}  {fmt(-inv.total)} EUR")
-        lines.append(f"    {CONVERSION}  {fmt(usd)} USD")
-        lines.append(f"    {AP}  {fmt(-usd)} USD")
+    lines.append(f"    {AP}  {fmt(-sign * inv.total)} EUR")
     return "\n".join(lines) + "\n"
 
 
-def main() -> None:
-    invoices = sorted((parse(Path(p)) for p in sys.argv[1:]), key=lambda i: (i.date, i.number))
-    by_number = {i.number: i for i in invoices}
-    cancelled = {i.cancels for i in invoices if i.kind == "Cancellation"}
-    # A replacement is an invoice for the same period as a cancelled one,
-    # issued after it, and settled by the cancellation's credit.
-    cancelled_periods = {by_number[n].period for n in cancelled if n in by_number}
-    seen = existing_invoice_numbers()
+def render_payment(number: str, charged: date, eur_total: Decimal, usd: Decimal) -> str:
+    return (
+        f"{charged} * Hetzner payment for invoice {number}\n"
+        f"    {AP}  {fmt(eur_total)} EUR\n"
+        f"    {CONVERSION}  {fmt(-eur_total)} EUR\n"
+        f"    {CONVERSION}  {fmt(usd)} USD\n"
+        f"    {AP}  {fmt(-usd)} USD\n"
+    )
 
-    available = card_charges()
-    for c in claimed_charges():
-        if c in available:
-            available.remove(c)
+
+@dataclass
+class LedgerDoc:
+    number: str
+    kind: str
+    date: date
+    period: str
+    cancels: str
+
+
+def ledger_docs() -> dict[str, LedgerDoc]:
+    """Hetzner invoices/cancellations already in the ledger, by number."""
+    out = subprocess.run(
+        ["hledger", "-f", str(LEDGER_FILE), "print", "desc:^Hetzner (Invoice|Cancellation) "],
+        capture_output=True, text=True, check=True,
+    ).stdout
+    docs = {}
+    for m in re.finditer(
+        r"^(\d{4}-\d\d-\d\d) \S* ?Hetzner (Invoice|Cancellation) (\w+)"
+        r"(?: for invoice (\w+))?\s*(?:;\s*period (\S+))?",
+        out, re.M,
+    ):
+        docs[m[3]] = LedgerDoc(m[3], m[2], date.fromisoformat(m[1]), m[5] or "", m[4] or "")
+    return docs
+
+
+def credit_settled_invoices(docs: dict[str, LedgerDoc]) -> set[str]:
+    """Replacement invoices: same period as a cancelled invoice, settled by
+    the cancellation's account credit rather than a card charge."""
+    cancelled = {d.cancels for d in docs.values() if d.kind == "Cancellation"}
+    periods = {docs[n].period for n in cancelled if n in docs}
+    return {
+        d.number for d in docs.values()
+        if d.kind == "Invoice" and d.period in periods and d.number not in cancelled
+    }
+
+
+@dataclass
+class Result:
+    invoice: Invoice
+    status: str  # "added" or "exists"
+    entry: str = ""
+
+
+def generate(paths: list[Path]) -> list[Result]:
+    """Parse the given PDFs and return one Result per document, in date order.
+    Only "added" results carry a journal entry."""
+    in_ledger = ledger_docs()
+    results = []
+    for inv in sorted((parse(p) for p in paths), key=lambda i: (i.date, i.number)):
+        if inv.number in in_ledger:
+            results.append(Result(inv, "exists"))
+        else:
+            results.append(Result(inv, "added", render(inv)))
+    return results
+
+
+def payments() -> list[str]:
+    """Payment entries for invoices in the ledger whose card charge has been
+    imported but not yet matched."""
+    docs = ledger_docs()
+    skip = credit_settled_invoices(docs)
+    paid = {
+        m[1] for r in hledger_csv("register", f"acct:^{AP}$", "desc:^Hetzner payment for invoice")
+        if (m := re.search(r"invoice (\w+)", r["description"]))
+    }
+    owed = {}  # invoice number -> EUR total, from the invoice's payable posting
+    for r in hledger_csv("register", f"acct:^{AP}$", "cur:EUR", "desc:^Hetzner Invoice "):
+        m = re.match(r"Hetzner Invoice (\w+)", r["description"])
+        if m:
+            owed[m[1]] = -amount(r["amount"])
+    unpaid = sorted(
+        (d for n, d in docs.items() if d.kind == "Invoice" and n in owed and n not in paid and n not in skip),
+        key=lambda d: (d.date, d.number),
+    )
+
+    charges = [
+        (date.fromisoformat(r["date"]), amount(r["amount"]))
+        for r in hledger_csv("register", f"acct:^{AP}$", "cur:USD", "desc:hetzner")
+        if not re.match(r"Hetzner (payment|Invoice|Cancellation) ", r["description"])
+        and amount(r["amount"]) > 0
+    ]
+    for r in hledger_csv("register", f"acct:^{AP}$", "cur:USD", "desc:^Hetzner payment for invoice"):
+        c = (date.fromisoformat(r["date"]), -amount(r["amount"]))
+        if c in charges:
+            charges.remove(c)
 
     out = []
-    for inv in invoices:
-        if inv.number in seen:
-            print(f"skip {inv.number}: already in ledger", file=sys.stderr)
+    for d in unpaid:
+        window = sorted(c for c in charges if d.date <= c[0] <= d.date + timedelta(days=10))
+        if not window:
             continue
-        credit_settled = inv.kind == "Cancellation" or (
-            inv.period in cancelled_periods and inv.number not in cancelled
-        )
-        usd = None
-        if not credit_settled:
-            window = [c for c in available if inv.date <= c[0] <= inv.date + timedelta(days=7)]
-            if not window:
-                print(f"skip {inv.number} ({inv.date}): no matching card charge yet", file=sys.stderr)
-                continue
-            charge = min(window)
-            available.remove(charge)
-            usd = charge[1]
-        out.append(render(inv, usd))
-    sys.stdout.write("\n".join(out))
+        charge = window[0]
+        charges.remove(charge)
+        out.append(render_payment(d.number, charge[0], owed[d.number], charge[1]))
+    return out
+
+
+def main() -> None:
+    if sys.argv[1:] == ["--payments"]:
+        sys.stdout.write("\n".join(payments()))
+        return
+    results = generate([Path(p) for p in sys.argv[1:]])
+    for r in results:
+        if r.status == "exists":
+            print(f"skip {r.invoice.number}: already in ledger", file=sys.stderr)
+    sys.stdout.write("\n".join(r.entry for r in results if r.status == "added"))
 
 
 if __name__ == "__main__":

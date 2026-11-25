@@ -36,6 +36,10 @@
     expenses:hosting:hetzner                7.700 EUR  ; Server cpx11 2 Servers, 2 @ €3.8500
     expenses:taxes:vat:hetzner             1.4428 EUR  ; 5%
     equity:rounding                       -0.0028 EUR
+    liabilities:accounts-payable:hetzner  -30.340 EUR
+
+2024-04-27 * Hetzner payment for invoice R0022831046
+    liabilities:accounts-payable:hetzner   30.340 EUR
     equity:conversion                     -30.340 EUR
     equity:conversion                       32.51 USD
     liabilities:accounts-payable:hetzner   -32.51 USD
@@ -47,6 +51,10 @@
     expenses:hosting:hetzner                7.700 EUR  ; Server cpx11 2 Servers, 2 @ €3.8500
     expenses:taxes:vat:hetzner             1.4465 EUR  ; 5%
     equity:rounding                        0.0035 EUR
+    liabilities:accounts-payable:hetzner  -30.350 EUR
+
+2024-05-27 * Hetzner payment for invoice R0023202059
+    liabilities:accounts-payable:hetzner   30.350 EUR
     equity:conversion                     -30.350 EUR
     equity:conversion                       32.96 USD
     liabilities:accounts-payable:hetzner   -32.96 USD
@@ -58,6 +66,10 @@
     expenses:hosting:hetzner                7.700 EUR  ; Server cpx11 2 Servers, 2 @ €3.8500
     expenses:taxes:vat:hetzner             1.4409 EUR  ; 5%
     equity:rounding                       -0.0009 EUR
+    liabilities:accounts-payable:hetzner  -30.340 EUR
+
+2024-06-27 * Hetzner payment for invoice R0023581031
+    liabilities:accounts-payable:hetzner   30.340 EUR
     equity:conversion                     -30.340 EUR
     equity:conversion                       32.61 USD
     liabilities:accounts-payable:hetzner   -32.61 USD
@@ -69,6 +81,10 @@
     expenses:hosting:hetzner                7.700 EUR  ; Server cpx11 2 Servers, 2 @ €3.8500
     expenses:taxes:vat:hetzner             1.4457 EUR  ; 5%
     equity:rounding                        0.0043 EUR
+    liabilities:accounts-payable:hetzner  -30.350 EUR
+
+2024-07-25 * Hetzner payment for invoice R0023971197
+    liabilities:accounts-payable:hetzner   30.350 EUR
     equity:conversion                     -30.350 EUR
     equity:conversion                       32.99 USD
     liabilities:accounts-payable:hetzner   -32.99 USD
@@ -80,6 +96,10 @@
     expenses:hosting:hetzner                7.700 EUR  ; Server cpx11 2 Servers, 2 @ €3.8500
     expenses:taxes:vat:hetzner             1.4477 EUR  ; 5%
     equity:rounding                        0.0023 EUR
+    liabilities:accounts-payable:hetzner  -30.350 EUR
+
+2024-08-26 * Hetzner payment for invoice R0024368480
+    liabilities:accounts-payable:hetzner   30.350 EUR
     equity:conversion                     -30.350 EUR
     equity:conversion                       34.00 USD
     liabilities:accounts-payable:hetzner   -34.00 USD
@@ -91,6 +111,10 @@
     expenses:hosting:hetzner                7.700 EUR  ; Server cpx11 2 Servers, 2 @ €3.8500
     expenses:taxes:vat:hetzner              1.448 EUR  ; 5%
     equity:rounding                         0.002 EUR
+    liabilities:accounts-payable:hetzner  -30.350 EUR
+
+2024-09-25 * Hetzner payment for invoice R0024773382
+    liabilities:accounts-payable:hetzner   30.350 EUR
     equity:conversion                     -30.350 EUR
     equity:conversion                       33.94 USD
     liabilities:accounts-payable:hetzner   -33.94 USD
@@ -103,6 +127,10 @@
     expenses:hosting:hetzner                6.600 EUR  ; 1 Volume, 150 GB-mo @ €0.0440
     expenses:taxes:vat:hetzner              1.420 EUR  ; 4.93%
     equity:rounding                        0.0012 EUR
+    liabilities:accounts-payable:hetzner  -30.330 EUR
+
+2024-10-25 * Hetzner payment for invoice 080000046407
+    liabilities:accounts-payable:hetzner   30.330 EUR
     equity:conversion                     -30.330 EUR
     equity:conversion                       32.85 USD
     liabilities:accounts-payable:hetzner   -32.85 USD
@@ -113,6 +141,10 @@
     expenses:hosting:hetzner                1.500 EUR  ; 3 Primary IPv4, 3 mo @ €0.5000
     expenses:hosting:hetzner                6.600 EUR  ; 1 Volume, 150 GB-mo @ €0.0440
     expenses:taxes:vat:hetzner              1.420 EUR  ; 4.93%
+    liabilities:accounts-payable:hetzner  -30.320 EUR
+
+2024-11-25 * Hetzner payment for invoice 083000076883
+    liabilities:accounts-payable:hetzner   30.320 EUR
     equity:conversion                     -30.320 EUR
     equity:conversion                       31.84 USD
     liabilities:accounts-payable:hetzner   -31.84 USD
@@ -123,6 +155,10 @@
     expenses:hosting:hetzner                1.500 EUR  ; 3 Primary IPv4, 3 mo @ €0.5000
     expenses:hosting:hetzner                6.600 EUR  ; 1 Volume, 150 GB-mo @ €0.0440
     expenses:taxes:vat:hetzner              1.420 EUR  ; 4.93%
+    liabilities:accounts-payable:hetzner  -30.320 EUR
+
+2024-12-27 * Hetzner payment for invoice 084000092464
+    liabilities:accounts-payable:hetzner   30.320 EUR
     equity:conversion                     -30.320 EUR
     equity:conversion                       31.64 USD
     liabilities:accounts-payable:hetzner   -31.64 USD

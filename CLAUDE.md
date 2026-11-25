@@ -88,25 +88,60 @@ Runway is `equity / average monthly burn`; take the two inputs from `bs` and
 
 ### Hetzner invoices (EUR)
 
-Hetzner bills in EUR. Each invoice is an itemized transaction in
-`ledger/YYYY/hetzner.journal` (one posting per server/IP/volume plus tax, in
-EUR), converted to USD with a pair of `equity:conversion` postings and
-balanced against `liabilities:accounts-payable:hetzner` in USD. The Chase
-import rule posts each `Hetzner Online GmbH` card charge to that payable, so
-it nets to $0.00 once both sides are in; a nonzero balance means a missing
-invoice or charge. The foreign-transaction fee stays its own transaction.
+Hetzner bills in EUR. Each document gets two transactions in
+`ledger/YYYY/hetzner.journal`:
 
-After importing the Chase CSV, generate any new invoices from the PDFs
-(emailed by Hetzner, or downloaded from accounts.hetzner.com/invoice):
+1. **Invoice**, dated on the invoice and booked as soon as it arrives: one
+   posting per server/IP/volume plus tax, in EUR, against
+   `liabilities:accounts-payable:hetzner`. Until it's paid, the payable shows
+   the EUR owed.
+2. **Payment**, dated on the card charge (`Hetzner payment for invoice N`):
+   clears the EUR from the payable and converts it to the USD actually
+   charged with a pair of `equity:conversion` postings. The Chase import rule
+   posts each `Hetzner Online GmbH` charge to the payable in USD, which this
+   offsets.
+
+So `hledger bal liabilities:accounts-payable:hetzner -H` is EUR for unpaid
+invoices, USD for charges with no invoice, and empty when everything matches.
+The foreign-transaction fee stays its own transaction. Cancellations and their
+replacement invoices are settled by Hetzner account credit, so they have no
+payment and offset each other in EUR.
+
+`bin/process-mail.py` (below) does both steps. To work from PDFs directly
+(e.g. downloaded from accounts.hetzner.com/invoice):
 
 ```bash
 bin/hetzner-invoice.py ~/Downloads/Hetzner_*.pdf >> ledger/2026/hetzner.journal
-hledger bal liabilities:accounts-payable:hetzner -H   # should be empty (0)
+bin/hetzner-invoice.py --payments   # after the Chase import; insert in date order
 ```
 
-The script skips invoices already in the ledger and ones whose card charge
-isn't imported yet. Invoices through 2024-03-01 are older hand-written entries
-in the 2023 style (conversion on the card charge with `@@`).
+Invoices through 2024-03-01 are older hand-written entries in the 2023 style
+(conversion on the card charge with `@@`).
+
+### Invoice mail
+
+`bin/process-mail.py` reads `~/Mail/Nevarro/INBOX` (the mbsync maildir), turns
+recognized vendor invoice emails into ledger entries (inserted in date order
+into `ledger/YYYY/<vendor>.journal`), runs `hledger check -s ordereddates`, and
+moves processed messages to the `Invoices` folder (the Gmail "Invoices" label),
+which archives them out of the inbox on the next `mbsync`. If the check fails,
+the ledger is restored and nothing is moved.
+
+```bash
+mbsync Nevarro
+hledger import ...                  # latest Chase CSV first
+bin/process-mail.py --dry-run       # preview
+bin/process-mail.py
+mbsync Nevarro                      # sync the moves
+```
+
+Each run also adds payments for any Hetzner invoices whose card charge has
+since been imported, even with no new mail. Messages stay in INBOX only when
+no handler recognizes them or they fail sender verification: the sender is
+taken from `X-Original-Sender` (mail relayed by the admin@nevarro.space group)
+or `From`, and must have a DKIM pass for the vendor's domain recorded by Google
+or Migadu. Handlers so far: Hetzner. Add new vendors as `handle_<vendor>`
+functions in `HANDLERS` (and a `RECONCILERS` entry if they need one).
 
 ### Prices
 
