@@ -24,7 +24,7 @@
 
 2026-01-19 * GITHUB  ; arp242, neovim
     liabilities:credit-cards:chase:ink-unlimited       -15.90 USD  ; date:2026-01-20
-    expenses:donations                                  15.90 USD
+    liabilities:accounts-payable:github                 15.90 USD
 
 2026-01-23 * NAME-CHEAP.COM* DQN9DY  ; kuatcom.me, kuatcomments.com, wthstack.com
     liabilities:credit-cards:chase:ink-unlimited       -61.34 USD  ; date:2026-01-23
@@ -52,7 +52,7 @@
 
 2026-02-19 * GITHUB  ; arp242, neovim
     liabilities:credit-cards:chase:ink-unlimited       -15.90 USD  ; date:2026-02-20
-    expenses:donations                                  15.90 USD
+    liabilities:accounts-payable:github                 15.90 USD
 
 2026-02-19 * BACKBLAZE INC
     liabilities:credit-cards:chase:ink-unlimited        -1.28 USD  ; date:2026-02-20
@@ -92,7 +92,7 @@
 
 2026-03-19 * GITHUB  ; arp242, neovim
     liabilities:credit-cards:chase:ink-unlimited       -15.90 USD  ; date:2026-03-20
-    expenses:donations                                  15.90 USD
+    liabilities:accounts-payable:github                 15.90 USD
 
 2026-03-25 * Hetzner Online GmbH
     liabilities:credit-cards:chase:ink-unlimited       -40.36 USD  ; date:2026-03-26
@@ -120,7 +120,7 @@
 
 2026-04-19 * GITHUB  ; arp242, neovim
     liabilities:credit-cards:chase:ink-unlimited       -15.90 USD  ; date:2026-04-20
-    expenses:donations                                  15.90 USD
+    liabilities:accounts-payable:github                 15.90 USD
 
 2026-04-23 * NAME-CHEAP.COM* DHBVSH  ; nevarro.space
     liabilities:credit-cards:chase:ink-unlimited       -32.68 USD  ; date:2026-04-24
@@ -148,7 +148,7 @@
 
 2026-05-19 * GITHUB  ; arp242, neovim
     liabilities:credit-cards:chase:ink-unlimited       -15.90 USD  ; date:2026-05-20
-    expenses:donations                                  15.90 USD
+    liabilities:accounts-payable:github                 15.90 USD
 
 2026-05-25 * Hetzner Online GmbH
     liabilities:credit-cards:chase:ink-unlimited       -52.53 USD  ; date:2026-05-26
@@ -176,7 +176,7 @@
 
 2026-06-19 * GITHUB  ; arp242, neovim
     liabilities:credit-cards:chase:ink-unlimited       -15.90 USD  ; date:2026-06-21
-    expenses:donations                                  15.90 USD
+    liabilities:accounts-payable:github                 15.90 USD
 
 2026-06-25 * Hetzner Online GmbH
     liabilities:credit-cards:chase:ink-unlimited       -51.44 USD  ; date:2026-06-26
@@ -200,7 +200,7 @@
 
 2026-07-19 * GITHUB  ; arp242, neovim
     liabilities:credit-cards:chase:ink-unlimited       -15.90 USD  ; date:2026-07-20
-    expenses:donations                                  15.90 USD
+    liabilities:accounts-payable:github                 15.90 USD
 
 2026-07-19 * BACKBLAZE INC
     liabilities:credit-cards:chase:ink-unlimited        -1.30 USD  ; date:2026-07-20
@@ -232,7 +232,7 @@
 
 2026-08-19 * GITHUB
     liabilities:credit-cards:chase:ink-unlimited       -15.90 USD  ; date:2026-08-20
-    expenses:donations                                  15.90 USD
+    liabilities:accounts-payable:github                 15.90 USD
 
 2026-08-25 * Hetzner Online GmbH
     liabilities:credit-cards:chase:ink-unlimited       -52.81 USD  ; date:2026-08-26
@@ -260,7 +260,7 @@
 
 2026-09-19 * GITHUB
     liabilities:credit-cards:chase:ink-unlimited       -15.90 USD  ; date:2026-09-20
-    expenses:donations                                  15.90 USD
+    liabilities:accounts-payable:github                 15.90 USD
 
 2026-09-25 * Hetzner Online GmbH
     liabilities:credit-cards:chase:ink-unlimited       -51.51 USD  ; date:2026-09-27
@@ -288,7 +288,7 @@
 
 2026-10-19 * GITHUB
     liabilities:credit-cards:chase:ink-unlimited       -15.90 USD  ; date:2026-10-20
-    expenses:donations                                  15.90 USD
+    liabilities:accounts-payable:github                 15.90 USD
 
 2026-10-25 * Hetzner Online GmbH
     liabilities:credit-cards:chase:ink-unlimited       -50.75 USD  ; date:2026-10-26
@@ -312,7 +312,7 @@
 
 2026-11-19 * GITHUB
     liabilities:credit-cards:chase:ink-unlimited       -15.90 USD  ; date:2026-11-20
-    expenses:donations                                  15.90 USD
+    liabilities:accounts-payable:github                 15.90 USD
 
 2026-11-19 * BACKBLAZE INC
     liabilities:credit-cards:chase:ink-unlimited        -1.16 USD  ; date:2026-11-20

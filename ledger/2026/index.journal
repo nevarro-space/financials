@@ -13,3 +13,4 @@ include bluevine.journal
 include chase-*.journal
 include hetzner.journal
 include fidelity.journal
+include github.journal

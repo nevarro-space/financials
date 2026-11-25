@@ -22,6 +22,8 @@ handler recognizes, or that fail sender verification, are left in INBOX.
 Handlers:
     hetzner  "Hetzner Online GmbH - Invoice|Cancellation ..." with a PDF
              (see bin/hetzner-invoice.py)
+    github   "[GitHub] Payment Receipt for nevarro-space" with a PDF
+             (see bin/github-receipt.py)
 """
 
 import argparse
@@ -53,6 +55,7 @@ def load(name: str, file: str):
 
 
 hetzner = load("hetzner_invoice", "hetzner-invoice.py")
+github = load("github_receipt", "github-receipt.py")
 
 
 @dataclass
@@ -120,7 +123,21 @@ def handle_hetzner(m: Message, tmp: Path) -> Outcome | None:
     return Outcome(m, "added" if entries else "exists", detail, entries)
 
 
-HANDLERS = [handle_hetzner]
+def handle_github(m: Message, tmp: Path) -> Outcome | None:
+    if m.sender != "noreply@github.com" or not m.subject.startswith("[GitHub] Payment Receipt for nevarro-space"):
+        return None
+    if not m.dkim_verified("github.com"):
+        return Outcome(m, "held", "DKIM for github.com not verified; check this message by hand", [])
+    pdfs = m.pdfs(tmp)
+    if not pdfs:
+        return None
+    results = github.generate(pdfs)
+    detail = ", ".join(f"receipt {r.receipt.txn_id} {r.status}" for r in results)
+    entries = [("github", r.entry) for r in results if r.status == "added"]
+    return Outcome(m, "added" if entries else "exists", detail, entries)
+
+
+HANDLERS = [handle_hetzner, handle_github]
 
 # Called after handler entries are written; each returns (vendor, entry) pairs
 # for entries that can now be completed from what's in the ledger.

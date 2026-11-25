@@ -27,8 +27,9 @@ if MIGADU
 
 # GitHub Sponsors (arp242, GoatCounter, neovim, ...) — paying for support of
 # projects we depend on, so booked as donations rather than dev tooling.
+# Settles the itemized receipt from bin/github-receipt.py (in github.journal).
 if GITHUB
-    account2 expenses:donations
+    account2 liabilities:accounts-payable:github
 
 if GOOGLE Workspace
 GOOGLE \*Workspace

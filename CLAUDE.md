@@ -118,6 +118,23 @@ bin/hetzner-invoice.py --payments   # after the Chase import; insert in date ord
 Invoices through 2024-03-01 are older hand-written entries in the 2023 style
 (conversion on the card charge with `@@`).
 
+### GitHub Sponsors receipts
+
+Nevarro sponsors maintainers from the `nevarro-space` GitHub org (arp242 $5/mo
+since 2024-02-28, neovim $10/mo since 2025-03-03). GitHub adds a 6% fee for
+org sponsorships and bills them together as one `GITHUB` card charge. Each
+receipt is a transaction in `ledger/YYYY/github.journal` with a posting per
+sponsorship (`expenses:donations:github:<login>`) and per fee
+(`expenses:fees:github-sponsors`) against `liabilities:accounts-payable:github`;
+the Chase import rule posts the card charge to that payable.
+
+`bin/github-receipt.py` parses the receipt PDFs (`process-mail.py` runs it
+on the "[GitHub] Payment Receipt for nevarro-space" emails). Charges before
+2026-08 have no receipt; those entries are tagged `reconstructed:` and split
+from the card amount using the sponsorship tiers. GitHub's GraphQL
+`totalSponsorshipAmountAsSponsorInCents` does not give per-period amounts that
+match the charges, so don't use it as a source.
+
 ### Invoice mail
 
 `bin/process-mail.py` reads `~/Mail/Nevarro/INBOX` (the mbsync maildir), turns
@@ -140,7 +157,7 @@ since been imported, even with no new mail. Messages stay in INBOX only when
 no handler recognizes them or they fail sender verification: the sender is
 taken from `X-Original-Sender` (mail relayed by the admin@nevarro.space group)
 or `From`, and must have a DKIM pass for the vendor's domain recorded by Google
-or Migadu. Handlers so far: Hetzner. Add new vendors as `handle_<vendor>`
+or Migadu. Handlers so far: Hetzner, GitHub. Add new vendors as `handle_<vendor>`
 functions in `HANDLERS` (and a `RECONCILERS` entry if they need one).
 
 ### Prices

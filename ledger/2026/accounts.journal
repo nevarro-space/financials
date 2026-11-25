@@ -3,6 +3,7 @@ account assets:cash:bluevine
 account assets:cash:fidelity
 
 ; Liabilities
+account liabilities:accounts-payable:github
 account liabilities:accounts-payable:hetzner
 account liabilities:credit-cards:chase:ink-unlimited
 
@@ -20,7 +21,10 @@ account expenses:communication:migadu
 account expenses:communication:sendgrid
 account expenses:domains:namecheap
 account expenses:donations
+account expenses:donations:github:arp242
+account expenses:donations:github:neovim
 account expenses:fees:foreign-transaction
+account expenses:fees:github-sponsors
 account expenses:fees:government
 account expenses:hosting:hetzner
 account expenses:monitoring:uptimerobot

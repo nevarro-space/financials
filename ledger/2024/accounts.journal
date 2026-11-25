@@ -2,8 +2,9 @@
 account assets:cash:bluevine
 
 ; Liabilities
-account liabilities:credit-cards:chase:ink-unlimited
+account liabilities:accounts-payable:github
 account liabilities:accounts-payable:hetzner
+account liabilities:credit-cards:chase:ink-unlimited
 
 ; Revenue
 account revenue:credits-and-adjustments
@@ -19,7 +20,9 @@ account expenses:communication:sendgrid
 account expenses:domains:google-domains
 account expenses:domains:namecheap
 account expenses:donations
+account expenses:donations:github:arp242
 account expenses:fees:foreign-transaction
+account expenses:fees:github-sponsors
 account expenses:fees:government
 account expenses:fees:square
 account expenses:hosting:hetzner
