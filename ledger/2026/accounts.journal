@@ -5,6 +5,7 @@ account assets:cash:fidelity
 ; Liabilities
 account liabilities:accounts-payable:github
 account liabilities:accounts-payable:hetzner
+account liabilities:accounts-payable:namecheap
 account liabilities:accounts-payable:sendgrid
 account liabilities:credit-cards:chase:ink-unlimited
 
@@ -23,6 +24,10 @@ account expenses:communication:sendgrid
 account expenses:communication:sendgrid:essentials
 account expenses:communication:sendgrid:marketing-campaigns
 account expenses:domains:namecheap
+account expenses:domains:namecheap:scopedcommits.com
+account expenses:domains:namecheap:scopedcommits.org
+account expenses:domains:namecheap:scoped-commits.com
+account expenses:domains:namecheap:scoped-commits.org
 account expenses:donations
 account expenses:donations:github:arp242
 account expenses:donations:github:neovim

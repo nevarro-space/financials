@@ -27,6 +27,8 @@ Handlers:
     sendgrid "You have a new invoice from SendGrid (INV...)" with a PDF
              (see bin/sendgrid-invoice.py); "Your payment to SendGrid was
              successful" confirmations are just filed
+    namecheap "Namecheap Order Summary (Order# N)" (items are in the HTML part;
+             see bin/namecheap-order.py)
 """
 
 import argparse
@@ -60,6 +62,7 @@ def load(name: str, file: str):
 hetzner = load("hetzner_invoice", "hetzner-invoice.py")
 github = load("github_receipt", "github-receipt.py")
 sendgrid = load("sendgrid_invoice", "sendgrid-invoice.py")
+namecheap = load("namecheap_order", "namecheap-order.py")
 
 
 @dataclass
@@ -162,7 +165,18 @@ def handle_sendgrid(m: Message, tmp: Path) -> Outcome | None:
     return Outcome(m, "added" if entries else "exists", detail, entries)
 
 
-HANDLERS = [handle_hetzner, handle_github, handle_sendgrid]
+def handle_namecheap(m: Message, tmp: Path) -> Outcome | None:
+    if m.sender != "support@namecheap.com" or not m.subject.startswith("Namecheap Order Summary"):
+        return None
+    if not m.dkim_verified("namecheap.com"):
+        return Outcome(m, "held", "DKIM for namecheap.com not verified; check this message by hand", [])
+    results = namecheap.generate([m.msg])
+    detail = ", ".join(f"order {r.order.number} {r.status}" for r in results)
+    entries = [("namecheap", r.entry) for r in results if r.status == "added"]
+    return Outcome(m, "added" if entries else "exists", detail, entries)
+
+
+HANDLERS = [handle_hetzner, handle_github, handle_sendgrid, handle_namecheap]
 
 # Called after handler entries are written; each returns (vendor, entry) pairs
 # for entries that can now be completed from what's in the ledger.
@@ -203,6 +217,36 @@ def journal_for(vendor: str, entry: str) -> Path:
     if line not in index.read_text():
         index.write_text(index.read_text().rstrip("\n") + f"\n{line}\n")
     return journal
+
+
+# New subaccounts under these prefixes (one per domain, maintainer, ...) are
+# declared automatically in that year's accounts.journal; anything else that's
+# undeclared still fails the strict check.
+AUTO_DECLARE = ("expenses:domains:namecheap:", "expenses:donations:github:")
+
+
+def declare_new_accounts(entries: list[tuple[str, str]], backups: dict[Path, str | None]) -> list[str]:
+    declared = []
+    for _, entry in entries:
+        year = entry[:4]
+        accounts_file = LEDGER_DIR / year / "accounts.journal"
+        for acct in re.findall(r"^\s+(\S+(?: \S+)*?)\s{2,}", entry, re.M):
+            if not acct.startswith(AUTO_DECLARE):
+                continue
+            text = accounts_file.read_text()
+            line = f"account {acct}"
+            if line in text.splitlines():
+                continue
+            backups.setdefault(accounts_file, text)
+            # Insert after the last declaration sharing the vendor prefix, or
+            # at the end of the file.
+            prefix = next(p for p in AUTO_DECLARE if acct.startswith(p)).rsplit(":", 2)[0]
+            lines = text.rstrip("\n").split("\n")
+            idx = max((i for i, l in enumerate(lines) if l.startswith(f"account {prefix}")), default=len(lines) - 1)
+            lines.insert(idx + 1, line)
+            accounts_file.write_text("\n".join(lines) + "\n")
+            declared.append(f"{year}: {acct}")
+    return declared
 
 
 def ledger_ok() -> tuple[bool, str]:
@@ -269,6 +313,9 @@ def main() -> None:
             print("Nothing to process.")
         return
     write(reconciled)
+    added = [(v, e) for o in outcomes if o.status == "added" for v, e in o.entries] + reconciled
+    for d in declare_new_accounts(added, backups):
+        print(f"declared {d}")
 
     if backups:
         ok, err = ledger_ok()

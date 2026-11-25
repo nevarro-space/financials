@@ -16,8 +16,9 @@ if DIVIDEND RECEIVED .* \((.*)\) \((Cash|Margin)\)
 if Hetzner
     account2 liabilities:accounts-payable:hetzner
 
+# Settles the itemized order from bin/namecheap-order.py (in namecheap.journal).
 if NAME-CHEAP
-    account2 expenses:domains:namecheap
+    account2 liabilities:accounts-payable:namecheap
 
 # Settles the itemized invoice from bin/sendgrid-invoice.py (in sendgrid.journal).
 if TWILIO SENDGRID

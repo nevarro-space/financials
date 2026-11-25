@@ -150,6 +150,20 @@ Charges since 2024 without an invoice in the mailbox are tagged
 `reconstructed:` and split by plan price. SendGrid announced in 2026-11 that
 it's merging into Twilio, so the sender or invoice format may change.
 
+### Namecheap orders
+
+Namecheap has no invoice export or order-history API; the itemized order is
+only in the HTML part of the "Namecheap Order Summary (Order# N)" email
+(re-sendable from Profile → Billing → Order History → Resend receipt). Each
+order is a transaction in `ledger/YYYY/namecheap.journal` with, per domain, the
+registration/renewal/transfer price and its ICANN fee under
+`expenses:domains:namecheap:<domain>`, against
+`liabilities:accounts-payable:namecheap`; the Chase import rule posts the
+`NAME-CHEAP.COM*` charge to that payable. `bin/namecheap-order.py` parses saved
+`.eml` files; `process-mail.py` handles the emails. Any USD balance on the
+payable is a card charge whose receipt hasn't been booked yet. Itemized from 2026-06 on; earlier charges stay as single
+`expenses:domains:namecheap` postings (domains noted in the comment).
+
 ### Invoice mail
 
 `bin/process-mail.py` reads `~/Mail/Nevarro/INBOX` (the mbsync maildir), turns
@@ -172,8 +186,10 @@ since been imported, even with no new mail. Messages stay in INBOX only when
 no handler recognizes them or they fail sender verification: the sender is
 taken from `X-Original-Sender` (mail relayed by the admin@nevarro.space group)
 or `From`, and must have a DKIM pass for the vendor's domain recorded by Google
-or Migadu. Handlers so far: Hetzner, GitHub, SendGrid. Add new vendors as `handle_<vendor>`
-functions in `HANDLERS` (and a `RECONCILERS` entry if they need one).
+or Migadu. Handlers so far: Hetzner, GitHub, SendGrid, Namecheap. Add new vendors as `handle_<vendor>`
+functions in `HANDLERS` (and a `RECONCILERS` entry if they need one). New
+subaccounts under the prefixes in `AUTO_DECLARE` (per domain, per GitHub
+maintainer) are declared in that year's `accounts.journal` automatically.
 
 ### Prices
 

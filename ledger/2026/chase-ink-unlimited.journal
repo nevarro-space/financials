@@ -164,7 +164,7 @@
 
 2026-06-03 * NAME-CHEAP.COM* Q6GX0G
     liabilities:credit-cards:chase:ink-unlimited       -41.32 USD  ; date:2026-06-04
-    expenses:domains:namecheap                          41.32 USD
+    liabilities:accounts-payable:namecheap              41.32 USD
 
 2026-06-03 * TWILIO SENDGRID
     liabilities:credit-cards:chase:ink-unlimited       -34.95 USD  ; date:2026-06-04
