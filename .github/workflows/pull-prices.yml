@@ -1,0 +1,34 @@
+name: Pull prices
+
+on:
+  schedule:
+    # 22:00 UTC every day, after the ECB publishes its daily reference rates
+    # (around 16:00 CET).
+    - cron: '0 22 * * *'
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  pull-prices:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: DeterminateSystems/nix-installer-action@main
+
+      - name: Fetch prices
+        run: nix develop --command bash bin/pull-prices.sh
+
+      - name: Commit and push updated prices
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add ledger/prices/
+          if git diff --cached --quiet; then
+            echo "No price updates"
+            exit 0
+          fi
+          git commit -m "ledger/prices: daily price update for $(date +%Y-%m-%d)"
+          git push

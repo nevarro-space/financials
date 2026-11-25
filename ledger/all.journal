@@ -5,3 +5,5 @@ include 2023/index.journal
 include 2024/index.journal
 include 2025/index.journal
 include 2026/index.journal
+
+include prices/*.journal

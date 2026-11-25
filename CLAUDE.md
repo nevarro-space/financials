@@ -86,10 +86,21 @@ hledger print tag:commentary -p 2026q3    # commentary for a period
 Runway is `equity / average monthly burn`; take the two inputs from `bs` and
 `is`.
 
+### Prices
+
+`ledger/prices/EUR.journal` holds daily ECB EUR/USD rates, fetched by
+`bin/pull-prices.sh` (pricehist) and updated nightly by the
+`.github/workflows/pull-prices.yml` action. Use them to report EUR amounts in
+USD: `hledger bal expenses --value=then,USD` (rate on each posting's date) or
+`-X USD` (rate at period end). `equity:conversion` valued in USD is the
+difference between what the card actually charged and the ECB rate, i.e. the
+card network's FX spread.
+
 ## Dev environment
 
 `nix develop` (or `direnv allow`, since `.envrc` has `use flake`) provides
-`hledger`, `hledger-web`, `pre-commit`, and `python3`, and sets `LEDGER_FILE`
+`hledger`, `hledger-web`, `pre-commit`, `pricehist`, and
+`python3`, and sets `LEDGER_FILE`
 to `ledger/all.journal`. `hledger-web` starts a local browser UI for exploring
 the ledger.
 
